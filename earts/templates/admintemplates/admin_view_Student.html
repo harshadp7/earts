@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title></head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="221" border="1">
+    <tr>
+      <th colspan="10" scope="col">Student&nbsp;Name </th>
+      <th width="17" scope="col"><label>
+        <input type="text" name="textfield" />
+        <input type="submit" name="Submit" value="Search" />
+      </label></th>
+    </tr></table><br/>
+	<table border="1">
+    <tr>
+      <td width="15">#</td>
+      <td width="99">Student&nbsp;Name</td>
+      <td width="45">Gender</td>
+      <td width="33">Place</td>
+      <td width="34">PIN</td>
+      <td width="28">Post</td>
+      <td width="43">District</td>
+      <td width="37">Image</td>
+      <td width="34">Email</td>
+      <td width="83">Course</td>
+      <td width="110"><a href="#">Edit</a></td>
+      <td width="110"><a href="#">Delete</a></td>
+    </tr>
+        {% for i in data %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>{{ i.student_name }}</td>
+      <td>{{ i.gender }}&nbsp;</td>
+      <td>{{ i.place }}&nbsp;</td>
+      <td>{{ i.pin }}&nbsp;</td>
+      <td>{{ i.post }}</td>
+      <td>{{ i.district }}&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>{{ i.email }}&nbsp;</td>
+      <td>{{ i.COURSE.course_name }}&nbsp;</td>
+      <td><a href="/earts/admin_editstudentload/{{ i.id }}">Edit</a></td>
+      <td><a href="/earts/admin_deletestudent/{{ i.id }}">Delete</a></td>
+    </tr>
+        {% endfor %}
+  </table>
+</form>
+</body>
+</html>

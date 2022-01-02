@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form action="/earts/admin_editstudentpost/" method="post" enctype="multipart/form-data" name="form1" id="form1">
+ <input type="hidden" name="stid" value="{{ st.id }}"/>
+  <table width="200" border="1">
+    <tr>
+      <td scope="col"><div align="left">Student&nbsp;Name </div></td>
+      <td scope="col"><label>
+        <input type="text" name="textfield" value="{{ st.student_name }}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+       {% if st.gender == 'male' %}
+      <td><label>
+        <input name="radiobutton" type="radio" value="male" checked="checked" />
+        Male 
+        <input name="radiobutton" type="radio" value="female" />
+      Female</label></td>
+        {% endif %}
+
+     {% if st.gender == 'female' %}
+      <td><label>
+        <input name="radiobutton" type="radio" value="male" />
+        Male
+        <input name="radiobutton" type="radio" value="female" checked="checked"/>
+      Female</label></td>
+        {% endif %}
+    </tr>
+    <tr>
+      <td>Place</td>
+      <td><label>
+        <input type="text" name="textfield1" value="{{ st.place }}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>PIN</td>
+      <td><label>
+        <input type="text" name="textfield2" value="{{ st.pin }}"/>
+      </label></td>
+    </tr>
+      <tr>
+      <td>Post</td>
+      <td><label>
+        <input type="text" name="textfield3" value="{{ st.post }}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>District</td>
+      <td><label>
+        <input type="text" name="textfield4" value="{{ st.district }}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <td>Image</td>
+      <td><label>
+        <input type="file" name="file" />
+      </label></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><label>
+        <input type="text" name="textfield5" value="{{ st.email }}" />
+      </label></td>
+    </tr
+    <tr>
+      <td>Course&nbsp;Name </td>
+      <td>
+          <select name="select">
+          <option value="{{ st.COURSE.id }}"> {{ st.COURSE.course_name }}</option>
+            {% for i in cr %}
+          <option value="{{ i.id }}">{{ i.course_name }}</option>
+            {% endfor %}
+
+        </select>
+
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2"><label>
+        <input type="submit" name="Submit" value="Save" />
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

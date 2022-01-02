@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title></head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1">
+    <tr>
+      <th colspan="8" scope="col">Staff&nbsp;name </th>
+      <th width="17" scope="col"><label>
+        <input type="text" name="textfield" />
+        <input type="submit" name="Submit" value="Search" />
+      </label></th>
+    </tr>
+    <tr>
+        <td width="15">#</td>
+      <td width="15">Name</td>
+      <td width="15">Gender</td>
+      <td width="15">Place</td>
+      <td width="15">PIN</td>
+      <td width="15">Post</td>
+      <td width="15">District</td>
+      <td width="15">Image</td>
+      <td width="15">Qualification</td>
+      <td width="15">Department</td>
+      <td width="20">Email</td>
+
+    </tr>
+      {% for i in data %}
+    <tr>
+
+      <td>{{ forloop.counter }}</td>
+      <td>{{ i.st_name }}&nbsp;</td>
+      <td>{{ i.gender }}&nbsp;</td>
+      <td>{{ i.place }}&nbsp;</td>
+      <td>{{ i.pin }}&nbsp;</td>
+      <td>{{ i.post }}&nbsp;</td>
+      <td>{{ i.district }}&nbsp;</td>
+      <td></td>
+      <td>{{ i.qualification }}</td>
+      <td>{{ i.department }}</td>
+      <td>{{ i.email }}</td>
+      <td><a href="/earts/admin_editstaffload/{{ i.id }}">Edit</a></td>
+      <td><a href="/earts/admin_deletestaff/{{ i.id }}">Delete</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body><form action="/earts/sadmin_editjudgespost/" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="jid" value="{{ jd.id }}"/>
+    <table width="200" border="1">
+  <tr>
+    <th scope="col">JudgesName</th>
+    <th scope="col"><input type="text" name="textfield" value="{{ jd.judge_name }}"/></th>
+  </tr>
+  <tr>
+    <th>Gender</th>
+      {% if jd.gender == 'male' %}
+    <td><p>
+      <input name="r1" type="radio" value="male" checked="checked"/>
+      Male&nbsp;
+        <input name="r1" type="radio" value="female" />
+      Female  </p></td>
+      {% endif %}
+
+   {% if jd.gender == 'female' %}
+    <td><p>
+      <input name="r1" type="radio" value="male" />
+      Male&nbsp;
+        <input name="r1" type="radio" value="female" checked="checked"/>
+      Female  </p></td>
+      {% endif %}
+  </tr>
+  <tr>
+    <th>Place</th>
+    <td>
+      <input type="text" name="textfield1" value="{{ jd.place }}"/>
+    </td>
+  </tr>
+  <tr>
+    <th>PIN</th>
+    <td>
+      <input type="text" name="textfield2" value="{{ jd.pin }}"/>
+    </td>
+  </tr>
+  <tr>
+    <th>Post</th>
+    <td><label>
+      <input type="text" name="textfield3" value="{{jd.post}}"/>
+    </label></td>
+  </tr>
+  <tr>
+    <th>District</th>
+    <td>
+      <input type="text" name="textfield4" value="{{ jd.district }}" />
+    </td>
+  </tr>
+  <tr>
+    <th>Image</th>
+    <td>
+      <input type="file" name="file" />
+    </td>
+  </tr>
+
+  <tr>
+    <th>eMail</th>
+    <td>
+      <input type="text" name="textfield5"  value="{{ jd.email }}"/>
+    </td>
+  </tr>
+  
+  <tr>
+    <td colspan="2"><label>
+      <input type="submit" name="Submit" value="Save" />
+    </label></td>
+    </tr>
+</table>
+</form>
+</body>
+</html>
