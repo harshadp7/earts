@@ -72,5 +72,6 @@ urlpatterns = [
     path('sadmin_addprogramcommitteepost/',views.sadmin_addprogramcommitteepost),
     path('sadmin_viewprogramcommitteepost/',views.sadmin_viewprogramcommitteepost),
     path('sadmin_viewprogramcommitteeload/',views.sadmin_viewprogramcommitteeload),
+    path('sadmin_deleteprogramcommittee/<id>', views.sadmin_deleteprogramcommittee),
 
 ]

@@ -347,7 +347,7 @@ def admin_editstudentpost(request):
     studentobj.email=studmail
 
     studentobj.save()
-    return render(request,'admintemplates/admin_edit_Student.html')
+    return admin_viewstudentload(request)
 
 def admin_editeventsload(request,id):
     eventobj=events.objects.get(pk=id)
@@ -552,3 +552,27 @@ def sadmin_viewprogramcommitteeload(request):
 def sadmin_viewprogramcommitteepost(request):
     searchprgmcobj=request.POST['textfield']
     return sadmin_viewprogramcommitteepost(request)
+
+def sadmin_deleteprogramcommittee(request,id):
+    prgmcommitte=program_committee.objects.get(id=id)
+    prgmcommitte.delete()
+    return redirect('/earts/sadmin_viewprogramcommitteeload/')
+
+
+def sadmin_editprogramcommitteeload(request):
+    prgmcommitteobj = program_committee.objects.get(pk=id)
+    staffobj=staff.objects.all()
+    eventobj=events.objects.all()
+    return render(request,'subadmintemplates/sadmin_edit_programcommittee.html',{'staffdata':staffobj,'eventdata':eventobj,'prgmcid':prgmcommitteobj})
+
+def sadmin_editprogramcommitteepost(request):
+    staffname=request.POST['select']
+    eventname=request.POST['select2']
+    prgmcid=request.POST['prgmcid']
+
+    prgmcommitteobj=program_committee.objects.get(id=prgmcid)
+    staffobj=staff.objects.get(id=staffdata)
+    prgmcommitteobj=STAFF=staffname
+    prgmcommitteobj=EVENTS=eventname
+    prgmcommitteobj.created_date=datetime.datetime.now().date()
+    prgmcommitteobj.save()
