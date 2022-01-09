@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c7ddf27-e2c1-4dd6-81b9-485d7bdaf20c" name="Default" comment="program committee add view kayinju&#10;&#10;eidtting on way">
+    <list default="true" id="8c7ddf27-e2c1-4dd6-81b9-485d7bdaf20c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_edit_programcommittee.html" afterPath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_edit_programcommittee.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/urls.py" afterPath="$PROJECT_DIR$/earts/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/views.py" afterPath="$PROJECT_DIR$/earts/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -52,17 +50,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/earts/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="91" column="48" lean-forward="false" selection-start-line="91" selection-start-column="48" selection-end-line="91" selection-end-column="48" />
+            <state relative-caret-position="181">
+              <caret line="141" column="13" lean-forward="false" selection-start-line="141" selection-start-column="6" selection-end-line="141" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Change_pass.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/earts/templates/Change_pass.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/earts/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="293">
@@ -86,8 +94,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>editjud</find>
-      <find>eve</find>
       <find>admin_editstudentload</find>
       <find>judges</find>
       <find>judg</find>
@@ -116,6 +122,8 @@
       <find>edit</find>
       <find>sadmin_editprogramcommitteeload</find>
       <find>editstu</find>
+      <find>partici</find>
+      <find>judges_</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -584,7 +592,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641714567301</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="subadmin prgrm committee finish">
+      <created>1641717955863</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1641717955863</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -602,7 +617,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30236304" sideWeight="0.49380806" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30760986" sideWeight="0.5107411" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30760986" sideWeight="0.5107411" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30760986" sideWeight="0.48925886" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -657,7 +672,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="program committee add view kayinju" />
     <MESSAGE value="program committee add view kayinju&#10;&#10;eidtting on way" />
-    <option name="LAST_COMMIT_MESSAGE" value="program committee add view kayinju&#10;&#10;eidtting on way" />
+    <MESSAGE value="subadmin prgrm committee finish" />
+    <option name="LAST_COMMIT_MESSAGE" value="subadmin prgrm committee finish" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -666,7 +682,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/earts/templates/admintemplates/home.html" />
     <entry file="file://$PROJECT_DIR$/earts/templates/admintemplates/admin_add_Event.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="239">
@@ -994,14 +1009,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/earts/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="91" column="48" lean-forward="false" selection-start-line="91" selection-start-column="48" selection-end-line="91" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_edit_programcommittee.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -1017,6 +1024,22 @@
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/templates/Change_pass.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="141" column="13" lean-forward="false" selection-start-line="141" selection-start-column="6" selection-end-line="141" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
