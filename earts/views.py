@@ -559,20 +559,22 @@ def sadmin_deleteprogramcommittee(request,id):
     return redirect('/earts/sadmin_viewprogramcommitteeload/')
 
 
-def sadmin_editprogramcommitteeload(request):
-    prgmcommitteobj = program_committee.objects.get(pk=id)
+def sadmin_editprogramcommitteeload(request,id):
+    prgmcobj = program_committee.objects.get(pk=id)
     staffobj=staff.objects.all()
     eventobj=events.objects.all()
-    return render(request,'subadmintemplates/sadmin_edit_programcommittee.html',{'staffdata':staffobj,'eventdata':eventobj,'prgmcid':prgmcommitteobj})
+    return render(request,'subadmintemplates/sadmin_edit_programcommittee.html',{'programcid':prgmcobj,'staffdata':staffobj,'eventdata':eventobj})
 
 def sadmin_editprogramcommitteepost(request):
     staffname=request.POST['select']
     eventname=request.POST['select2']
-    prgmcid=request.POST['prgmcid']
+    programcid=request.POST['programcid']
 
-    prgmcommitteobj=program_committee.objects.get(id=prgmcid)
-    staffobj=staff.objects.get(id=staffdata)
-    prgmcommitteobj=STAFF=staffname
-    prgmcommitteobj=EVENTS=eventname
-    prgmcommitteobj.created_date=datetime.datetime.now().date()
-    prgmcommitteobj.save()
+    prgmcobj=program_committee.objects.get(id=programcid)
+    staffobj=staff.objects.get(id=staffname)
+    eventobj=events.objects.get(id=eventname)
+    prgmcobj.STAFF_id=staffobj.id
+    prgmcobj.EVENTS_id=eventobj.id
+    #prgmcobj.created_date=datetime.datetime.now().date()
+    prgmcobj.save()
+    return sadmin_viewprogramcommitteeload(request)

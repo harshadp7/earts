@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c7ddf27-e2c1-4dd6-81b9-485d7bdaf20c" name="Default" comment="program committee add view kayinju">
+    <list default="true" id="8c7ddf27-e2c1-4dd6-81b9-485d7bdaf20c" name="Default" comment="program committee add view kayinju&#10;&#10;eidtting on way">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_edit_programcommittee.html" afterPath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_edit_programcommittee.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/urls.py" afterPath="$PROJECT_DIR$/earts/urls.py" />
@@ -32,41 +32,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/earts/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="74" column="82" lean-forward="false" selection-start-line="74" selection-start-column="82" selection-end-line="74" selection-end-column="82" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="sadmin_edit_programcommittee.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_edit_programcommittee.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="8" column="70" lean-forward="false" selection-start-line="8" selection-start-column="70" selection-end-line="8" selection-end-column="70" />
+            <state relative-caret-position="147">
+              <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin_edit_Student.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/earts/templates/admintemplates/admin_edit_Student.html">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/earts/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="78" column="24" lean-forward="true" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="24" />
+            <state relative-caret-position="228">
+              <caret line="67" column="63" lean-forward="true" selection-start-line="67" selection-start-column="63" selection-end-line="67" selection-end-column="63" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sadmin_home.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_home.html">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/earts/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="32" column="59" lean-forward="false" selection-start-line="32" selection-start-column="59" selection-end-line="32" selection-end-column="59" />
+            <state relative-caret-position="223">
+              <caret line="91" column="48" lean-forward="false" selection-start-line="91" selection-start-column="48" selection-end-line="91" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -75,21 +65,11 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/earts/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="575" column="36" lean-forward="true" selection-start-line="575" selection-start-column="36" selection-end-line="575" selection-end-column="36" />
+            <state relative-caret-position="293">
+              <caret line="572" column="57" lean-forward="true" selection-start-line="572" selection-start-column="57" selection-end-line="572" selection-end-column="57" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sadmin_view_programcommittee.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_view_programcommittee.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="28" column="48" lean-forward="true" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -106,8 +86,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>subad</find>
-      <find>editeve</find>
       <find>editjud</find>
       <find>eve</find>
       <find>admin_editstudentload</find>
@@ -122,7 +100,6 @@
       <find>admin_editjudgespost</find>
       <find>sadmin_editjudgesload</find>
       <find>sadmin_editjudgespost</find>
-      <find>edit</find>
       <find>deleteju</find>
       <find>addcour</find>
       <find>program</find>
@@ -133,8 +110,11 @@
       <find>view</find>
       <find>viewstu</find>
       <find>sadmin_viewprogramcommitteeload</find>
-      <find>delete</find>
       <find>deletestu</find>
+      <find>delete</find>
+      <find>sadmin_editprogramcommitteepost</find>
+      <find>edit</find>
+      <find>sadmin_editprogramcommitteeload</find>
       <find>editstu</find>
     </findStrings>
   </component>
@@ -181,9 +161,9 @@
         <option value="$PROJECT_DIR$/earts/templates/admintemplates/admin_add_Student.html" />
         <option value="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_add_programcommittee.html" />
         <option value="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_home.html" />
-        <option value="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_edit_programcommittee.html" />
-        <option value="$PROJECT_DIR$/earts/urls.py" />
         <option value="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_view_programcommittee.html" />
+        <option value="$PROJECT_DIR$/earts/urls.py" />
+        <option value="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_edit_programcommittee.html" />
         <option value="$PROJECT_DIR$/earts/views.py" />
       </list>
     </option>
@@ -597,7 +577,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641712832240</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="program committee add view kayinju&#10;&#10;eidtting on way">
+      <created>1641714567301</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1641714567301</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TodoView">
@@ -615,14 +602,14 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30236304" sideWeight="0.49380806" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30868167" sideWeight="0.5085929" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30760986" sideWeight="0.5107411" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30760986" sideWeight="0.4914071" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30760986" sideWeight="0.48925886" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973147" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32690248" sideWeight="0.4935553" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39978564" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28947368" sideWeight="0.50619197" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -669,7 +656,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="program committee add view kayinju" />
-    <option name="LAST_COMMIT_MESSAGE" value="program committee add view kayinju" />
+    <MESSAGE value="program committee add view kayinju&#10;&#10;eidtting on way" />
+    <option name="LAST_COMMIT_MESSAGE" value="program committee add view kayinju&#10;&#10;eidtting on way" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -678,7 +666,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/earts/migrations/0002_auto_20211121_1122.py" />
     <entry file="file://$PROJECT_DIR$/earts/templates/admintemplates/home.html" />
     <entry file="file://$PROJECT_DIR$/earts/templates/admintemplates/admin_add_Event.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -951,14 +938,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/earts/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="89" column="18" lean-forward="false" selection-start-line="89" selection-start-column="14" selection-end-line="89" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/earts/templates/admintemplates/admin_view_Student.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="546">
@@ -983,14 +962,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/earts/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="74" column="82" lean-forward="false" selection-start-line="74" selection-start-column="82" selection-end-line="74" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_view_programcommittee.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
@@ -999,26 +970,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_edit_programcommittee.html">
+    <entry file="file://$PROJECT_DIR$/earts/templates/admintemplates/admin_edit_Student.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="70" lean-forward="false" selection-start-line="8" selection-start-column="70" selection-end-line="8" selection-end-column="70" />
+        <state relative-caret-position="294">
+          <caret line="14" column="75" lean-forward="true" selection-start-line="14" selection-start-column="75" selection-end-line="14" selection-end-column="75" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/earts/templates/admintemplates/admin_edit_Student.html">
+    <entry file="file://C:/Python36/Lib/site-packages/django/utils/datastructures.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="78" column="24" lean-forward="true" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="24" />
+        <state relative-caret-position="1617">
+          <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="67" column="63" lean-forward="true" selection-start-line="67" selection-start-column="63" selection-end-line="67" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="91" column="48" lean-forward="false" selection-start-line="91" selection-start-column="48" selection-end-line="91" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_edit_programcommittee.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/earts/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="575" column="36" lean-forward="true" selection-start-line="575" selection-start-column="36" selection-end-line="575" selection-end-column="36" />
+        <state relative-caret-position="293">
+          <caret line="572" column="57" lean-forward="true" selection-start-line="572" selection-start-column="57" selection-end-line="572" selection-end-column="57" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>

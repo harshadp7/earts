@@ -7,11 +7,13 @@
 
 <body>
 <form id="form1" name="form1" method="post" action="/earts/sadmin_editprogramcommitteepost/">
+<input type="hidden" name="programcid" value="{{ programcid.id }}"/>
   <table width="200" border="1">
     <tr>
       <td>Staff</td>
       <td><label>
      <select name="select">
+          <option value="{{ programcid.STAFF.id }}"> {{ programcid.STAFF.st_name }}</option>
             {% for i in staffdata %}
           <option value="{{ i.id }}">{{ i.st_name }}</option>
             {% endfor %}
@@ -23,6 +25,7 @@
       <td>Event</td>
       <td><label>
       <select name="select2">
+                <option value="{{ programcid.EVENTS.id }}"> {{ programcid.EVENTS.event_name }}</option>
             {% for i in eventdata %}
           <option value="{{ i.id }}">{{ i.event_name }}</option>
             {% endfor %}
@@ -32,7 +35,7 @@
     </tr>
     <tr>
       <td colspan="2"><label>
-        <input type="submit" name="Submit" value="Add" />
+        <input type="submit" name="Submit" value="Save" />
       </label></td>
     </tr>
   </table>
