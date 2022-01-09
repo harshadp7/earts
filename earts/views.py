@@ -1,5 +1,5 @@
 import random
-
+import datetime
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .models import login,subadmin,staff,course,student,events,programs,participants,program_committee,judges,performance,judges_assigned,result,complaint,comments_rating
@@ -70,7 +70,7 @@ def admin_addsubadminpost(request):
     subadminobj.email=s_adminmail
     subadminobj.LOGIN=loginobj
     subadminobj.save()
-    return render(request,'admintemplates/admin_add_SubAdmin.html')
+    return admin_addsubadminload(request)
 
 def admin_addstaffload(request):
     return render(request,'admintemplates/admin_add_staff.html')
@@ -108,7 +108,7 @@ def admin_addstaffpost(request):
     staffobj.LOGIN=loginobj
     staffobj.save()
 
-    return render(request,'admintemplates/admin_add_staff.html')
+    return admin_addstaffload(request)
 
 def admin_addstudentload(request):
     allcourses=course.objects.all()
@@ -146,7 +146,7 @@ def admin_addstudentpost(request):
     studentobj.LOGIN=loginobj
     studentobj.save()
 
-    return render(request,'admintemplates/admin_add_Student.html')
+    return admin_addstudentload(request)
 
 
 def admin_addeventload(request):
@@ -161,7 +161,7 @@ def admin_addeventpost(request):
     eventobj.event_date=eventdate
     eventobj.event_discription=eventdisc
     eventobj.save()
-    return render(request,'admintemplates/admin_add_Event.html')
+    return admin_addeventload(request)
 
 def admin_viewsubadminload(request):
     allsubadmin=subadmin.objects.all()
@@ -402,7 +402,7 @@ def admin_addcoursepost(request):
     courseobj.department=department
     courseobj.save()
 
-    return render(request,'admintemplates/admin_add_Course.html')
+    return admin_addcourseload(request)
 
 def admin_viewcourseload(request):
     allcourses=course.objects.all()
@@ -456,7 +456,7 @@ def sadmin_addjudgespost(request):
     judgesobj.email=judgesemail
     judgesobj.LOGIN=loginobj
     judgesobj.save()
-    return render(request,'subadmintemplates/sadmin_add_judges.html')
+    return sadmin_addjudgesload(request)
 
 
 def sadmin_viewjudgesload(request):
@@ -514,7 +514,7 @@ def sadmin_addeventpost(request):
     eventobj.event_date=eventdate
     eventobj.event_discription=eventdisc
     eventobj.save()
-    return render(request,'subadmintemplates/sadmin_add_event.html')
+    return sadmin_addeventload(request)
 
 def sadmin_vieweventsload(request):
     allevents=events.objects.all()
@@ -528,3 +528,27 @@ def sadmin_deleteevents(request,id):
 def sadmin_vieweventspost(request):
     searchevents=request.POST['textfield']
     return render(request,'subadmintemplates/sadmin_view_Events.html')
+
+def sadmin_addprogramcommitteeload(request):
+    staffobj=staff.objects.all()
+    eventobj=events.objects.all()
+    return render(request,'subadmintemplates/sadmin_add_programcommittee.html',{'staffdata':staffobj,'eventdata':eventobj})
+def sadmin_addprogramcommitteepost(request):
+    staffname=request.POST['select']
+    eventname=request.POST['select2']
+
+    prgmcommitteobj=program_committee()
+    prgmcommitteobj.STAFF_id=staffname
+    prgmcommitteobj.EVENTS_id=eventname
+    prgmcommitteobj.created_date=datetime.datetime.now().date()
+    prgmcommitteobj.save()
+
+    return sadmin_addprogramcommitteeload(request)
+
+def sadmin_viewprogramcommitteeload(request):
+    allprgmcommittee=program_committee.objects.all()
+    return render(request,'subadmintemplates/sadmin_view_programcommittee.html',{'prgmcdata':allprgmcommittee})
+
+def sadmin_viewprogramcommitteepost(request):
+    searchprgmcobj=request.POST['textfield']
+    return sadmin_viewprogramcommitteepost(request)

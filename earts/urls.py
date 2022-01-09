@@ -68,5 +68,9 @@ urlpatterns = [
     path('sadmin_editjudgespost/',views.sadmin_editjudgespost),
     path('sadmin_vieweventspost/',views.admin_vieweventspost),
     path('sadmin_vieweventsload/',views.admin_vieweventsload),
+    path('sadmin_addprogramcommitteeload/',views.sadmin_addprogramcommitteeload),
+    path('sadmin_addprogramcommitteepost/',views.sadmin_addprogramcommitteepost),
+    path('sadmin_viewprogramcommitteepost/',views.sadmin_viewprogramcommitteepost),
+    path('sadmin_viewprogramcommitteeload/',views.sadmin_viewprogramcommitteeload),
 
 ]
