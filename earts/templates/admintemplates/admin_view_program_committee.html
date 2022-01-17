@@ -5,14 +5,15 @@
 <title>Untitled Document</title>
 </head>
 
-<body><form action="submit"><table width="362" border="1">
+<body><form action="/earts/admin_viewprogramcommitteeload/" method="post"><table width="362" border="1">
   <tr>
     <th width="76" scope="col">Events:</th>
-    <th colspan="2" scope="col"><select name="events" id="Events" >
-      <option>Annual Day</option>
-      <option>onam_celeb</option>
-      <option>Events</option>
-            </select></th>
+    <th colspan="2" scope="col">Event&nbsp;name<select name="select2">
+            {% for i in event %}
+          <option value="{{ i.id }}">{{ i.event_name }}</option>
+            {% endfor %}
+
+        </select></th>
     <th width="82" scope="col">
       <input type="submit" name="Submit" value="View" /></th>
     </tr>
@@ -26,12 +27,15 @@
     <th width="122">Event&nbsp;Name </th>
     <th width="80">Date</th>
     </tr>
+
+    {% for i in prgmcdata %}
   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td>{{ forloop.counter }}</td>
+    <td>{{ i.STAFF.st_name }}&nbsp;</td>
+      <td>{{ i.EVENTS.event_name}}&nbsp;</td>
+    <td>{{ i.created_date }}</td>
     </tr>
+        {% endfor %}
 </table>
 </form>
 </body>

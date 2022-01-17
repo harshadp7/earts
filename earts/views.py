@@ -17,6 +17,7 @@ def loginpost(request):
         if login.objects.filter(username=uname,password=password).exists():
             a=login.objects.get(username=uname,password=password)
             if a.type== 'Subadmin':
+                request.session['lid']=a.id
                 return render(request,'subadmintemplates/sadmin_home.html')
             elif a.type == 'admin':
                 return render(request,'admintemplates/admin_home.html')
@@ -164,6 +165,12 @@ def admin_addeventpost(request):
     return admin_addeventload(request)
 
 def admin_viewsubadminload(request):
+
+    if request.method=="POST":
+        t=request.POST['textfield']
+        allsubadmin = subadmin.objects.filter(subadmin_name__contains=t)
+        return render(request, 'admintemplates/admin_view_SubAdmin.html', {'data': allsubadmin})
+
     allsubadmin=subadmin.objects.all()
     return render(request,'admintemplates/admin_view_SubAdmin.html',{'data':allsubadmin})
 
@@ -183,6 +190,11 @@ def admin_viewsubadminpost(request):
     return render(request,'admintemplates/admin_viewSubadmin.html')
 
 def admin_viewstaffload(request):
+
+    if request.method=="POST":
+        t=request.POST['textfield']
+        allstaff = staff.objects.filter(st_name__contains=t)
+        return render(request, 'admintemplates/admin_view_staff.html', {'data': allstaff})
     allstaff=staff.objects.all()
     return render(request,'admintemplates/admin_view_staff.html',{'data':allstaff})
 
@@ -197,6 +209,12 @@ def admin_viewstaffpost(request):
     return render(request,'admintemplates/admin_viewSubadmin.html')
 
 def admin_vieweventsload(request):
+
+    if request.method=="POST":
+        t=request.POST['textfield']
+        allevents = events.objects.filter(event_name__contains=t)
+        return render(request, 'admintemplates/admin_view_Events.html', {'data': allevents})
+
     allevents=events.objects.all()
     return render(request,'admintemplates/admin_view_Events.html',{'data':allevents})
 
@@ -210,6 +228,10 @@ def admin_vieweventspost(request):
     return render(request,'admintemplates/admin_view_Events.html')
 
 def admin_viewstudentload(request):
+    if request.method == "POST":
+        t = request.POST['textfield']
+        allstudents = student.objects.filter(student_name__contains=t)
+        return render(request, 'admintemplates/admin_view_Student.html', {'data': allstudents})
     allstudents=student.objects.all()
     return render(request,'admintemplates/admin_view_Student.html',{'data':allstudents})
 
@@ -244,7 +266,21 @@ def admin_viewcommentsratingpost(request):
     viewcommentspr2=request.POST['select']
     return render(request,'admintemplates/admin_viewSubadmin.html')
 def admin_viewprogramcommitteeload(request):
-    return render(request,'admintemplates/admin_view_program_committee.html')
+    eventobj = events.objects.all()
+
+    if request.method == "POST":
+        t = request.POST['select2']
+
+        a = program_committee.objects.filter(EVENTS_id=t)
+        allevents = events.objects.all()
+
+        return render(request, 'admintemplates/admin_view_program_committee.html', {'prgmcdata': a, 'event': eventobj})
+
+    a=program_committee.objects.all()
+    allevents=events.objects.all()
+
+
+    return render(request,'admintemplates/admin_view_program_committee.html',{'prgmcdata':a,'event':eventobj})
 def admin_viewprogramcommitteepost(request):
     searchpcommittee=request.POST['events']
     return render(request,'admintemplates/admin_viewSubadmin.html')
@@ -405,6 +441,12 @@ def admin_addcoursepost(request):
     return admin_addcourseload(request)
 
 def admin_viewcourseload(request):
+
+    if request.method=="POST":
+        t=request.POST['textfield']
+        allcourses = course.objects.filter(course_name__contains=t)
+        return render(request, 'admintemplates/admin_view_Course.html', {'data': allcourses})
+
     allcourses=course.objects.all()
     return render(request,'admintemplates/admin_view_Course.html',{'data':allcourses})
 def admin_deletecourse(request,id):
@@ -461,6 +503,12 @@ def sadmin_addjudgespost(request):
 
 def sadmin_viewjudgesload(request):
     alljudges=judges.objects.all()
+
+    if request.method == "POST":
+        t = request.POST['textfield']
+        alljudges = judges.objects.filter(judge_name__contains=t)
+        return render(request, 'subadmintemplates/sadmin_view_judges.html', {'data': alljudges})
+
     return render(request,'subadmintemplates/sadmin_view_judges.html',{'data':alljudges})
 def sadmin_viewjudgespost(request):
     searchjudges=request.POST['textfield']
@@ -501,7 +549,10 @@ def sadmin_editjudgespost(request):
 
 
 def sadmin_viewprofileload(request):
-    return render(request,'subadmintemplates/sadmin_view_profile.html')
+
+    sobj=subadmin.objects.get(LOGIN_id=request.session['lid'])
+
+    return render(request,'subadmintemplates/sadmin_view_profile.html',{'a':sobj})
 
 def sadmin_addeventload(request):
     return render(request,'subadmintemplates/sadmin_add_event.html')
@@ -518,7 +569,12 @@ def sadmin_addeventpost(request):
 
 def sadmin_vieweventsload(request):
     allevents=events.objects.all()
-    return render(request,'subadmintemplates/sadmin_view_Events.html',{'data':allevents})
+
+    if request.method == "POST":
+        t = request.POST['textfield']
+        allevents = events.objects.filter(event_name__contains=t)
+        return render(request, 'subadmintemplates/sadmin_view_events.html', {'data': allevents})
+    return render(request,'subadmintemplates/sadmin_view_events.html',{'data':allevents})
 
 def sadmin_deleteevents(request,id):
     d_eventobj=events.objects.get(id=id)
@@ -536,7 +592,6 @@ def sadmin_addprogramcommitteeload(request):
 def sadmin_addprogramcommitteepost(request):
     staffname=request.POST['select']
     eventname=request.POST['select2']
-
     prgmcommitteobj=program_committee()
     prgmcommitteobj.STAFF_id=staffname
     prgmcommitteobj.EVENTS_id=eventname
@@ -546,14 +601,28 @@ def sadmin_addprogramcommitteepost(request):
     return sadmin_addprogramcommitteeload(request)
 
 def sadmin_viewprogramcommitteeload(request):
-    allprgmcommittee=program_committee.objects.all()
-    return render(request,'subadmintemplates/sadmin_view_programcommittee.html',{'prgmcdata':allprgmcommittee})
+    eventobj = events.objects.all()
 
+    if request.method == "POST":
+        t = request.POST['select2']
+
+        a = program_committee.objects.filter(EVENTS_id=t)
+        allevents = events.objects.all()
+
+        return render(request, 'subadmintemplates/sadmin_view_programcommittee.html', {'prgmcdata': a, 'event': eventobj})
+
+    a = program_committee.objects.all()
+    allevents = events.objects.all()
+
+    return render(request, 'subadmintemplates/sadmin_view_programcommittee.html', {'prgmcdata': a, 'event': eventobj})
 def sadmin_viewprogramcommitteepost(request):
     searchprgmcobj=request.POST['textfield']
     return sadmin_viewprogramcommitteepost(request)
 
 def sadmin_deleteprogramcommittee(request,id):
+
+
+
     prgmcommitte=program_committee.objects.get(id=id)
     prgmcommitte.delete()
     return redirect('/earts/sadmin_viewprogramcommitteeload/')
@@ -578,3 +647,23 @@ def sadmin_editprogramcommitteepost(request):
     #prgmcobj.created_date=datetime.datetime.now().date()
     prgmcobj.save()
     return sadmin_viewprogramcommitteeload(request)
+
+def sadmin_addprogramsload(request):
+    eventobj = events.objects.all()
+    return render(request,'subadmintemplates/sadmin_add_programs.html',{'eventdata':eventobj})
+
+def sadmin_addprogramspost(request):
+
+    programname=request.POST['text1']
+    programdiscription=request.POST['text2']
+    eventname=request.POST['select1']
+
+    programsobj=programs()
+    programsobj.program_name=programname
+    programsobj.program_discription=programdiscription
+    programsobj.EVENTS_id=eventname
+    programsobj.save()
+
+
+
+    return sadmin_addprogramsload(request)
