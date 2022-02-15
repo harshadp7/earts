@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+
+    <tr><th><a href="/earts/procommittee_viewprofileload">View Profile</a></th></tr>
+    <tr><th><a href="/earts/procommittee_viewschedulesload">View Scheduled Program</a></th></tr>
+
+    <tr><th><a href="/earts/loginload/">LOG OUT</a></th>
+</tr>
+</table>
+
+
+
+<h3>My assigned events</h3>
+<table border="1">
+    <tr>
+        <td>Sl no</td>
+        <td>Event</td>
+         <td>Event Date</td>
+        <td>Event Description</td>
+        <td></td>
+    </tr>
+    {%  for i in proc %}
+        <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>
+            {{ i.EVENTS.event_name }}
+        </td>
+        <td>
+            {{ i.EVENTS.event_date }}
+        </td>
+        <td>
+            {{ i.EVENTS.event_discription }}
+        </td>
+        <td>
+            <a href="/earts/procommittee_viewprogramsload/{{ i.EVENTS.id }}">View Programs</a></td>
+        </td>
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

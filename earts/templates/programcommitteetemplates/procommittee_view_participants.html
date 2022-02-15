@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>PARTICIPANTS TABLE</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1">
+    <tr>
+      <th>Sl.no</td>
+      <th>Program&nbsp;Name</td>
+      <th>Participant&nbsp;Name</td>
+      <th>Status</td>
+      <th>requested&nbsp;Date</td>
+      <th>&nbsp;</td>
+    </tr>
+      {% for i in partic %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>{{ i.PROGRAMS.program_name }}</td>
+      <td>{{ i.STUDENT.student_name }}</td>
+      <td>{{ i.status }}</td>
+      <td>{{ i.requested_date }}</td>
+      <td><a href="/earts/procommittee_approveload/{{ i.id }}">Approve</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+
+</body>
+</html>
