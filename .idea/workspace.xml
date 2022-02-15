@@ -1,24 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c7ddf27-e2c1-4dd6-81b9-485d7bdaf20c" name="Default" comment="judges assigned need to start">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/earts/templates/participants_studentstemplates/student_home.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/earts/templates/participants_studentstemplates/student_view_Events.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/earts/templates/participants_studentstemplates/student_view_programs.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommitte_view_programs.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_edit_programs.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_view_profile.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_edit_programs.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_view_programs.html" />
+    <list default="true" id="8c7ddf27-e2c1-4dd6-81b9-485d7bdaf20c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/judgestemplates/judges_view_profile.html" afterPath="$PROJECT_DIR$/earts/templates/judgestemplates/judges_view_profile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/participants_studentstemplates/student_view_profile.html" afterPath="$PROJECT_DIR$/earts/templates/participants_studentstemplates/student_view_profile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_edit_Events.html" afterPath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_edit_Events.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_home.html" afterPath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_view_events.html" afterPath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_view_events.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_view_profile.html" afterPath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_view_profile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/urls.py" afterPath="$PROJECT_DIR$/earts/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/views.py" afterPath="$PROJECT_DIR$/earts/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -59,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_view_programcommittee.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="504">
-              <caret line="24" column="40" lean-forward="true" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
+              <caret line="24" column="40" lean-forward="false" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -81,7 +65,7 @@
         <entry file="file://$PROJECT_DIR$/earts/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2646">
-              <caret line="126" column="0" lean-forward="true" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+              <caret line="126" column="0" lean-forward="false" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -91,7 +75,7 @@
         <entry file="file://$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_home.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="10" column="58" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="58" />
+              <caret line="10" column="58" lean-forward="false" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -346,6 +330,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="programcommitteetemplates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="earts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="judgestemplates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -645,7 +651,21 @@
       <option name="project" value="LOCAL" />
       <updated>1641718807735</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="3rd module">
+      <created>1644947517019</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1644947517020</updated>
+    </task>
+    <task id="LOCAL-00006" summary="program committee templates">
+      <created>1644947662021</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1644947662021</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
@@ -660,15 +680,15 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1933" height="1088" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2692515" sideWeight="0.478355" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2692515" sideWeight="0.478355" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30760986" sideWeight="0.5107411" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22426869" sideWeight="0.48925886" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973147" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.49945828" sideWeight="0.4935553" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.49945828" sideWeight="0.4935553" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2692515" sideWeight="0.521645" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39978564" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -729,7 +749,9 @@
     <MESSAGE value="program committee add view kayinju&#10;&#10;eidtting on way" />
     <MESSAGE value="subadmin prgrm committee finish" />
     <MESSAGE value="judges assigned need to start" />
-    <option name="LAST_COMMIT_MESSAGE" value="judges assigned need to start" />
+    <MESSAGE value="3rd module" />
+    <MESSAGE value="program committee templates" />
+    <option name="LAST_COMMIT_MESSAGE" value="program committee templates" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -929,6 +951,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="25" column="58" lean-forward="false" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -936,6 +959,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="7" column="39" lean-forward="false" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -943,6 +967,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="8" column="72" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="72" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -957,6 +982,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="8" column="88" lean-forward="false" selection-start-line="8" selection-start-column="88" selection-end-line="8" selection-end-column="88" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -985,6 +1011,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1005,7 +1032,7 @@
     <entry file="file://$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="10" column="58" lean-forward="true" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="58" />
+          <caret line="10" column="58" lean-forward="false" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="58" />
           <folding />
         </state>
       </provider>
@@ -1024,6 +1051,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="455">
           <caret line="34" column="16" lean-forward="true" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1031,6 +1059,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="30" column="18" lean-forward="true" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1038,6 +1067,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="392">
           <caret line="32" column="24" lean-forward="false" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1052,7 +1082,7 @@
     <entry file="file://$PROJECT_DIR$/earts/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2646">
-          <caret line="126" column="0" lean-forward="true" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+          <caret line="126" column="0" lean-forward="false" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1060,7 +1090,7 @@
     <entry file="file://$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_view_programcommittee.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
-          <caret line="24" column="40" lean-forward="true" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
+          <caret line="24" column="40" lean-forward="false" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
           <folding />
         </state>
       </provider>
