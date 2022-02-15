@@ -776,10 +776,10 @@ def procommittee_viewprogramsload(request,id):
     programsobj = programs.objects.filter(EVENTS_id=id)
     eventobj = events.objects.all()
 
-    if request.method == "POST":
-        t = request.POST['textfield']
-        allprograms = programs.objects.filter(program_name__contains=t)
-        return render(request, 'programcommitteetemplates/procommitte_view_programs.html', {'eventdata':eventobj,'prgmsdata':allprograms})
+    # if request.method == "POST":
+    #     t = request.POST['textfield']
+    #     allprograms = programs.objects.filter(program_name__contains=t)
+    #     return render(request, 'programcommitteetemplates/procommitte_view_programs.html', {'eventdata':eventobj,'prgmsdata':allprograms})
     return render(request,'programcommitteetemplates/procommitte_view_programs.html',{'eventdata':eventobj,'prgmsdata':programsobj})
 
 def procommittee_viewprofileload(request):
@@ -815,7 +815,7 @@ def procommittee_assignjudgespost(request):
     judgeassgnobj.EVENTS_id = eventid
     judgeassgnobj.PROGRAMS_id=programid
     judgeassgnobj.save()
-    return procommitte_homeload(request)
+    return procommittee_viewprogramsload(request,id=request.session['eventids'])
 
 def procommittee_scheduleprogload(request,id):
     request.session['pgmid'] = str(id)
@@ -861,6 +861,7 @@ def student_vieweventsload(request):
     return render(request,'participants_studentstemplates/student_view_Events.html',{'data':allevents})
 
 def student_viewprogramsload(request,id):
+    request.session['pgmid'] = str(id)
     programsobj = programs.objects.filter(EVENTS_id=id)
     eventobj = events.objects.all()
 
@@ -878,7 +879,7 @@ def student_applyprograms(request,id):
     participantsobj.requested_date=datetime.datetime.now().date()
     participantsobj.status="Pending"
     participantsobj.save()
-    return student_viewprogramsload(request,id)
+    return student_viewprogramsload(request,id=request.session['pgmid'])
 
 def student_viewparticipationload(request):
     particpationobj=participants.objects.filter(STUDENT_id=request.session["id"])
