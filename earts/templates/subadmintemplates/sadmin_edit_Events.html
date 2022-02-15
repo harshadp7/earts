@@ -6,26 +6,27 @@
 </head>
 
 <body>
-<form action="" method="post" enctype="multipart/form-data" name="form1" id="form1">
+<form action="/earts/sadmin_editeventspost/" method="post" enctype="multipart/form-data" name="form1" id="form1">
+     <input type="hidden" name="evid" value="{{ a.id }}" />
   <table width="200" border="1">
     <tr>
       <td scope="col"><div align="left">Event&nbsp;Name </div>        </td>
       <td scope="col">
-        <input type="text" name="textfield" />
+        <input type="text" name="textfield" value="{{ a.event_name }}" />
       </td>
     </tr>
 
     <tr>
       <td>Event&nbsp;Date</td>
       <td>
-        <input type="date" name="textfield1" />
+        <input type="date" name="textfield1" value="{{ a.event_date }}"/>
       </td>
     </tr>
 
     <tr>
       <td> Event&nbsp;Discription</td>
       <td>
-        <textarea name="textfield2"></textarea>
+        <textarea name="textfield2" value="">{{ a.event_discription }}</textarea>
       </td>
     </tr>
 

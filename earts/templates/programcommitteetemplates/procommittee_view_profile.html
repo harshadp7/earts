@@ -5,14 +5,14 @@
 <title>S_ADMIN PROFILE</title>
 </head>
 <body>
-<form action="">
+<form action="/earts/procommittee_homeload/" >
 <table width="889" border="1">
   <tr>
     <td colspan="3">PROFILE</td>
     </tr>
   <tr>
     <td width="100">Name:</td>
-    <td width="584" >&nbsp;{{ a.judge_name }}</td>
+    <td width="584" >&nbsp;{{ a.st_name }}</td>
     <td width="183" rowspan="8">&nbsp;</td>
   </tr>
   <tr>
@@ -34,7 +34,11 @@
   <tr>
     <td>District:</td>
     <td>{{ a.district }}</td>
-    </tr>
+  </tr>
+  <tr>
+    <td>Qualification:</td>
+    <td>{{ a.qualification }}</td>
+  </tr>
   <tr>
     <td>E-mail:</td>
     <td>{{ a.email }}</td>

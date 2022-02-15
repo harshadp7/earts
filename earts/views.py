@@ -2,7 +2,9 @@ import random
 import datetime
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from .models import login,subadmin,staff,course,student,events,programs,participants,program_committee,judges,performance,judges_assigned,result,complaint,comments_rating
+from pip._vendor.requests import session
+
+from .models import login,subadmin,staff,course,student,schedule,events,programs,participants,program_committee,judges,performance,judges_assigned,result,complaint,comments_rating
 # Create your views here.
 
 def loginload(request):
@@ -21,10 +23,17 @@ def loginpost(request):
                 return render(request,'subadmintemplates/sadmin_home.html')
             elif a.type == 'admin':
                 return render(request,'admintemplates/admin_home.html')
+            elif a.type == 'judge':
+                request.session['lid']=a.id
+                return render(request,'judgestemplates/judges_home.html')
             elif a.type == 'staff':
-                return render(request,'#')
+                request.session['lid'] = a.id
+                return procommitte_homeload(request)
             elif a.type == 'student':
-                return render(request,'#')
+                da=student.objects.get(LOGIN=a.id)
+                request.session["id"]=da.id
+
+                return render(request,'participants_studentstemplates/student_home.html')
             else:
                 return HttpResponse("INVALID")
         else:
@@ -282,7 +291,6 @@ def admin_viewprogramcommitteeload(request):
 
     return render(request,'admintemplates/admin_view_program_committee.html',{'prgmcdata':a,'event':eventobj})
 def admin_viewprogramcommitteepost(request):
-    searchpcommittee=request.POST['events']
     return render(request,'admintemplates/admin_viewSubadmin.html')
 
 def admin_editsubadminload(request,id):
@@ -502,14 +510,14 @@ def sadmin_addjudgespost(request):
 
 
 def sadmin_viewjudgesload(request):
-    alljudges=judges.objects.all()
+    judgesobj=judges.objects.all()
 
     if request.method == "POST":
         t = request.POST['textfield']
         alljudges = judges.objects.filter(judge_name__contains=t)
         return render(request, 'subadmintemplates/sadmin_view_judges.html', {'data': alljudges})
 
-    return render(request,'subadmintemplates/sadmin_view_judges.html',{'data':alljudges})
+    return render(request,'subadmintemplates/sadmin_view_judges.html',{'data':judgesobj})
 def sadmin_viewjudgespost(request):
     searchjudges=request.POST['textfield']
     return render(request,'subadmintemplates/sadmin_view_judges.html')
@@ -585,6 +593,23 @@ def sadmin_vieweventspost(request):
     searchevents=request.POST['textfield']
     return render(request,'subadmintemplates/sadmin_view_Events.html')
 
+def sadmin_editeventsload(request,id):
+    eventobj=events.objects.get(pk=id)
+    return render(request,'subadmintemplates/sadmin_edit_Events.html',{'a':eventobj})
+def sadmin_editeventspost(request):
+    eventname = request.POST['textfield']
+    eventdate = request.POST['textfield1']
+    eventdisc = request.POST['textfield2']
+    evid =request.POST['evid']
+
+    eventobj=events.objects.get(id=evid)
+    eventobj.event_name=eventname
+    eventobj.event_date=eventdate
+    eventobj.event_discription=eventdisc
+    eventobj.save()
+    return render(request,'subadmintemplates/sadmin_edit_Events.html')
+
+
 def sadmin_addprogramcommitteeload(request):
     staffobj=staff.objects.all()
     eventobj=events.objects.all()
@@ -615,6 +640,12 @@ def sadmin_viewprogramcommitteeload(request):
     allevents = events.objects.all()
 
     return render(request, 'subadmintemplates/sadmin_view_programcommittee.html', {'prgmcdata': a, 'event': eventobj})
+
+
+
+
+
+
 def sadmin_viewprogramcommitteepost(request):
     searchprgmcobj=request.POST['textfield']
     return sadmin_viewprogramcommitteepost(request)
@@ -667,3 +698,199 @@ def sadmin_addprogramspost(request):
 
 
     return sadmin_addprogramsload(request)
+
+def sadmin_viewprogramsload(request):
+    programsobj = programs.objects.all()
+    eventobj = events.objects.all()
+
+    if request.method == "POST":
+        t = request.POST['textfield']
+        allprograms = programs.objects.filter(program_name__contains=t)
+        return render(request, 'subadmintemplates/sadmin_view_programs.html', {'eventdata':eventobj,'prgmsdata': allprograms})
+    else:
+        return render(request,'subadmintemplates/sadmin_view_programs.html',{'eventdata':eventobj,'prgmsdata':programsobj})
+
+def sadmin_viewprogramspost(request):
+    return render(request,'subadmintemplates/sadmin_view_programs.html')
+
+def sadmin_deleteprograms(request,id):
+    programsdel=programs.objects.get(id=id)
+    programsdel.delete()
+    return sadmin_viewprogramsload(request)
+
+def sadmin_editprogramsload(request,id):
+    prgmsobj = programs.objects.get(pk=id)
+    eventobj=events.objects.all()
+    return render(request,'subadmintemplates/sadmin_edit_programs.html',{'programsid':prgmsobj,'eventdata':eventobj})
+
+def sadmin_editprogramspost(request):
+    programname = request.POST['text1']
+    programdiscription = request.POST['text2']
+    eventname = request.POST['select1']
+    programsid=request.POST['programsid']
+
+    prgmsobj=programs.objects.get(id=programsid)
+    eventobj=events.objects.get(id=eventname)
+    prgmsobj.program_name=programname
+    prgmsobj.program_discription=programdiscription
+    prgmsobj.EVENTS_id=eventobj.id
+    prgmsobj.save()
+    return sadmin_viewprogramsload(request)
+
+def judges_homeload(request):
+    return render(request,'judgestemplates/judges_home.html')
+def judges_homepost(request):
+    return render(request,'judgestemplates/judges_home.html')
+
+def judges_viewprogramsload(request):
+    programsobj = programs.objects.all()
+    eventobj = events.objects.all()
+
+    if request.method=="POST":
+        t=request.POST['textfield']
+        alljudges = judges.objects.filter(judge_name__contains=t)
+        return render(request, 'admintemplates/admin_view_SubAdmin.html', {'eventdata':eventobj,'prgmsdata':alljudges})
+
+    return render(request,'judgestemplates/judges_view_programs.html',{'eventdata':eventobj,'prgmsdata':programsobj})
+
+
+def judges_viewprofileload(request):
+
+    jobj=judges.objects.get(LOGIN_id=request.session['lid'])
+
+    return render(request,'judgestemplates/judges_view_profile.html',{'a':jobj})
+
+#program_committee
+
+def procommitte_homeload(request):
+    procommobj = program_committee.objects.filter(STAFF__LOGIN_id=request.session['lid'])
+
+
+    return render(request,'programcommitteetemplates/procommittee_home.html',{'proc':procommobj})
+def procommittee_homepost(request):
+    return render(request,'programcommitteetemplates/procommittee_home.html')
+
+def procommittee_viewprogramsload(request,id):
+    request.session['eventids']=id
+    request.session['pgmid'] = str(id)
+    programsobj = programs.objects.filter(EVENTS_id=id)
+    eventobj = events.objects.all()
+
+    if request.method == "POST":
+        t = request.POST['textfield']
+        allprograms = programs.objects.filter(program_name__contains=t)
+        return render(request, 'programcommitteetemplates/procommitte_view_programs.html', {'eventdata':eventobj,'prgmsdata':allprograms})
+    return render(request,'programcommitteetemplates/procommitte_view_programs.html',{'eventdata':eventobj,'prgmsdata':programsobj})
+
+def procommittee_viewprofileload(request):
+
+    sobj=staff.objects.get(LOGIN_id=request.session['lid'])
+
+    return render(request,'programcommitteetemplates/procommittee_view_profile.html',{'a':sobj})
+def procommittee_viewparticipants(request,id):
+    particobj=participants.objects.filter(PROGRAMS_id=id)
+    request.session['pgmid'] = str(id)
+
+    return render(request,'programcommitteetemplates/procommittee_view_participants.html',{'partic':particobj})
+
+def procommittee_approveload(request,id):
+    particobj=participants.objects.get(id=id)
+    particobj.status="approve"
+    particobj.save()
+    return redirect('/earts/procommittee_viewparticipants/'+request.session['pgmid'])
+
+def procommittee_assignjudgesload(request,id):
+    judgesobj=judges.objects.all()
+    request.session["selpid"]=id
+
+    return render(request, 'programcommitteetemplates/procommittee_assign_judges.html', {'judgesdata': judgesobj})
+
+def procommittee_assignjudgespost(request):
+    judgename=request.POST["select"]
+    programid=request.session["selpid"]
+    eventid=request.session['eventids']
+
+    judgeassgnobj=judges_assigned()
+    judgeassgnobj.JUDGES_id = judgename
+    judgeassgnobj.EVENTS_id = eventid
+    judgeassgnobj.PROGRAMS_id=programid
+    judgeassgnobj.save()
+    return procommitte_homeload(request)
+
+def procommittee_scheduleprogload(request,id):
+    request.session['pgmid'] = str(id)
+    progobj=programs.objects.get(id=id)
+    return render(request,'programcommitteetemplates/procommittee_schedule_program.html',{'progobj':progobj})
+
+def procommittee_scheduleprogpost(request):
+    sdate=request.POST['date']
+    stime=request.POST['time']
+    progid=request.session['pgmid']
+
+    scheduleobj=schedule()
+    scheduleobj.date=sdate
+    scheduleobj.time=stime
+    scheduleobj.PROGRAM_id=progid
+    scheduleobj.save()
+    return render(request,'programcommitteetemplates/procommittee_schedule_program.html')
+
+def procommittee_viewschedulesload(request):
+    scheduleobj=schedule.objects.all()
+    return render(request,'programcommitteetemplates/procommittee_view_schedules.html',{'scheduledata':scheduleobj})
+
+
+#Students/participants
+
+def student_homeload(request):
+
+    return render(request,'participants_studentstemplates/student_home.html')
+def student_homepost(request):
+    return render(request,'participants_studentstemplates/student_home.html')
+
+def student_vieweventspost(request):
+    searchevents=request.POST['textfield']
+    return render(request,'participants_studentstemplates/student_view_Events.html')
+
+def student_vieweventsload(request):
+    allevents=events.objects.all()
+
+    if request.method == "POST":
+        t = request.POST['textfield']
+        allevents = events.objects.filter(event_name__contains=t)
+        return render(request, 'participants_studentstemplates/student_view_Events.html', {'data': allevents})
+    return render(request,'participants_studentstemplates/student_view_Events.html',{'data':allevents})
+
+def student_viewprogramsload(request,id):
+    programsobj = programs.objects.filter(EVENTS_id=id)
+    eventobj = events.objects.all()
+
+    if request.method == "POST":
+        t = request.POST['textfield']
+        allprograms = programs.objects.filter(program_name__contains=t)
+        return render(request, 'participants_studentstemplates/student_view_programs.html', {'eventdata':eventobj,'prgmsdata':allprograms})
+    return render(request,'participants_studentstemplates/student_view_programs.html',{'eventdata':eventobj,'prgmsdata':programsobj})
+
+def student_applyprograms(request,id):
+    studentid=request.session["id"]
+    participantsobj=participants()
+    participantsobj.PROGRAMS_id=id
+    participantsobj.STUDENT_id=studentid
+    participantsobj.requested_date=datetime.datetime.now().date()
+    participantsobj.status="Pending"
+    participantsobj.save()
+    return student_viewprogramsload(request,id)
+
+def student_viewparticipationload(request):
+    particpationobj=participants.objects.filter(STUDENT_id=request.session["id"])
+    return render(request,'participants_studentstemplates/student_view_participation.html',{'data':particpationobj})
+
+def student_deleteprticipation(request,id):
+        partcipationobj = participants.objects.get(id=id)
+        partcipationobj.delete()
+        return redirect('/earts/student_viewparticipationload/')
+
+def student_uploadprogramsload(request):
+    return render(request,'participants_studentstemplates/student_upload_program.html')
+
+def student_uploadprogramspost(request):
+    return render(request,'participants_studentstemplates/student_upload_program.html')

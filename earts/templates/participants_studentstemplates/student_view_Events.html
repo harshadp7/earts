@@ -1,10 +1,11 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Untitled Document</title>
 </head>
 
-<body><form action="/earts/sadmin_vieweventsload/" method="post"><table width="316" border="1">
+<body><form action="/earts/student_vieweventsload/" method="post"><table width="316" border="1">
   <tr>
     <th colspan="3" scope="col"><p>Event&nbsp;Name&nbsp;
       
@@ -30,8 +31,7 @@
     <td>{{ i.event_name }}&nbsp;</td>
     <td>{{ i.event_date }}&nbsp;</td>
     <td>{{ i.event_discription }}&nbsp;</td>
-    <td><a href="/earts/sadmin_editeventsload/{{ i.id }}">Edit</a></td>
-    <td><a href="/earts/subadmin_deleteevents/{{ i.id }}">Delete</a></td>
+    <td><a href="/earts/student_viewprogramsload/{{ i.id }}">Programs</a></td>
   </tr>
       {% endfor %}
 </table>

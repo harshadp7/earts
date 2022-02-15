@@ -56,6 +56,7 @@ urlpatterns = [
     path('admin_sendreplypost/', views.admin_sendreplypost),
     path('admin_home/', views.admin_homeload),
 
+    #subadmin path:
     path('sadmin_home/', views.sadmin_homeload),
     path('sadmin_addjudgesload/',views.sadmin_addjudgesload),
     path('sadmin_addjudgespost/',views.sadmin_addjudgespost),
@@ -68,14 +69,49 @@ urlpatterns = [
     path('sadmin_editjudgespost/',views.sadmin_editjudgespost),
     path('sadmin_vieweventspost/',views.sadmin_vieweventspost),
     path('sadmin_vieweventsload/',views.sadmin_vieweventsload),
+    path('sadmin_editeventsload/<str:id>',views.sadmin_editeventsload),
+    path('sadmin_editeventspost/<str:id>',views.sadmin_editeventspost),
     path('sadmin_addprogramsload/',views.sadmin_addprogramsload),
     path('sadmin_addprogramspost/',views.sadmin_addprogramspost),
+    path('sadmin_viewprogramspost/',views.sadmin_viewprogramspost),
+    path('sadmin_viewprogramsload/',views.sadmin_viewprogramsload),
     path('sadmin_addprogramcommitteeload/',views.sadmin_addprogramcommitteeload),
     path('sadmin_addprogramcommitteepost/',views.sadmin_addprogramcommitteepost),
     path('sadmin_viewprogramcommitteepost/',views.sadmin_viewprogramcommitteepost),
     path('sadmin_viewprogramcommitteeload/',views.sadmin_viewprogramcommitteeload),
     path('sadmin_editprogramcommitteeload/<str:id>',views.sadmin_editprogramcommitteeload),
-    path('sadmin_editprogramcommitteepost/',views.sadmin_editprogramcommitteepost),
+    path('sadmin_editprogramsload/<str:id>',views.sadmin_editprogramsload),
+    path('sadmin_editprogramspost/',views.sadmin_editprogramspost),
     path('sadmin_deleteprogramcommittee/<id>', views.sadmin_deleteprogramcommittee),
+    path('sadmin_deleteprograms/<id>', views.sadmin_deleteprograms),
+
+#judges path :
+    path('judges_home/', views.judges_homeload),
+    path('judges_viewprofileload/',views.judges_viewprofileload),
+    path('judges_viewprogramsload/',views.judges_viewprogramsload),
+
+#programcommitte path:
+    path('procommittee_homeload/', views.procommitte_homeload),
+    path('procommittee_viewprofileload/', views.procommittee_viewprofileload),
+    path('procommittee_viewprogramsload/<str:id>',views.procommittee_viewprogramsload),
+    path('procommittee_viewparticipants/<str:id>',views.procommittee_viewparticipants),
+    path('procommittee_approveload/<str:id>',views.procommittee_approveload),
+    path('procommittee_assignjudgesload/<str:id>',views.procommittee_assignjudgesload),
+    path('procommittee_assignjudgespost/',views.procommittee_assignjudgespost),
+    path('procommittee_scheduleprogload/<str:id>',views.procommittee_scheduleprogload),
+    path('procommittee_scheduleprogpost/',views.procommittee_scheduleprogpost),
+    path('procommittee_viewschedulesload/',views.procommittee_viewschedulesload),
+
+
+#participants_student path:
+    path('student_homeload/',views.student_homeload),
+    path('student_viewprogramsload/<str:id>',views.student_viewprogramsload),
+    path('student_vieweventsload/',views.student_vieweventsload),
+    path('student_vieweventspost/<str:id>',views.student_vieweventspost),
+    path('student_applyprograms/<str:id>',views.student_applyprograms),
+    path('student_viewparticipationload/',views.student_viewparticipationload),
+    path('student_deleteprticipation/<str:id>',views.student_deleteprticipation),
+    path('student_uploadprogramsload/<str:id>',views.student_uploadprogramsload),
+    path('student_uploadprogramspost/<str:id>',views.student_uploadprogramspost),
 
 ]
