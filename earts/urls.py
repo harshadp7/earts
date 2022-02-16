@@ -42,6 +42,7 @@ urlpatterns = [
     path('admin_viewcommentsratingpost/', views.admin_viewcommentsratingpost),
     path('admin_viewprogramcommitteeload/', views.admin_viewprogramcommitteeload),
     path('admin_viewprogramcommitteepost/', views.admin_viewprogramcommitteepost),
+    path('admin_viewjudgesassgnload/', views.admin_viewjudgesassgnload),
     path('admin_editsubadminload/<str:id>', views.admin_editsubadminload),
     path('admin_editsubadminpost/', views.admin_editsubadminpost),
     path('admin_editstaffload/<str:id>', views.admin_editstaffload),
@@ -80,6 +81,8 @@ urlpatterns = [
     path('sadmin_viewprogramcommitteepost/',views.sadmin_viewprogramcommitteepost),
     path('sadmin_viewprogramcommitteeload/',views.sadmin_viewprogramcommitteeload),
     path('sadmin_editprogramcommitteeload/<str:id>',views.sadmin_editprogramcommitteeload),
+    path('sadmin_viewjudgesassgnload/',views.sadmin_viewjudgesassgnload),
+    path('sadmin_viewparticipants/',views.sadmin_viewparticipants),
     path('sadmin_editprogramsload/<str:id>',views.sadmin_editprogramsload),
     path('sadmin_editprogramspost/',views.sadmin_editprogramspost),
     path('sadmin_deleteprogramcommittee/<id>', views.sadmin_deleteprogramcommittee),
@@ -101,6 +104,9 @@ urlpatterns = [
     path('procommittee_scheduleprogload/<str:id>',views.procommittee_scheduleprogload),
     path('procommittee_scheduleprogpost/',views.procommittee_scheduleprogpost),
     path('procommittee_viewschedulesload/',views.procommittee_viewschedulesload),
+    path('procommittee_viewassignedjudgesload/',views.procommittee_viewassignedjudgesload),
+    path('procommittee_deletejudgeassgn/<str:id>',views.procommittee_deletejudgeassgn),
+
 
 
 #participants_student path:

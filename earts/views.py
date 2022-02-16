@@ -1,5 +1,7 @@
 import random
 import datetime
+
+from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from pip._vendor.requests import session
@@ -32,7 +34,6 @@ def loginpost(request):
             elif a.type == 'student':
                 da=student.objects.get(LOGIN=a.id)
                 request.session["id"]=da.id
-
                 return render(request,'participants_studentstemplates/student_home.html')
             else:
                 return HttpResponse("INVALID")
@@ -60,8 +61,16 @@ def admin_addsubadminpost(request):
     s_adminpin=request.POST['textfield2']
     s_adminpost=request.POST['textfield3']
     s_admindistrict=request.POST['textfield4']
-    s_adminimg=request.FILES['file']
     s_adminmail=request.POST['textfield5']
+
+    s_adminimg = request.FILES['file']
+    fs = FileSystemStorage()
+    nam = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M")
+    filename = nam + ".jpg"
+    print(filename)
+    fs.save(filename, s_adminimg)
+
+    url = '/media/' + nam + ".jpg"
 
     loginobj = login()
     loginobj.username = s_adminmail
@@ -76,7 +85,7 @@ def admin_addsubadminpost(request):
     subadminobj.pin=s_adminpin
     subadminobj.post=s_adminpost
     subadminobj.district=s_admindistrict
-    subadminobj.image=s_adminimg
+    subadminobj.image=url
     subadminobj.email=s_adminmail
     subadminobj.LOGIN=loginobj
     subadminobj.save()
@@ -141,7 +150,6 @@ def admin_addstudentpost(request):
     loginobj.password = str(random.randint(1111, 666666))
     loginobj.type = "student"
     loginobj.save()
-
 
     studentobj=student()
     studentobj.student_name=studname
@@ -467,6 +475,16 @@ def admin_viewcoursepost(request):
     searchcourse=request.POST['textfield']
     return render(request,'admintemplates/admin_view_Course.html')
 
+def admin_viewjudgesassgnload(request):
+        assgnjudegesobj = judges_assigned.objects.all()
+        return render(request, 'admintemplates/admin_view_assignedjudges.html',
+                      {'data': assgnjudegesobj})
+
+
+
+
+ # subadmin Views#########################################################################
+
 def sadmin_homeload(request):
     return render(request,'subadmintemplates/sadmin_home.html')
 def sadmin_homepost(request):
@@ -737,6 +755,22 @@ def sadmin_editprogramspost(request):
     prgmsobj.save()
     return sadmin_viewprogramsload(request)
 
+def sadmin_viewjudgesassgnload(request):
+        assgnjudegesobj = judges_assigned.objects.all()
+        return render(request, 'subadmintemplates/sadmin_view_assignedjudges.html',
+                      {'data': assgnjudegesobj})
+
+def sadmin_viewparticipants(request):
+    particobj=participants.objects.all()
+
+    return render(request,'subadmintemplates/sadmin_view_participants.html',{'partic':particobj})
+
+
+##################### JUDGES VIEW  #################################
+
+
+
+
 def judges_homeload(request):
     return render(request,'judgestemplates/judges_home.html')
 def judges_homepost(request):
@@ -780,10 +814,10 @@ def procommittee_viewprogramsload(request,id):
     #     t = request.POST['textfield']
     #     allprograms = programs.objects.filter(program_name__contains=t)
     #     return render(request, 'programcommitteetemplates/procommitte_view_programs.html', {'eventdata':eventobj,'prgmsdata':allprograms})
+
     return render(request,'programcommitteetemplates/procommitte_view_programs.html',{'eventdata':eventobj,'prgmsdata':programsobj})
 
 def procommittee_viewprofileload(request):
-
     sobj=staff.objects.get(LOGIN_id=request.session['lid'])
 
     return render(request,'programcommitteetemplates/procommittee_view_profile.html',{'a':sobj})
@@ -832,11 +866,21 @@ def procommittee_scheduleprogpost(request):
     scheduleobj.time=stime
     scheduleobj.PROGRAM_id=progid
     scheduleobj.save()
-    return render(request,'programcommitteetemplates/procommittee_schedule_program.html')
+    return procommittee_viewprogramsload(request,id=request.session['eventids'])
 
 def procommittee_viewschedulesload(request):
     scheduleobj=schedule.objects.all()
     return render(request,'programcommitteetemplates/procommittee_view_schedules.html',{'scheduledata':scheduleobj})
+
+def procommittee_viewassignedjudgesload(request):
+    assgnjudegesobj=judges_assigned.objects.all()
+    return render(request,'programcommitteetemplates/procommitte_view_assignedjudges.html',{'data':assgnjudegesobj})
+
+def procommittee_deletejudgeassgn(request,id):
+    assgnjudegesobj = judges_assigned.objects.get(id=id)
+    assgnjudegesobj.delete()
+    return redirect('/earts/procommittee_viewassignedjudgesload/')
+
 
 
 #Students/participants
@@ -883,6 +927,7 @@ def student_applyprograms(request,id):
 
 def student_viewparticipationload(request):
     particpationobj=participants.objects.filter(STUDENT_id=request.session["id"])
+
     return render(request,'participants_studentstemplates/student_view_participation.html',{'data':particpationobj})
 
 def student_deleteprticipation(request,id):
@@ -890,8 +935,27 @@ def student_deleteprticipation(request,id):
         partcipationobj.delete()
         return redirect('/earts/student_viewparticipationload/')
 
-def student_uploadprogramsload(request):
-    return render(request,'participants_studentstemplates/student_upload_program.html')
+def student_uploadprogramsload(request,id):
+    progobj = programs.objects.get(id=id)
+
+    return render(request,'participants_studentstemplates/student_upload_program.html',{'progobj':progobj})
 
 def student_uploadprogramspost(request):
+    prgmid=request.session['pgmid']
+    perfomancename=request.POST['text1']
+    uploadfile=request.FILES['file']
+    fs = FileSystemStorage()
+    nam = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M")
+    filename = nam + ".jpg"
+    print(filename)
+    fs.save(filename, uploadfile)
+
+    url = '/media/' + nam + ".jpg"
+
+    performanceobj=performance()
+    performanceobj.PROGRAMS_id=prgmid
+    performanceobj.performance_name=perfomancename
+    performanceobj.url
+    performanceobj.save()
+
     return render(request,'participants_studentstemplates/student_upload_program.html')
