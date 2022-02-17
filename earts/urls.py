@@ -117,7 +117,9 @@ urlpatterns = [
     path('student_applyprograms/<str:id>',views.student_applyprograms),
     path('student_viewparticipationload/',views.student_viewparticipationload),
     path('student_deleteprticipation/<str:id>',views.student_deleteprticipation),
-    path('student_uploadprogramsload/<str:id>',views.student_uploadprogramsload),
-    path('student_uploadprogramspost/<str:id>',views.student_uploadprogramspost),
+    path('student_uploadprogramsload/<str:id>/<praticipationid>',views.student_uploadprogramsload),
+    path('student_uploadprogramspost/',views.student_uploadprogramspost),
+    path('student_deleteperfomance/<str:id>/<progobj>/<praticipationid>',views.student_deleteperfomance),
+    path('student_viewperfomanceload/<str:id>/<progobj>/<praticipationid>',views.student_viewperfomanceload),
 
 ]

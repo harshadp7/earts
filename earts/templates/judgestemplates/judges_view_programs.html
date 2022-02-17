@@ -24,8 +24,8 @@
     {% for i in prgmsdata  %}
   <tr>
       <td height="61">{{ forloop.counter }}</td>
-      <td>{{ i.program_name }}&nbsp;</td>
-      <td>{{ i.program_discription}}&nbsp;</td>
+      <td>{{ i.PROGRAMS.program_name }}&nbsp;</td>
+      <td>{{ i.PROGRAMS.program_discription}}&nbsp;</td>
     <td colspan="2" >{{i.EVENTS.event_name}}</td>
   </tr>
     {% endfor %}

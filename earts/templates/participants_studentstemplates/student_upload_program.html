@@ -6,11 +6,12 @@
 </head>
 
 <body>
-<form id="form1" name="form1" enctype="multipart/form-data" method="post" action="">
+<form id="form1" name="form1" enctype="multipart/form-data" method="post" action="/earts/student_uploadprogramspost/">
 <table width="200" border="1">
   <tr>
     <th>Program&nbsp;Name</th>
-    <td>{{ progobj.program_name }}</td>
+    <td>{{ progobj.program_name }}<input type="hidden" value="{{ praticipationid }}" name="praticipationid"/><input type="hidden" value="{{ progobj.id }}" name="progobj"/></td>
+
 
   </tr>
    <tr>
@@ -35,22 +36,24 @@
 </table>
 </form>
 <table width="200" border="1">
+{% for i in perfomanneobj %}
   <tr>
     <th>Program&nbsp;Name</th>
-    <th>&nbsp;</th>
+    <th>{{ i.PROGRAMS.program_name }}&nbsp;</th>
+  </tr>
+  <tr>
+    <th>Participant&nbsp;Name</th>
+    <th>{{ i.PARTICIPANTS.STUDENT.student_name }}&nbsp;</th>
   </tr>
   <tr>
     <th>Perfomance&nbsp;Name</th>
-    <th>&nbsp;</th>
+    <th>{{ i.performance_name }}</th>
   </tr>
   <tr>
-    <th>Date</th>
-    <td>&nbsp;</td>
+    <th><a href="/earts/student_viewperfomanceload/{{ i.id }}/{{ progobj.id }}/{{ praticipationid }}">View</a></td>
+    <th><a href="/earts/student_deleteperfomance/{{ i.id }}/{{ progobj.id }}/{{ praticipationid }}">Delete</a></td>
   </tr>
-  <tr>
-    <th><a href="">View</a></td>
-    <th><a href="">Delete</a></td>
-  </tr>
+    {% endfor %}
 
 </table>
 

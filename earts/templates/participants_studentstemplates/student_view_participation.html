@@ -29,7 +29,7 @@
       {% if i.status == "Pending" %}
           <td>Please wait for approval</td>
       {% else %}
-    <td><a href="/earts/student_uploadprogramsload/{{ i.PROGRAMS.id }}">Enter Program</a></td>
+    <td><a href="/earts/student_uploadprogramsload/{{ i.PROGRAMS.id }}/{{ i.id }}">Enter Program</a></td>
   {% endif %}
 
   </tr>

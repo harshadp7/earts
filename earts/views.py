@@ -777,13 +777,14 @@ def judges_homepost(request):
     return render(request,'judgestemplates/judges_home.html')
 
 def judges_viewprogramsload(request):
-    programsobj = programs.objects.all()
+    programsobj = judges_assigned.objects.filter(JUDGES__LOGIN_id=request.session['lid'])
+
     eventobj = events.objects.all()
 
     if request.method=="POST":
         t=request.POST['textfield']
         alljudges = judges.objects.filter(judge_name__contains=t)
-        return render(request, 'admintemplates/admin_view_SubAdmin.html', {'eventdata':eventobj,'prgmsdata':alljudges})
+        return render(request, 'judgestemplates/admin_view_SubAdmin.html', {'eventdata':eventobj,'prgmsdata':alljudges})
 
     return render(request,'judgestemplates/judges_view_programs.html',{'eventdata':eventobj,'prgmsdata':programsobj})
 
@@ -909,7 +910,7 @@ def student_viewprogramsload(request,id):
     programsobj = programs.objects.filter(EVENTS_id=id)
     eventobj = events.objects.all()
 
-    if request.method == "POST":
+    if request.method == "GET":
         t = request.POST['textfield']
         allprograms = programs.objects.filter(program_name__contains=t)
         return render(request, 'participants_studentstemplates/student_view_programs.html', {'eventdata':eventobj,'prgmsdata':allprograms})
@@ -935,27 +936,38 @@ def student_deleteprticipation(request,id):
         partcipationobj.delete()
         return redirect('/earts/student_viewparticipationload/')
 
-def student_uploadprogramsload(request,id):
+def student_uploadprogramsload(request,id,praticipationid):
+    perfomanneobj=performance.objects.filter(PROGRAMS__performance__PARTICIPANTS_id=praticipationid)
     progobj = programs.objects.get(id=id)
 
-    return render(request,'participants_studentstemplates/student_upload_program.html',{'progobj':progobj})
+    return render(request,'participants_studentstemplates/student_upload_program.html',{'progobj':progobj,'praticipationid':praticipationid,'perfomanneobj':perfomanneobj})
 
 def student_uploadprogramspost(request):
-    prgmid=request.session['pgmid']
     perfomancename=request.POST['text1']
     uploadfile=request.FILES['file']
+    praticipationid=request.POST["praticipationid"]
+    progobj=request.POST["progobj"]
     fs = FileSystemStorage()
     nam = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M")
     filename = nam + ".jpg"
-    print(filename)
     fs.save(filename, uploadfile)
 
     url = '/media/' + nam + ".jpg"
 
     performanceobj=performance()
-    performanceobj.PROGRAMS_id=prgmid
+    performanceobj.PROGRAMS_id=progobj
+    performanceobj.PARTICIPANTS_id=praticipationid
     performanceobj.performance_name=perfomancename
-    performanceobj.url
+    performanceobj.uploaded_files=url
     performanceobj.save()
+    return student_uploadprogramsload(request,progobj,praticipationid)
 
-    return render(request,'participants_studentstemplates/student_upload_program.html')
+def student_viewperfomanceload(request,id,progobj,praticipationid):
+    performanceobj=performance.objects.get(id=id)
+    return render(request,'participants_studentstemplates/student_view_perfomance.html',{'perfomance':performanceobj})
+
+
+def student_deleteperfomance(request,id,progobj,praticipationid):
+    perfomanceobj=performance.objects.get(id=id)
+    perfomanceobj.delete()
+    return student_uploadprogramsload(request, progobj, praticipationid)
