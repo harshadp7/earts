@@ -779,14 +779,13 @@ def judges_homepost(request):
 def judges_viewprogramsload(request):
     programsobj = judges_assigned.objects.filter(JUDGES__LOGIN_id=request.session['lid'])
 
-    eventobj = events.objects.all()
 
     if request.method=="POST":
         t=request.POST['textfield']
         alljudges = judges.objects.filter(judge_name__contains=t)
-        return render(request, 'judgestemplates/admin_view_SubAdmin.html', {'eventdata':eventobj,'prgmsdata':alljudges})
+        return render(request, 'judgestemplates/admin_view_SubAdmin.html', {'prgmsdata':alljudges})
 
-    return render(request,'judgestemplates/judges_view_programs.html',{'eventdata':eventobj,'prgmsdata':programsobj})
+    return render(request,'judgestemplates/judges_view_programs.html',{'prgmsdata':programsobj})
 
 
 def judges_viewprofileload(request):
