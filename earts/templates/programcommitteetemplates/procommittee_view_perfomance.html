@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/earts/sadmin_viewprogramsload/"><table width="767" border="0">
+  <tr>
+    <th colspan="2">Programs </th>
+    <th colspan="2">Program&nbsp;name:&nbsp; <input name="textfield" type="text" /> </th>
+    <td colspan="3"><label>
+      <input type="submit" name="search" value="Search" />
+    </label></td>
+  </tr>
+  <tr>
+    <th>#</th>
+    <th>Program&nbsp;Name </th><th>Participants Name</th><th>Perfomance Name </th><th>&nbsp;</th>
+    </tr>
+    {% for i in perfomancedata  %}
+  <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>{{ i.PROGRAMS.program_name }}&nbsp;</td>
+      <td>{{ i.PARTICIPANTS.STUDENT.student_name }}</td>
+      <td>{{ i.performance_name }} </td>
+      <td><a href="/earts/sadmin_viewperfomance2/{{ i.id }}">View</a></td>
+  </tr>
+    {% endfor %}
+</table>
+
+</form>
+</body>
+</html>
