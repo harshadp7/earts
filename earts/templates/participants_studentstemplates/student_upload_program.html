@@ -10,8 +10,7 @@
 <table width="200" border="1">
   <tr>
     <th>Program&nbsp;Name</th>
-    <td>{{ progobj.program_name }}<input type="hidden" value="{{ praticipationid }}" name="praticipationid"/><input type="hidden" value="{{ progobj.id }}" name="progobj"/></td>
-
+    <td>{{ progobj.program_name }}<input type="hidden" value="{{ praticipationid }}" name="praticipationid"/> <input type="hidden" value="{{ progobj.id }}" name="progobj"/></td>
 
   </tr>
    <tr>
@@ -39,18 +38,18 @@
 {% for i in perfomanneobj %}
   <tr>
     <th>Program&nbsp;Name</th>
-    <th>{{ i.PROGRAMS.program_name }}&nbsp;</th>
+    <td>{{ i.PROGRAMS.program_name }}&nbsp;</td>
   </tr>
   <tr>
     <th>Participant&nbsp;Name</th>
-    <th>{{ i.PARTICIPANTS.STUDENT.student_name }}&nbsp;</th>
+    <td>{{ i.PARTICIPANTS.STUDENT.student_name }}&nbsp;</td>
   </tr>
   <tr>
     <th>Perfomance&nbsp;Name</th>
-    <th>{{ i.performance_name }}</th>
+    <td>{{ i.performance_name }}</td>
   </tr>
   <tr>
-    <th><a href="/earts/student_viewperfomanceload/{{ i.id }}/{{ progobj.id }}/{{ praticipationid }}">View</a></td>
+    <th><a href="/earts/student_viewperfomanceload/{{ i.id }}">View</a></td>
     <th><a href="/earts/student_deleteperfomance/{{ i.id }}/{{ progobj.id }}/{{ praticipationid }}">Delete</a></td>
   </tr>
     {% endfor %}

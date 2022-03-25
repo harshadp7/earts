@@ -5,17 +5,19 @@
 <title>Untitled Document</title>
 </head>
 
-<body><form action="/earts/procommittee_viewperfomance1/" method="post">  <table width="407" border="0">
-
+<body><form action="/earts/judges_scoreperfomance/" method="post">  <table width="407" border="0">
+<input type="hidden" name="perfid" value="{{ perfomance.id }}"/>
 <tr>
     <th width="173">Perfomance&nbsp;Name</th>
-    <td width="218">{{ viewdata.performance_name }}</td>
+    <td width="218">{{ perfomance.performance_name }}</td>
   </tr>
   <tr>
-    <td  colspan="2"><img src="{{ viewdata.uploaded_files }}" width="500" height="350" ></td>
+    <td  colspan="2"><img src="{{ perfomance.uploaded_files }}" width="500" height="350" ></td>
     </tr>
 	 <tr>
-    <td  colspan="2"><button name="back" type="submit">Back</button></td>
+    <td  colspan="2">Score :&nbsp;<input type="text" name="score"/></td><tr>
+    <td  colspan="2"><button type="submit">Save</button></td></tr>
+
     </tr>
 </table>
 </form>

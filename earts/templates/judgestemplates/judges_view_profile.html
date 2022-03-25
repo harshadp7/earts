@@ -13,7 +13,7 @@
   <tr>
     <td width="100">Name:</td>
     <td width="584" >&nbsp;{{ a.judge_name }}</td>
-    <td width="183" rowspan="8">&nbsp;</td>
+    <td width="183" rowspan="8"><img src="{{ a.image }}" height="100" width="80" ></td>
   </tr>
   <tr>
     <td>Gender:</td>
@@ -40,7 +40,8 @@
     <td>{{ a.email }}</td>
     </tr>
   <tr>
-    <td colspan="2"><input name="Back" type="submit" value="Back" /></td>
+    <td colspan="2"><input name="Back" type="submit" value="Back" />&nbsp;
+    <button type="submit" formaction="/earts/changepasswordload/{{ a.LOGIN_id }}">Change Password</button></td>
     </tr>
 </table>
 </form>

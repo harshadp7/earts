@@ -5,21 +5,14 @@
 <title>Untitled Document</title>
 </head>
 
-<body><form action="/earts/student_uploadprogramsload/" method="post">  <table width="407" border="1">
+<body><form action="/earts/sadmin_viewperfomance1/" method="post">  <table width="407" border="0">
 
-  <tr>
-    <th width="173">Program&nbsp;Name</td>
-    <td width="218">{{ perfomance.PROGRAMS.program_name}}</td>
-  </tr>
-    <tr>
-    <th width="173">Participant&nbsp;Name</td>
-    <td width="218">{{ perfomance.PARTICIPANTS.STUDENT.student_name}}</td>
-  </tr>
+<tr>
     <th width="173">Perfomance&nbsp;Name</th>
-    <td width="218">{{ perfomance.performance_name }}</td>
+    <td width="218">{{ viewdata.performance_name }}</td>
   </tr>
   <tr>
-    <td  colspan="2"><img src="{{ perfomance.uploaded_files }}" width="200" height="150" ></td>
+    <td  colspan="2"><img src="{{ viewdata.uploaded_files }}" width="500" height="350" ></td>
     </tr>
 	 <tr>
     <td  colspan="2"><button name="back" type="submit">Back</button></td>

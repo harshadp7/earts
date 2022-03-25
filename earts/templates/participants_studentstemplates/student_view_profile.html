@@ -2,45 +2,46 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>STUDENT PROFILE</title>
+<title>S_ADMIN PROFILE</title>
 </head>
 <body>
-<form>
+<form action="/earts/sadmin_home/">
 <table width="889" border="1">
   <tr>
     <td colspan="3">PROFILE</td>
     </tr>
   <tr>
     <td width="100">Name:</td>
-    <td width="584" >&nbsp;</td>
-    <td width="183" rowspan="8">&nbsp;</td>
+    <td width="584" >&nbsp;{{ a.subadmin_name }}</td>
+    <td width="183" rowspan="8"><img src="{{ a.image }}" ></td>
   </tr>
   <tr>
     <td>Gender:</td>
-    <td></td>
+    <td>{{ a.gender }}</td>
     </tr>
   <tr>
     <td>Place:</td>
-    <td></td>
+    <td>{{ a.place }}</td>
     </tr>
   <tr>
     <td>PIN:</td>
-    <td></td>
+    <td>{{ a.pin }}</td>
     </tr>
   <tr>
     <td>Post:</td>
-    <td></td>
+    <td>{{ a.post }}</td>
     </tr>
   <tr>
     <td>District:</td>
-    <td></td>
+    <td>{{ a.district }}</td>
     </tr>
   <tr>
     <td>E-mail:</td>
-    <td></td>
+    <td>{{ a.email }}</td>
     </tr>
   <tr>
-    <td colspan="2"><input name="Back" type="button" value="Back" /></td>
+    <td colspan="2"><input name="Back" type="submit" value="Back" /></td>
+    <td ><button type="submit" formaction="/earts/changepasswordload/{{ a.LOGIN_id }}">Change Password</button></td>
     </tr>
 </table>
 </form>

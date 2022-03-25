@@ -6,7 +6,7 @@
 </head>
 
 <body>
-<form id="form1" name="form1" method="post" action="/earts/sadmin_viewprogramsload/"><table width="767" border="1">
+<form id="form1" name="form1" method="post" action="/earts/sadmin_viewprogramsload/"><table width="767" border="0">
   <tr>
     <th colspan="2">Programs </th>
     <th colspan="2">Program&nbsp;name:&nbsp; <input name="textfield" type="text" /> </th>
@@ -15,20 +15,16 @@
     </label></td>
   </tr>
   <tr>
-    <th width="131" height="33">#</th>
-    <th width="140">Program&nbsp;Name </th>
-    <th width="185">Program&nbsp;Discription </th>
-    <th colspan="2">Event</th>
-    <th colspan="2">&nbsp;</th>
+    <th>#</th>
+    <th>Program&nbsp;Name </th><th>Participants Name</th><th>Perfomance Name </th><th>&nbsp;</th>
     </tr>
-    {% for i in prgmsdata  %}
+    {% for i in perfomancedata  %}
   <tr>
-      <td height="61">{{ forloop.counter }}</td>
-      <td>{{ i.program_name }}&nbsp;</td>
-      <td>{{ i.program_discription}}&nbsp;</td>
-    <td colspan="2" >{{i.EVENTS.event_name}}</td>
-    <td width="47"><a href="/earts/sadmin_deleteprograms/{{ i.id }}">Delete</a></td>
-    <td width="68"><a href="/earts/sadmin_editprogramsload/{{ i.id }}">Edit</a></td>
+      <td>{{ forloop.counter }}</td>
+      <td>{{ i.PROGRAMS.program_name }}&nbsp;</td>
+      <td>{{ i.PARTICIPANTS.STUDENT.student_name }}</td>
+      <td>{{ i.performance_name }} </td>
+      <td><a href="/earts/sadmin_viewperfomance2/{{ i.id }}">View</a></td>
   </tr>
     {% endfor %}
 </table>

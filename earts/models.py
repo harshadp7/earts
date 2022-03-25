@@ -75,6 +75,7 @@ class programs(models.Model):
     EVENTS=models.ForeignKey(events, on_delete=models.CASCADE)
     program_discription=models.CharField(max_length=50)
 
+
     class Meta:
         db_table = 'programs'
 
@@ -116,6 +117,13 @@ class performance(models.Model):
     PARTICIPANTS= models.ForeignKey(participants, on_delete=models.CASCADE)
     PROGRAMS= models.ForeignKey(programs, on_delete=models.CASCADE)
     uploaded_files=models.CharField(max_length=500)
+    score1=models.CharField(max_length=10,default="0")
+    score2=models.CharField(max_length=10,default="0")
+    score3=models.CharField(max_length=10,default="0")
+    judge1=models.ForeignKey(judges,on_delete=models.CASCADE,related_name="j3")
+    judge2=models.ForeignKey(judges,on_delete=models.CASCADE,related_name="j2")
+    judge3=models.ForeignKey(judges,on_delete=models.CASCADE,related_name="j1")
+
 
     class Meta:
         db_table = 'performance'

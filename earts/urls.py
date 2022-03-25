@@ -3,9 +3,10 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+    path('landingpage/', views.landingpage),
     path('loginload/', views.loginload),
     path('loginpost/', views.loginpost),
-    path('changepasswordload/', views.changepasswordload),
+    path('changepasswordload/<str:id>', views.changepasswordload),
     path('changepasswordpost/', views.changepasswordpost),
     path('admin_addsubadminload/', views.admin_addsubadminload),
     path('admin_addsubadminpost/', views.admin_addsubadminpost),
@@ -83,6 +84,8 @@ urlpatterns = [
     path('sadmin_editprogramcommitteeload/<str:id>',views.sadmin_editprogramcommitteeload),
     path('sadmin_viewjudgesassgnload/',views.sadmin_viewjudgesassgnload),
     path('sadmin_viewparticipants/',views.sadmin_viewparticipants),
+    path('sadmin_viewperfomance1/',views.sadmin_viewperfomance1),
+    path('sadmin_viewperfomance2/<str:id>',views.sadmin_viewperfomance2),
     path('sadmin_editprogramsload/<str:id>',views.sadmin_editprogramsload),
     path('sadmin_editprogramspost/',views.sadmin_editprogramspost),
     path('sadmin_deleteprogramcommittee/<id>', views.sadmin_deleteprogramcommittee),
@@ -92,12 +95,18 @@ urlpatterns = [
     path('judges_home/', views.judges_homeload),
     path('judges_viewprofileload/',views.judges_viewprofileload),
     path('judges_viewprogramsload/',views.judges_viewprogramsload),
+    path('judges_viewparticipantsload/<str:id>',views.judges_viewparticipantsload),
+    path('judges_viewperfomanceload/<str:id>',views.judges_viewperfomanceload),
+    path('judges_scoreperfomance/',views.judges_scoreperfomance),
+
 
 #programcommitte path:
     path('procommittee_homeload/', views.procommitte_homeload),
     path('procommittee_viewprofileload/', views.procommittee_viewprofileload),
     path('procommittee_viewprogramsload/<str:id>',views.procommittee_viewprogramsload),
     path('procommittee_viewparticipants/<str:id>',views.procommittee_viewparticipants),
+    path('procommittee_viewperfomanceload/<str:id>', views.procommittee_viewperfomanceload),
+    path('procommittee_viewperfomance2/<str:id>', views.procommittee_viewperfomance2),
     path('procommittee_approveload/<str:id>',views.procommittee_approveload),
     path('procommittee_assignjudgesload/<str:id>',views.procommittee_assignjudgesload),
     path('procommittee_assignjudgespost/',views.procommittee_assignjudgespost),
@@ -111,6 +120,7 @@ urlpatterns = [
 
 #participants_student path:
     path('student_homeload/',views.student_homeload),
+    path('student_viewprofileload/',views.student_viewprofileload),
     path('student_viewprogramsload/<str:id>',views.student_viewprogramsload),
     path('student_vieweventsload/',views.student_vieweventsload),
     path('student_vieweventspost/<str:id>',views.student_vieweventspost),
@@ -120,6 +130,7 @@ urlpatterns = [
     path('student_uploadprogramsload/<str:id>/<praticipationid>',views.student_uploadprogramsload),
     path('student_uploadprogramspost/',views.student_uploadprogramspost),
     path('student_deleteperfomance/<str:id>/<progobj>/<praticipationid>',views.student_deleteperfomance),
-    path('student_viewperfomanceload/<str:id>/<progobj>/<praticipationid>',views.student_viewperfomanceload),
+    path('student_viewperfomanceload/<str:id>',views.student_viewperfomanceload),
+
 
 ]
