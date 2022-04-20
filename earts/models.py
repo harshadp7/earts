@@ -125,6 +125,7 @@ class performance(models.Model):
     judge3=models.ForeignKey(judges,on_delete=models.CASCADE,related_name="j1")
 
 
+
     class Meta:
         db_table = 'performance'
 

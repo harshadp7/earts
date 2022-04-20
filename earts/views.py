@@ -509,6 +509,7 @@ def admin_sendreplypost(request):
     return render(request, 'admintemplates/admin_send_Reply.html')
 
 
+
 def admin_homeload(request):
     return render(request, 'admintemplates/admin_home.html')
 
@@ -942,7 +943,6 @@ def judges_scoreperfomance(request):
     perfomanceobj = performance.objects.get(id=perfid)
 
     jdgid=judges_assigned.objects.filter(PROGRAMS_id = progid )
-
     j1 = jdgid[0].JUDGES_id
     j2 = jdgid[1].JUDGES_id
     j3 = jdgid[2].JUDGES_id
@@ -950,23 +950,25 @@ def judges_scoreperfomance(request):
         if perfomanceobj.score1 == "0" and perfomanceobj.judge1_id == j1:
             perfomanceobj.score1 = score
             perfomanceobj.save()
+            return HttpResponse("<script>alert('Scored...!');window.history.back()</script>")
         else:
-            return HttpResponse("<script>alert('Already Scored');</script>")
+            return HttpResponse("<script>alert('Already Scored');window.history.back()</script>")
 
     elif j2==jdid.id:
        if perfomanceobj.score2 == "0" and perfomanceobj.judge2_id==j2:
            perfomanceobj.score2 = score
            perfomanceobj.save()
+           return HttpResponse("<script>alert('Scored...!');window.history.back()</script>")
        else:
-           return HttpResponse("<script>alert('Already Scored');</script>")
+           return HttpResponse("<script>alert('Already Scored');window.history.back()</script>")
 
     elif j3==jdid.id:
         if perfomanceobj.score3 == "0" and perfomanceobj.judge3_id==j3:
            perfomanceobj.score3 = score
            perfomanceobj.save()
+           return HttpResponse("<script>alert('Scored...!');window.history.back()</script>")
         else:
-            return HttpResponse("<script>alert('Already Scored');window.location='/earts/judges_home/'</script>")
-
+            return HttpResponse("<script>alert('Already Scored');window.history.back()</script>")
 
 ###########################################program_committee###########################
 
@@ -1183,7 +1185,7 @@ def student_uploadprogramspost(request):
 
     pobj = performance.objects.filter(PARTICIPANTS_id=praticipationid)
     if pobj.exists():
-        return HttpResponse("<script>alert('Already Uploaded');window.location='/earts/student_viewparticipationload/'</script>")
+        return HttpResponse("<script>alert('Already Uploaded');window.history.back()</script>")
     performanceobj = performance()
     performanceobj.PROGRAMS_id = progobj
     performanceobj.PARTICIPANTS_id = praticipationid
@@ -1194,6 +1196,7 @@ def student_uploadprogramspost(request):
     performanceobj.judge3_id = j3
     performanceobj.save()
     return student_uploadprogramsload(request, progobj, praticipationid)
+
 
 
 def student_viewperfomanceload(request, id):
