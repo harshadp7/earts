@@ -31,7 +31,7 @@ def loginpost(request):
                 request.session['lid'] = a.id
                 return render(request, 'subadmintemplates/sadmin_home.html')
             elif a.type == 'admin':
-                return render(request, 'admintemplates/admin_home.html')
+                return render(request, 'admintemplates/index.html')
             elif a.type == 'judge':
                 request.session['lid'] = a.id
                 return render(request, 'judgestemplates/judges_home.html')
@@ -116,7 +116,8 @@ def admin_addsubadminpost(request):
     subadminobj.email = s_adminmail
     subadminobj.LOGIN = loginobj
     subadminobj.save()
-    return admin_addsubadminload(request)
+    return HttpResponse("<script>alert('Successfully Saved...!');window.history.back()</script>") and admin_addsubadminload(request)
+
 
 
 def admin_addstaffload(request):

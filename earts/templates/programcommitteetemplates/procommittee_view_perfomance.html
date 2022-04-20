@@ -15,14 +15,14 @@
   </tr>
   <tr>
     <th>#</th>
-    <th>Program&nbsp;Name </th><th>Participants Name</th><th>Perfomance Name </th><th>&nbsp;</th>
+    <th>Program&nbsp;Name </th><th>Participants Name</th><th>Perfomance Name </th><th>Total score</th><th>&nbsp;</th>
     </tr>
     {% for i in perfomancedata  %}
   <tr>
       <td>{{ forloop.counter }}</td>
       <td>{{ i.PROGRAMS.program_name }}&nbsp;</td>
       <td>{{ i.PARTICIPANTS.STUDENT.student_name }}</td>
-      <td>{{ i.performance_name }} </td>
+      <td>{{ i.performance_name }} </td><td>{{ i.score }}</td>
       <td><a href="/earts/procommittee_viewperfomance2/{{ i.id }}">View</a></td>
   </tr>
     {% endfor %}
