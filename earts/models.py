@@ -120,6 +120,7 @@ class performance(models.Model):
     score1=models.CharField(max_length=10,default="0")
     score2=models.CharField(max_length=10,default="0")
     score3=models.CharField(max_length=10,default="0")
+    totalscore=models.CharField(max_length=100,default="0")
     judge1=models.ForeignKey(judges,on_delete=models.CASCADE,related_name="j3")
     judge2=models.ForeignKey(judges,on_delete=models.CASCADE,related_name="j2")
     judge3=models.ForeignKey(judges,on_delete=models.CASCADE,related_name="j1")

@@ -5,7 +5,7 @@ from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from pip._vendor.requests import session
-
+from django.db.models import Sum
 from .models import login, subadmin, staff, course, student, schedule, events, programs, participants, \
     program_committee, judges, performance, judges_assigned, result, complaint, comments_rating
 
@@ -969,9 +969,9 @@ def judges_scoreperfomance(request):
            perfomanceobj.save()
            return HttpResponse("<script>alert('Scored...!');window.history.back()</script>")
         else:
-            return HttpResponse("<script>alert('Already Scored');window.history.back()</script>")
-
-###########################################program_committee###########################
+           return HttpResponse("<script>alert('Already Scored');window.history.back()</script>")
+    ###########################################program_committee###########################
+    ###########################################program_committee###########################
 
 def procommitte_homeload(request):
     procommobj = program_committee.objects.filter(STAFF__LOGIN_id=request.session['lid'])
@@ -1073,18 +1073,39 @@ def procommittee_deletejudgeassgn(request, id):
     return redirect('/earts/procommittee_viewassignedjudgesload/')
 
 
-def procommittee_viewperfomanceload(request, id):
+def procommittee_viewperfomanceload(request,id):
     perfomanceobj = performance.objects.filter(PROGRAMS_id=id)
-    return render(request, 'programcommitteetemplates/procommittee_view_perfomance.html',
-                  {'perfomancedata': perfomanceobj})
+    sums=0
+    ls = []
+    for i in perfomanceobj:
+        jobj=i.score1
+        opj=i.score2
+        hy=i.score3
+        sums=int(jobj)+int(opj)+int(hy)
+        ls.append({"program_name":i.PROGRAMS.program_name,"ss":i.PARTICIPANTS.STUDENT.student_name,"p":i.performance_name,"sc":sums,"id":i.id})
+    return render(request, 'programcommitteetemplates/procommittee_view_perfomance.html',{'perfomancedata': ls})
 
 
 def procommittee_viewperfomance2(request, id):
     viewobj = performance.objects.get(id=id)
     return render(request, 'programcommitteetemplates/procommittee_view_perfomance2.html', {'viewdata': viewobj})
 
+def procommittee_saveresults(request):
+    perfobj=performance.objects.all()
 
-# Students/participants
+    for i in perfobj:
+      sc1=i.score1
+      sc2=i.score2
+      sc3=i.score3
+      print(sc3,sc2,sc1)
+      if(sc3 and sc2 and sc1!=0):
+        sum1=int(sc1)+int(sc2)+int(sc3)
+        i.totalscore=sum1
+        i.save()
+
+
+
+#Students/participants
 
 def student_homeload(request):
     return render(request, 'participants_studentstemplates/student_home.html')
@@ -1187,6 +1208,7 @@ def student_uploadprogramspost(request):
     pobj = performance.objects.filter(PARTICIPANTS_id=praticipationid)
     if pobj.exists():
         return HttpResponse("<script>alert('Already Uploaded');window.history.back()</script>")
+
     performanceobj = performance()
     performanceobj.PROGRAMS_id = progobj
     performanceobj.PARTICIPANTS_id = praticipationid
@@ -1196,6 +1218,7 @@ def student_uploadprogramspost(request):
     performanceobj.judge2_id = j2
     performanceobj.judge3_id = j3
     performanceobj.save()
+
     return student_uploadprogramsload(request, progobj, praticipationid)
 
 

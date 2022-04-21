@@ -16,17 +16,17 @@
   <tr>
     <th>#</th>
     <th>Program&nbsp;Name </th><th>Participants Name</th><th>Perfomance Name </th><th>Total score</th><th>&nbsp;</th>
-    </tr>
+          </tr>
     {% for i in perfomancedata  %}
   <tr>
       <td>{{ forloop.counter }}</td>
-      <td>{{ i.PROGRAMS.program_name }}&nbsp;</td>
-      <td>{{ i.PARTICIPANTS.STUDENT.student_name }}</td>
-      <td>{{ i.performance_name }} </td><td>{{ i.score- }}</td>
+      <td>{{ i.program_name }}&nbsp;</td>
+      <td>{{ i.ss }}</td>
+      <td>{{ i.p }} </td><td>{{ i.sc }}</td>
       <td><a href="/earts/procommittee_viewperfomance2/{{ i.id }}">View</a></td>
   </tr>
     {% endfor %}
-</table>
-
+   </table>
+    <a href="/earts/procommittee_saveresults/" >Save&nbsp;Result</a>
 </body>
 </html>
