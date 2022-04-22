@@ -117,6 +117,7 @@ urlpatterns = [
     path('procommittee_viewassignedjudgesload/',views.procommittee_viewassignedjudgesload),
     path('procommittee_deletejudgeassgn/<str:id>',views.procommittee_deletejudgeassgn),
     path('procommittee_saveresults/',views.procommittee_saveresults),
+    path('procommittee_publishresult/',views.procommittee_publishresult),
 
 
 

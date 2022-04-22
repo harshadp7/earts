@@ -228,7 +228,8 @@ def admin_addeventpost(request):
     eventobj.event_date = eventdate
     eventobj.event_discription = eventdisc
     eventobj.save()
-    return admin_addeventload(request)
+    return admin_addeventload(request) and HttpResponse("<script>alert('Event Added...!');</script>")
+
 
 
 def admin_viewsubadminload(request):
@@ -1074,6 +1075,7 @@ def procommittee_deletejudgeassgn(request, id):
 
 
 def procommittee_viewperfomanceload(request,id):
+    request.session['pgmid2'] = str(id)
     perfomanceobj = performance.objects.filter(PROGRAMS_id=id)
     sums=0
     ls = []
@@ -1082,26 +1084,40 @@ def procommittee_viewperfomanceload(request,id):
         opj=i.score2
         hy=i.score3
         sums=int(jobj)+int(opj)+int(hy)
-        ls.append({"program_name":i.PROGRAMS.program_name,"ss":i.PARTICIPANTS.STUDENT.student_name,"p":i.performance_name,"sc":sums,"id":i.id})
+        ls.append({"program_name":i.PROGRAMS.program_name,"ss":i.PARTICIPANTS.STUDENT.student_name,"p":i.performance_name,"sc":sums,"id":i.id,"pid":i.PROGRAMS_id})
     return render(request, 'programcommitteetemplates/procommittee_view_perfomance.html',{'perfomancedata': ls})
 
-
-def procommittee_viewperfomance2(request, id):
-    viewobj = performance.objects.get(id=id)
-    return render(request, 'programcommitteetemplates/procommittee_view_perfomance2.html', {'viewdata': viewobj})
-
 def procommittee_saveresults(request):
-    perfobj=performance.objects.all()
+    pgmid1=request.session['pgmid2']
+    print(pgmid1)
+    perfobj=performance.objects.filter(PROGRAMS_id=pgmid1)
 
     for i in perfobj:
       sc1=i.score1
       sc2=i.score2
       sc3=i.score3
-      print(sc3,sc2,sc1)
-      if(sc3 and sc2 and sc1!=0):
-        sum1=int(sc1)+int(sc2)+int(sc3)
-        i.totalscore=sum1
-        i.save()
+      print(sc2,sc3,sc1)
+      if(int(sc3) and int(sc2) and int(sc1)!=0):
+         sum1=int(sc1)+int(sc2)+int(sc3)
+         i.totalscore=sum1
+         i.save()
+      else:
+          return HttpResponse("<script>alert('Judges Not Scored..!');window.history.back()</script>")
+    return HttpResponse("<script>alert('Saved...!');window.history.back()</script>")
+
+def procommittee_publishresult(request):
+    pgmid1=request.session['pgmid2']
+    perfobj=performance.objects.filter(PROGRAMS_id=pgmid1)
+    ls=[]
+    for i in perfobj:
+        ls.append(int(i.totalscore))
+    list=sorted(ls,reverse=1)
+
+    return HttpResponse("<script>alert('done..!');window.history.back()</script>")
+def procommittee_viewperfomance2(request, id):
+    viewobj = performance.objects.get(id=id)
+    return render(request, 'programcommitteetemplates/procommittee_view_perfomance2.html', {'viewdata': viewobj})
+
 
 
 
