@@ -6,7 +6,7 @@
 </head>
 
 <body><form action="/earts/student_uploadprogramsload/" method="post">  <table width="407" border="1">
-
+{% if perfomance.file_type == 'Image' %}
   <tr>
     <th width="173">Program&nbsp;Name</td>
     <td width="218">{{ perfomance.PROGRAMS.program_name}}</td>
@@ -23,7 +23,44 @@
     </tr>
 	 <tr>
     <td  colspan="2"><button name="back" type="submit">Back</button></td>
+    </tr>{% elif perfomance.file_type == "Video" %}
+      <tr>
+    <th width="173">Program&nbsp;Name</td>
+    <td width="218">{{ perfomance.PROGRAMS.program_name}}</td>
+  </tr>
+    <tr>
+    <th width="173">Participant&nbsp;Name</td>
+    <td width="218">{{ perfomance.PARTICIPANTS.STUDENT.student_name}}</td>
+  </tr>
+    <th width="173">Perfomance&nbsp;Name</th>
+    <td width="218">{{ perfomance.performance_name }}</td>
+  </tr>
+  <tr>
+    <td  colspan="2"> <video height="415" controls autoplay src="{{ perfomance.uploaded_files }}" frameborder="0"  allowfullscreen=""></video>
+</td>
     </tr>
+	 <tr>
+    <td  colspan="2"><button name="back" type="submit">Back</button></td>
+    </tr>
+          </tr>{% else %}
+      <tr>
+    <th width="173">Program&nbsp;Name</td>
+    <td width="218">{{ perfomance.PROGRAMS.program_name}}</td>
+  </tr>
+    <tr>
+    <th width="173">Participant&nbsp;Name</td>
+    <td width="218">{{ perfomance.PARTICIPANTS.STUDENT.student_name}}</td>
+  </tr>
+    <th width="173">Perfomance&nbsp;Name</th>
+    <td width="218">{{ perfomance.performance_name }}</td>
+  </tr>
+  <tr>
+    <td  colspan="2"> <audio height="415" controls autoplay src="{{ perfomance.uploaded_files }}" frameborder="0"  allowfullscreen=""></audio>
+</td>
+    </tr>
+	 <tr>
+    <td  colspan="2"><button name="back" type="submit">Back</button></td>
+    </tr>{% endif %}
 </table>
 </form>
 </body>

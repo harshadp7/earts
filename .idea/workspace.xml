@@ -2,14 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c7ddf27-e2c1-4dd6-81b9-485d7bdaf20c" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/earts/templates/audiencetemplates/public.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/earts/templates/audiencetemplates/public1.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/earts/templates/audiencetemplates/public2.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/earts/templates/audiencetemplates/public3.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/earts/static/desk/src/images/apple-touch-icon.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/admintemplates/admin_add_Event.html" afterPath="$PROJECT_DIR$/earts/templates/admintemplates/admin_add_Event.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/admintemplates/admin_add_SubAdmin.html" afterPath="$PROJECT_DIR$/earts/templates/admintemplates/admin_add_SubAdmin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/models.py" afterPath="$PROJECT_DIR$/earts/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/static/desk/index.html" afterPath="$PROJECT_DIR$/earts/static/desk/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/admintemplates/admin_home.html" afterPath="$PROJECT_DIR$/earts/templates/admintemplates/admin_home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/admintemplates/admin_view_Events.html" afterPath="$PROJECT_DIR$/earts/templates/admintemplates/admin_view_Events.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/admintemplates/admin_view_SubAdmin.html" afterPath="$PROJECT_DIR$/earts/templates/admintemplates/admin_view_SubAdmin.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/admintemplates/index.html" afterPath="$PROJECT_DIR$/earts/templates/admintemplates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_view_perfomance.html" afterPath="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_view_perfomance.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/landingpage.html" afterPath="$PROJECT_DIR$/earts/templates/landingpage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/participants_studentstemplates/student_upload_program.html" afterPath="$PROJECT_DIR$/earts/templates/participants_studentstemplates/student_upload_program.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/participants_studentstemplates/student_view_perfomance.html" afterPath="$PROJECT_DIR$/earts/templates/participants_studentstemplates/student_view_perfomance.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/urls.py" afterPath="$PROJECT_DIR$/earts/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/views.py" afterPath="$PROJECT_DIR$/earts/views.py" />
     </list>
@@ -38,56 +44,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/earts/templates/admintemplates/index.html">
+      <file leaf-file-name="landingpage.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/earts/templates/landingpage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="569">
-              <caret line="305" column="0" lean-forward="true" selection-start-line="305" selection-start-column="0" selection-end-line="305" selection-end-column="0" />
+            <state relative-caret-position="1533">
+              <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin_add_SubAdmin.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/earts/templates/admintemplates/admin_add_SubAdmin.html">
+      <file leaf-file-name="public2.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/earts/templates/audiencetemplates/public2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="64" column="8" lean-forward="true" selection-start-line="60" selection-start-column="2" selection-end-line="64" selection-end-column="8" />
+            <state relative-caret-position="-291">
+              <caret line="8" column="28" lean-forward="true" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin_add_Event.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/earts/templates/admintemplates/admin_add_Event.html">
+      <file leaf-file-name="public3.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/earts/templates/audiencetemplates/public3.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="16" column="106" lean-forward="false" selection-start-line="16" selection-start-column="106" selection-end-line="16" selection-end-column="106" />
-              <folding>
-                <element signature="e#336#342#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="1365">
+              <caret line="65" column="24" lean-forward="false" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin_view_Events.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/earts/templates/admintemplates/admin_view_Events.html">
+      <file leaf-file-name="student_view_perfomance.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/earts/templates/participants_studentstemplates/student_view_perfomance.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding>
-                <element signature="e#659#665#0#HTML" expanded="true" />
-                <element signature="e#721#727#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="798">
+              <caret line="38" column="96" lean-forward="false" selection-start-line="38" selection-start-column="65" selection-end-line="38" selection-end-column="96" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/earts/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="221" column="41" lean-forward="true" selection-start-line="221" selection-start-column="41" selection-end-line="221" selection-end-column="41" />
+            <state relative-caret-position="341">
+              <caret line="1320" column="0" lean-forward="true" selection-start-line="1320" selection-start-column="0" selection-end-line="1320" selection-end-column="0" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -95,31 +96,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin_view_SubAdmin.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/earts/templates/admintemplates/admin_view_SubAdmin.html">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/earts/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="577">
+              <caret line="139" column="25" lean-forward="false" selection-start-line="139" selection-start-column="25" selection-end-line="139" selection-end-column="25" />
+              <folding>
+                <element signature="e#1#29#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/earts/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="49" column="6" lean-forward="false" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="form-pickers.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/earts/static/desk/form-pickers.html">
+      <file leaf-file-name="video-player.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/earts/static/desk/video-player.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="493" column="114" lean-forward="false" selection-start-line="493" selection-start-column="36" selection-end-line="493" selection-end-column="114" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin_home.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/earts/templates/admintemplates/admin_home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+            <state relative-caret-position="735">
+              <caret line="497" column="26" lean-forward="true" selection-start-line="491" selection-start-column="20" selection-end-line="497" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -137,36 +140,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>icin</find>
-      <find>icon</find>
-      <find>main-container</find>
-      <find>button</find>
-      <find>btn</find>
-      <find>a</find>
-      <find>.a</find>
-      <find>sidebar</find>
-      <find>li.</find>
-      <find>item</find>
-      <find>text</find>
-      <find>mtext</find>
-      <find>basic T</find>
-      <find>home</find>
-      <find>drop</find>
-      <find>data-table table stripe hover nowrap</find>
-      <find>search</find>
-      <find>label</find>
-      <find>DataTables_Table_0_filter</find>
-      <find>ear</find>
+      <find>judges</find>
+      <find>publish</find>
+      <find>PARTICIP</find>
+      <find>STUDENT</find>
+      <find>__</find>
+      <find>perf</find>
+      <find>class</find>
+      <find>post</find>
+      <find>perfom</find>
+      <find>publi</find>
+      <find>res</find>
+      <find>publ</find>
+      <find>pub</find>
+      <find>upload</find>
+      <find>procommittee_view</find>
+      <find>href</find>
+      <find>sedna</find>
+      <find>logo</find>
+      <find>ico</find>
+      <find>buttons ite</find>
+      <find>mac</find>
+      <find>primary</find>
+      <find>perfo</find>
       <find>view</find>
-      <find>simple</find>
-      <find>select</find>
-      <find>&lt;f</find>
-      <find>menu-icon</find>
-      <find>main</find>
-      <find>defaulted</find>
-      <find>sear</find>
-      <find>add_even</find>
-      <find>add_ev</find>
+      <find>admin</find>
+      <find>user</find>
+      <find>add_judges</find>
+      <find>add_sub</find>
+      <find>plyr</find>
+      <find>viewperfoma</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -175,10 +178,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/earts/templates/participants_studentstemplates/student_view_participants.html" />
-        <option value="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_view_programs.html" />
-        <option value="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_view_participants.html" />
-        <option value="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_edit_programs.html" />
         <option value="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_assign_judges.html" />
         <option value="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_schedule_program.html" />
         <option value="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_view_schedules.html" />
@@ -186,7 +185,6 @@
         <option value="$PROJECT_DIR$/earts/templates/admintemplates/admin_view_assignedjudges.html" />
         <option value="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_view_participants.html" />
         <option value="$PROJECT_DIR$/untitled/urls.py" />
-        <option value="$PROJECT_DIR$/earts/templates/participants_studentstemplates/student_view_perfomance.html" />
         <option value="$PROJECT_DIR$/earts/templates/judgestemplates/judges_home.html" />
         <option value="$PROJECT_DIR$/earts/templates/judgestemplates/judges_view_programs.html" />
         <option value="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_home.html" />
@@ -200,11 +198,9 @@
         <option value="$PROJECT_DIR$/earts/templates/judgestemplates/judges_view_profile.html" />
         <option value="$PROJECT_DIR$/earts/templates/login.html" />
         <option value="$PROJECT_DIR$/earts/templates/judgestemplates/judges_view_perfomance.html" />
-        <option value="$PROJECT_DIR$/earts/templates/participants_studentstemplates/student_upload_program.html" />
         <option value="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_view_perfomance2.html" />
         <option value="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_view_profile.html" />
         <option value="$PROJECT_DIR$/earts/static/architectui-html-free/main.css" />
-        <option value="$PROJECT_DIR$/earts/templates/landingpage.html" />
         <option value="$PROJECT_DIR$/earts/templates/admintemplates/admin_temp.html" />
         <option value="$PROJECT_DIR$/earts/static/homepage/index.html" />
         <option value="$PROJECT_DIR$/earts/templates/static/index.html" />
@@ -213,19 +209,26 @@
         <option value="$PROJECT_DIR$/earts/templates/participants_studentstemplates/student_view_participation.html" />
         <option value="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommitte_view_programs.html" />
         <option value="$PROJECT_DIR$/earts/static/desk/vendors/styles/core.css" />
-        <option value="$PROJECT_DIR$/earts/static/desk/index.html" />
-        <option value="$PROJECT_DIR$/earts/models.py" />
         <option value="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_view_perfomance.html" />
-        <option value="$PROJECT_DIR$/earts/urls.py" />
         <option value="$PROJECT_DIR$/earts/static/desk/src/styles/style.css" />
-        <option value="$PROJECT_DIR$/earts/templates/admintemplates/admin_home.html" />
         <option value="$PROJECT_DIR$/earts/static/desk/datatable.html" />
-        <option value="$PROJECT_DIR$/earts/templates/admintemplates/index.html" />
         <option value="$PROJECT_DIR$/earts/templates/admintemplates/admin_add_SubAdmin.html" />
         <option value="$PROJECT_DIR$/earts/templates/admintemplates/admin_view_Events.html" />
-        <option value="$PROJECT_DIR$/earts/templates/admintemplates/admin_view_SubAdmin.html" />
         <option value="$PROJECT_DIR$/earts/templates/admintemplates/admin_add_Event.html" />
+        <option value="$PROJECT_DIR$/earts/templates/admintemplates/admin_home.html" />
+        <option value="$PROJECT_DIR$/earts/models.py" />
+        <option value="$PROJECT_DIR$/earts/templates/participants_studentstemplates/student_upload_program.html" />
+        <option value="$PROJECT_DIR$/earts/templates/participants_studentstemplates/student_view_perfomance.html" />
+        <option value="$PROJECT_DIR$/earts/templates/admintemplates/index.html" />
+        <option value="$PROJECT_DIR$/earts/static/desk/index.html" />
+        <option value="$PROJECT_DIR$/earts/templates/admintemplates/admin_view_SubAdmin.html" />
+        <option value="$PROJECT_DIR$/earts/templates/audiencetemplates/public.html" />
+        <option value="$PROJECT_DIR$/earts/templates/audiencetemplates/public1.html" />
+        <option value="$PROJECT_DIR$/earts/templates/landingpage.html" />
+        <option value="$PROJECT_DIR$/earts/templates/audiencetemplates/public2.html" />
+        <option value="$PROJECT_DIR$/earts/urls.py" />
         <option value="$PROJECT_DIR$/earts/views.py" />
+        <option value="$PROJECT_DIR$/earts/templates/audiencetemplates/public3.html" />
       </list>
     </option>
   </component>
@@ -263,7 +266,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -326,60 +328,57 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="programcommitteetemplates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="earts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="audiencetemplates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="untitled" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="earts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="admintemplates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="untitled" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="untitled" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="earts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="desk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="untitled" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="untitled" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="earts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="desk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendors" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -391,19 +390,19 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\untitled\earts\templates\audiencetemplates" />
+      <recent name="D:\untitled\earts\templates" />
+      <recent name="D:\untitled\earts\templates\admintemplates" />
+      <recent name="D:\untitled\earts\templates\judgestemplates" />
+      <recent name="D:\untitled\earts\templates\programcommitteetemplates" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\untitled\earts" />
       <recent name="D:\untitled\earts\templates" />
       <recent name="D:\untitled\earts\templates\audiencetemplates" />
       <recent name="D:\untitled\earts\templates\admintemplates" />
       <recent name="D:\my_project\earts\templates" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\untitled\earts\templates\admintemplates" />
-      <recent name="D:\untitled\earts\templates\judgestemplates" />
-      <recent name="D:\untitled\earts\templates\programcommitteetemplates" />
-      <recent name="D:\untitled\earts\templates\subadmintemplates" />
-      <recent name="D:\untitled\earts\templates\participants_studentstemplates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -594,8 +593,8 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
         <env name="DJANGO_SETTINGS_MODULE" value="untitled.settings" />
+        <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="C:\Python36\python.exe" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -607,7 +606,7 @@
       <option name="port" value="8000" />
       <option name="host" value="" />
       <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="http://127.0.0.1:8000/earts/loginload/" />
+      <option name="browserUrl" value="http://127.0.0.1:8000/earts/" />
       <option name="runTestServer" value="false" />
       <option name="runNoReload" value="false" />
       <option name="useCustomRunCommand" value="false" />
@@ -793,7 +792,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650538375925</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="css">
+      <created>1650657531150</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1650657531154</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TodoView">
@@ -809,15 +815,16 @@
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18689582" sideWeight="0.478355" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279743" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49945828" sideWeight="0.5083468" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921588" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279743" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21436228" sideWeight="0.48925886" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34619507" sideWeight="0.4916532" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26369494" sideWeight="0.478355" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921588" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973147" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46087888" sideWeight="0.4916532" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2692515" sideWeight="0.521645" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39978564" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921588" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -827,7 +834,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -915,80 +921,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/earts/static/homepage/assets/images/logo-inverse.png" />
-    <entry file="file://$PROJECT_DIR$/earts/static/homepage/assets/css/main.css" />
-    <entry file="file://$PROJECT_DIR$/earts/templates/admintemplates/admin_temp.html" />
-    <entry file="file://$PROJECT_DIR$/earts/static/homepage/index.html" />
-    <entry file="file://$PROJECT_DIR$/earts/static/admin_temp/src/html/index.html" />
-    <entry file="file://$PROJECT_DIR$/earts/static/admin_temp/src/html/login.html" />
-    <entry file="file://$PROJECT_DIR$/earts/static/admin_temp/dist/index.html" />
-    <entry file="file://$PROJECT_DIR$/earts/templates/admintemplates/admin_view_Student.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="8" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/earts/templates/static/pages-sign-in.html" />
-    <entry file="file://$PROJECT_DIR$/earts/templates/Change_pass.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="78" lean-forward="false" selection-start-line="8" selection-start-column="78" selection-end-line="8" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/earts/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1575">
-          <caret line="75" column="17" lean-forward="false" selection-start-line="75" selection-start-column="17" selection-end-line="75" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/earts/templates/static/index.html" />
-    <entry file="file://$PROJECT_DIR$/earts/static/index.html" />
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/pycharm.jar!/resources/html5-schema/html5/meta.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-287">
-          <caret line="174" column="22" lean-forward="false" selection-start-line="174" selection-start-column="22" selection-end-line="174" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/earts/templates/static/desk/index.html" />
-    <entry file="file://$PROJECT_DIR$/earts/static/desk/form-basic.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-882">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python36/Lib/site-packages/setuptools/namespaces.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/earts/static/desk/basic-table.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="491" column="26" lean-forward="false" selection-start-line="491" selection-start-column="21" selection-end-line="491" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/earts/static/desk/image-dropzone.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="98" column="34" lean-forward="false" selection-start-line="98" selection-start-column="30" selection-end-line="98" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/earts/static/desk/ui-buttons.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="501" column="58" lean-forward="true" selection-start-line="501" selection-start-column="58" selection-end-line="501" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/earts/templates/admintemplates/admin_add_Student.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1051,20 +983,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_view_participants.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="25" column="58" lean-forward="false" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_assign_judges.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommitte_view_programs.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
@@ -1083,21 +1001,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="8" column="33" lean-forward="false" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_view_perfomance.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="30" column="28" lean-forward="true" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/earts/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="153" column="6" lean-forward="false" selection-start-line="153" selection-start-column="5" selection-end-line="153" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1133,49 +1036,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/earts/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="59" column="10" lean-forward="false" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/earts/static/desk/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="292" column="42" lean-forward="false" selection-start-line="292" selection-start-column="41" selection-end-line="292" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/earts/static/desk/datatable.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22974">
           <caret line="1115" column="10" lean-forward="true" selection-start-line="35" selection-start-column="4" selection-end-line="1115" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/earts/templates/admintemplates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="305" column="0" lean-forward="true" selection-start-line="305" selection-start-column="0" selection-end-line="305" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/earts/templates/admintemplates/admin_home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/earts/static/desk/form-pickers.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
+        <state relative-caret-position="10353">
           <caret line="493" column="114" lean-forward="false" selection-start-line="493" selection-start-column="36" selection-end-line="493" selection-end-column="114" />
           <folding />
         </state>
@@ -1183,28 +1053,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/earts/templates/admintemplates/admin_add_SubAdmin.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="64" column="8" lean-forward="true" selection-start-line="60" selection-start-column="2" selection-end-line="64" selection-end-column="8" />
+        <state relative-caret-position="1344">
+          <caret line="64" column="8" lean-forward="false" selection-start-line="60" selection-start-column="2" selection-end-line="64" selection-end-column="8" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/earts/templates/admintemplates/admin_view_SubAdmin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/earts/templates/admintemplates/admin_view_Events.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#659#665#0#HTML" expanded="true" />
-            <element signature="e#721#727#0#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1218,13 +1069,256 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/earts/views.py">
+    <entry file="file://$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_assign_judges.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="9" lean-forward="true" selection-start-line="13" selection-start-column="6" selection-end-line="19" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/templates/participants_studentstemplates/student_upload_program.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="47" column="28" lean-forward="false" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
+          <folding>
+            <marker date="1650710359957" expanded="true" signature="1274:1820" ph="{% for i in perfomanneobj ... %}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/templates/admintemplates/admin_edit_Staff.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/templates/admintemplates/admin_home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="17" column="10" lean-forward="false" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_view_perfomance.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="30" column="28" lean-forward="true" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_view_participants.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="25" column="58" lean-forward="false" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python36/Lib/site-packages/django/apps/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="28" lean-forward="true" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/static/Landing/favicon.ico">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-819">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/static/desk/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
-          <caret line="221" column="41" lean-forward="true" selection-start-line="221" selection-start-column="41" selection-end-line="221" selection-end-column="41" />
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/static/desk/ui-list-group.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1428">
+          <caret line="503" column="26" lean-forward="true" selection-start-line="492" selection-start-column="20" selection-end-line="503" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/static/Landing/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="163" column="44" lean-forward="true" selection-start-line="163" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/templates/admintemplates/admin_view_Events.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="13" column="83" lean-forward="true" selection-start-line="13" selection-start-column="83" selection-end-line="13" selection-end-column="83" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/static/desk/ui-buttons.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="490" column="32" lean-forward="false" selection-start-line="490" selection-start-column="0" selection-end-line="491" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/templates/admintemplates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-394">
+          <caret line="207" column="28" lean-forward="false" selection-start-line="207" selection-start-column="27" selection-end-line="207" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/templates/admintemplates/admin_view_SubAdmin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="46" column="160" lean-forward="false" selection-start-line="46" selection-start-column="156" selection-end-line="46" selection-end-column="160" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/templates/audiencetemplates/public.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/templates/audiencetemplates/public1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="28" column="79" lean-forward="false" selection-start-line="28" selection-start-column="79" selection-end-line="28" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="49" column="6" lean-forward="false" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="577">
+          <caret line="139" column="25" lean-forward="false" selection-start-line="139" selection-start-column="25" selection-end-line="139" selection-end-column="25" />
+          <folding>
+            <element signature="e#1#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/templates/landingpage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1533">
+          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/static/desk/video-player.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="497" column="26" lean-forward="true" selection-start-line="491" selection-start-column="20" selection-end-line="497" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/templates/audiencetemplates/public2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-291">
+          <caret line="8" column="28" lean-forward="true" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_view_perfomance2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="1320" column="0" lean-forward="true" selection-start-line="1320" selection-start-column="0" selection-end-line="1320" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/templates/participants_studentstemplates/student_view_perfomance.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="798">
+          <caret line="38" column="96" lean-forward="false" selection-start-line="38" selection-start-column="65" selection-end-line="38" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/earts/templates/audiencetemplates/public3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1365">
+          <caret line="65" column="24" lean-forward="false" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -1,0 +1,76 @@
+{% extends 'landingpage.html' %}
+{% block body %}
+	<div class="mobile-menu-overlay"></div>
+
+	<div class="main-container">
+		<div class="pd-ltr-20 xs-pd-20-10">
+			<div class="min-height-600px">
+                <!-- Simple Datatable start -->
+				<div class="card-box mb-30">
+					<div class="pd-20">
+						<h2 class="text-blue h2">Performances View</h2>
+					</div>
+{#					<div class="col-lg-4 col-md-6 col-sm-12 mb-30">#}
+                <h4>{{ data.file_type}}</h4>
+                        {% if data.file_type == "Video" %}
+						<div class="pd-20 card-box height-100-p">
+                           <div class="pd-20 card-box mb-30">
+					        <div class="clearfix mb-20">
+						      <div class="pull-left">
+							    <h4 class="text-blue h4">Plyr HTML5 Video</h4>
+							    <p class="font-14 ml-0">A simple, accessible HTML5 media player <a href="https://github.com/sampotts/plyr" target="_blank" class="weight-700 text-blue">Click Here</a></p>
+						      </div>
+					        </div>
+					        <div class="container">
+						      <video poster="" controls crossorigin>
+						     	<source src="{{ data.uploaded_files }}" type="video/mp4">
+						    	<source src="{{ data.uploaded_files }}" type="video/webm">
+						      </video>
+					        </div>
+				           </div>
+						</div>
+                        {% elif data.file_type == 'Image' %}
+						<div class="pd-20 card-box height-100-p">
+                           <div class="pd-20 card-box mb-30">
+					        <div class="clearfix mb-20">
+						      <div class="pull-left">
+							    <h4 class="text-blue h4">Plyr HTML5 Video</h4>
+							    <p class="font-14 ml-0">A simple, accessible HTML5 media player <a href="https://github.com/sampotts/plyr" target="_blank" class="weight-700 text-blue">Click Here</a></p>
+						      </div>
+					        </div>
+					        <div class="container">
+						      <video poster="" controls crossorigin>
+						     	<source src="{{ data.uploaded_files }}" type="video/mp4">
+						    	<source src="{{ data.uploaded_files }}" type="video/webm">
+						      </video>
+					        </div>
+				           </div>
+						</div>
+                        {% else %}
+						<div class="pd-20 card-box height-100-p">
+                           <div class="pd-20 card-box mb-30">
+					        <div class="clearfix mb-20">
+						      <div class="pull-left">
+							    <h4 class="text-blue h4">Plyr HTML5 Video</h4>
+							    <p class="font-14 ml-0">A simple, accessible HTML5 media player <a href="https://github.com/sampotts/plyr" target="_blank" class="weight-700 text-blue">Click Here</a></p>
+						      </div>
+					        </div>
+					        <div class="container">
+						      <audio controls>
+						      	<source src="{{ data.uploaded_files }}" type="audio/mp3">
+						     	<source src="{{ data.uploaded_files }}" type="audio/ogg">
+						      </audio>
+					        </div>
+				           </div>
+						</div>
+                        {% endif %}
+{#					</div>#}
+				</div>
+
+				<!-- Export Datatable End -->
+			</div><footer>
+			<div class="footer-wrap pd-20 mb-20 card-box">
+            </div></footer>
+		</div>
+	</div>
+{% endblock %}

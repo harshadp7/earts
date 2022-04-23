@@ -4,7 +4,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('landingpage/', views.landingpage),
+    path('', views.landingpage),
     path('loginload/', views.loginload),
     path('loginpost/', views.loginpost),
     path('changepasswordload/<str:id>', views.changepasswordload),
@@ -134,6 +134,10 @@ urlpatterns = [
     path('student_uploadprogramspost/',views.student_uploadprogramspost),
     path('student_deleteperfomance/<str:id>/<progobj>/<praticipationid>',views.student_deleteperfomance),
     path('student_viewperfomanceload/<str:id>',views.student_viewperfomanceload),
+    path('publicpageload/',views.publicpageload),
+    path('publicpageload1/<str:id>',views.publicpageload1),
+    path('publicpageload2/<str:id>',views.publicpageload2),
+    path('publicpageload3/<str:id>',views.publicpageload3),
 
 
 ]

@@ -117,6 +117,7 @@ class performance(models.Model):
     PARTICIPANTS= models.ForeignKey(participants, on_delete=models.CASCADE)
     PROGRAMS= models.ForeignKey(programs, on_delete=models.CASCADE)
     uploaded_files=models.CharField(max_length=500)
+    file_type=models.CharField(max_length=500)
     score1=models.CharField(max_length=10,default="0")
     score2=models.CharField(max_length=10,default="0")
     score3=models.CharField(max_length=10,default="0")
@@ -140,11 +141,10 @@ class schedule(models.Model):
 
 class result(models.Model):
     PROGRAMS = models.ForeignKey(programs, on_delete=models.CASCADE)
-    STUDENT = models.ForeignKey(student, on_delete=models.CASCADE)
     date=models.CharField(max_length=50)
-    result1=models.CharField(max_length=50)
-    result2=models.CharField(max_length=50)
-    result3=models.CharField(max_length=50)
+    result1 = models.ForeignKey(student, on_delete=models.CASCADE, related_name="s1")
+    result2 = models.ForeignKey(student, on_delete=models.CASCADE, related_name="s2")
+    result3 = models.ForeignKey(student, on_delete=models.CASCADE, related_name="s3")
 
     class Meta:
         db_table = 'result'

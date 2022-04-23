@@ -70,9 +70,9 @@ def changepasswordpost(request):
             loginobj.password = conpassword
             loginobj.save()
         else:
-            return HttpResponse("Entered Password Doesnot Matching")
+            return HttpResponse("Entered Password Does'nt Matching")
     else:
-        return HttpResponse("Entered Password Doesnot Exist")
+        return HttpResponse("Entered Password Does'nt Exist")
 
     return render(request, 'Change_pass.html')
 
@@ -98,10 +98,10 @@ def admin_addsubadminpost(request):
     fs.save(filename, s_adminimg)
 
     url = '/media/' + nam + ".jpg"
-
+    passw=str(random.randint(1111, 666666))
     loginobj = login()
     loginobj.username = s_adminmail
-    loginobj.password = str(random.randint(1111, 666666))
+    loginobj.password = passw
     loginobj.type = "Subadmin"
     loginobj.save()
 
@@ -116,7 +116,15 @@ def admin_addsubadminpost(request):
     subadminobj.email = s_adminmail
     subadminobj.LOGIN = loginobj
     subadminobj.save()
-    return HttpResponse("<script>alert('Successfully Saved...!');window.history.back()</script>") and admin_addsubadminload(request)
+    import smtplib
+    s = smtplib.SMTP('smtp.gmail.com', 587)
+    s.starttls()
+    s.login("eartsproject1@gmail.com", "Earts@123")
+    message = "Your Password is " + str(passw)
+    s.sendmail("eartsproject1@gmail.com", s_adminmail, message)
+    s.quit()
+
+    return HttpResponse("<script>alert('Successfully Added...!');window.history.back()</script>") and admin_addsubadminload(request)
 
 
 
@@ -144,10 +152,10 @@ def admin_addstaffpost(request):
     fs.save(filename, staffimg)
 
     url = '/media/' + nam + ".jpg"
-
+    passw=str(random.randint(1111, 666666))
     loginobj = login()
     loginobj.username = staffmail
-    loginobj.password = str(random.randint(1111, 666666))
+    loginobj.password = passw
     loginobj.type = "staff"
     loginobj.save()
 
@@ -164,6 +172,14 @@ def admin_addstaffpost(request):
     staffobj.department = staffdept
     staffobj.LOGIN = loginobj
     staffobj.save()
+
+    import smtplib
+    s = smtplib.SMTP('smtp.gmail.com', 587)
+    s.starttls()
+    s.login("eartsproject1@gmail.com", "Earts@123")
+    message = "Your Password is " + str(passw)
+    s.sendmail("eartsproject1@gmail.com", staffmail, message)
+    s.quit()
 
     return admin_addstaffload(request)
 
@@ -191,10 +207,10 @@ def admin_addstudentpost(request):
     url = '/media/' + nam + ".jpg"
     studmail = request.POST['textfield5']
     studcourse = request.POST['select']
-
+    ss=str(random.randint(1111, 666666))
     loginobj = login()
     loginobj.username = studmail
-    loginobj.password = str(random.randint(1111, 666666))
+    loginobj.password =ss
     loginobj.type = "student"
     loginobj.save()
 
@@ -210,6 +226,17 @@ def admin_addstudentpost(request):
     studentobj.COURSE_id = studcourse
     studentobj.LOGIN = loginobj
     studentobj.save()
+
+
+    import smtplib
+    s=smtplib.SMTP('smtp.gmail.com',587)
+    s.starttls()
+    s.login("eartsproject1@gmail.com","Earts@123")
+    message="Your Password is "+ str(ss)
+    s.sendmail("eartsproject1@gmail.com",studmail,message)
+    s.quit()
+
+
 
     return admin_addstudentload(request)
 
@@ -597,10 +624,10 @@ def sadmin_addjudgespost(request):
 
     url = '/media/' + nam + ".jpg"
     judgesemail = request.POST['textfield5']
-
+    passw=str(random.randint(1111, 666666))
     loginobj = login()
     loginobj.username = judgesemail
-    loginobj.password = "1234"
+    loginobj.password = passw
     loginobj.type = "judge"
     loginobj.save()
 
@@ -615,6 +642,15 @@ def sadmin_addjudgespost(request):
     judgesobj.email = judgesemail
     judgesobj.LOGIN = loginobj
     judgesobj.save()
+
+    import smtplib
+    s = smtplib.SMTP('smtp.gmail.com', 587)
+    s.starttls()
+    s.login("eartsproject1@gmail.com", "Earts@123")
+    message = "Your Password is " + str(passw)
+    s.sendmail("eartsproject1@gmail.com", judgesemail, message)
+    s.quit()
+
     return sadmin_addjudgesload(request)
 
 
@@ -1106,14 +1142,30 @@ def procommittee_saveresults(request):
     return HttpResponse("<script>alert('Saved...!');window.history.back()</script>")
 
 def procommittee_publishresult(request):
+    resultobj=result()
     pgmid1=request.session['pgmid2']
-    perfobj=performance.objects.filter(PROGRAMS_id=pgmid1)
-    ls=[]
-    for i in perfobj:
-        ls.append(int(i.totalscore))
-    list=sorted(ls,reverse=1)
+    pobj = result.objects.filter(PROGRAMS_id=pgmid1)
+    pp=performance.objects.filter(PROGRAMS_id=pgmid1).order_by("-totalscore")[:3]
+    ids=[]
+    pid=[]
+    if pobj.exists():
+       return HttpResponse("<script>alert('Already Published');window.history.back()</script>")
+    else:
+       for i in pp:
+          ids.append(i.PARTICIPANTS.STUDENT.id)
+          pid.append(i.PROGRAMS_id)
+       id1=ids[0]
+       id2=ids[1]
+       id3=ids[2]
+       id4=pid[0]
+       resultobj.result1_id=id1
+       resultobj.result2_id=id2
+       resultobj.result3_id=id3
+       resultobj.PROGRAMS_id=id4
+       resultobj.save()
+    return HttpResponse("<script>alert('Published..!');window.history.back()</script>")
 
-    return HttpResponse("<script>alert('done..!');window.history.back()</script>")
+
 def procommittee_viewperfomance2(request, id):
     viewobj = performance.objects.get(id=id)
     return render(request, 'programcommitteetemplates/procommittee_view_perfomance2.html', {'viewdata': viewobj})
@@ -1202,13 +1254,22 @@ def student_uploadprogramspost(request):
     perfomancename = request.POST['text1']
     uploadfile = request.FILES['file']
     praticipationid = request.POST["praticipationid"]
+    filetype = request.POST["select"]
     progobj = request.POST["progobj"]
     fs = FileSystemStorage()
     nam = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M")
-    filename = nam + ".jpg"
-    fs.save(filename, uploadfile)
-
-    url = '/media/' + nam + ".jpg"
+    if filetype == 'Image':
+      filename = nam + ".jpg"
+      fs.save(filename, uploadfile)
+      url = '/media/' + nam + ".jpg"
+    elif filetype == 'Video':
+      filename = nam + ".mp4"
+      fs.save(filename, uploadfile)
+      url = '/media/' + nam + ".mp4"
+    else:
+      filename = nam + ".mp3"
+      fs.save(filename, uploadfile)
+      url = '/media/' + nam + ".mp3"
     j1 = 0
     j2 = 0
     j3 = 0
@@ -1230,6 +1291,7 @@ def student_uploadprogramspost(request):
     performanceobj.PARTICIPANTS_id = praticipationid
     performanceobj.performance_name = perfomancename
     performanceobj.uploaded_files = url
+    performanceobj.file_type = filetype
     performanceobj.judge1_id = j1
     performanceobj.judge2_id = j2
     performanceobj.judge3_id = j3
@@ -1241,11 +1303,25 @@ def student_uploadprogramspost(request):
 
 def student_viewperfomanceload(request, id):
     performanceobj = performance.objects.get(id=id)
-    return render(request, 'participants_studentstemplates/student_view_perfomance.html',
-                  {'perfomance': performanceobj})
+    return render(request, 'participants_studentstemplates/student_view_perfomance.html',{'perfomance': performanceobj})
 
 
 def student_deleteperfomance(request, id, progobj, praticipationid):
     perfomanceobj = performance.objects.get(id=id)
     perfomanceobj.delete()
     return student_uploadprogramsload(request, progobj, praticipationid)
+
+def publicpageload(request):
+    eventobj=events.objects.all()
+    return render(request,'audiencetemplates/public.html',{'data': eventobj})
+
+def publicpageload1(request,id):
+    progobj=programs.objects.filter(EVENTS_id=id)
+    return render(request,'audiencetemplates/public1.html',{'data': progobj})
+
+def publicpageload2(request,id):
+    perfobj=performance.objects.filter(PROGRAMS_id=id)
+    return render(request,'audiencetemplates/public2.html',{'data':perfobj})
+def publicpageload3(request,id):
+    perfobj=performance.objects.get(id=id)
+    return render(request,'audiencetemplates/public3.html',{'data':perfobj})
