@@ -1229,7 +1229,6 @@ def procommittee_publishresult(request):
     pgmid1=request.session['pgmid2']
     pobj = result.objects.filter(PROGRAMS_id=pgmid1)
     pp=performance.objects.filter(PROGRAMS_id=pgmid1).order_by("-totalscore")[:3]
-    scores=pp.
     ids=[]
     pid=[]
     if pp.exists():

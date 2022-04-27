@@ -2,84 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c7ddf27-e2c1-4dd6-81b9-485d7bdaf20c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/earts/templates/audiencetemplates/public4.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/earts/templates/judgestemplates/judges_view_result.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/earts/templates/participants_studentstemplates/student_view_result.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_view_result.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/earts/templates/subadmintemplates/subadminhome.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/earts/templates/admintemplates/admin_send_Reply.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/earts/templates/admintemplates/admin_view_CommentsRating.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/earts/templates/admintemplates/admin_view_complaints&amp;reply.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_schedule_program.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_view_schedules.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_add_programs.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_edit_programs.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/models.py" afterPath="$PROJECT_DIR$/earts/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/static/desk/vendors/styles/style.css" afterPath="$PROJECT_DIR$/earts/static/desk/vendors/styles/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/static/desk/vendors/styles/style.min.css" afterPath="$PROJECT_DIR$/earts/static/desk/vendors/styles/style.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/static/desk/video-player.html" afterPath="$PROJECT_DIR$/earts/static/desk/video-player.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/Change_pass.html" afterPath="$PROJECT_DIR$/earts/templates/Change_pass.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/admintemplates/admin_add_Course.html" afterPath="$PROJECT_DIR$/earts/templates/admintemplates/admin_add_Course.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/admintemplates/admin_add_Event.html" afterPath="$PROJECT_DIR$/earts/templates/admintemplates/admin_add_Event.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/admintemplates/admin_add_Student.html" afterPath="$PROJECT_DIR$/earts/templates/admintemplates/admin_add_Student.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/admintemplates/admin_add_SubAdmin.html" afterPath="$PROJECT_DIR$/earts/templates/admintemplates/admin_add_SubAdmin.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/admintemplates/admin_add_staff.html" afterPath="$PROJECT_DIR$/earts/templates/admintemplates/admin_add_staff.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/admintemplates/admin_edit_Events.html" afterPath="$PROJECT_DIR$/earts/templates/admintemplates/admin_edit_Events.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/admintemplates/admin_edit_Staff.html" afterPath="$PROJECT_DIR$/earts/templates/admintemplates/admin_edit_Staff.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/admintemplates/admin_edit_Student.html" afterPath="$PROJECT_DIR$/earts/templates/admintemplates/admin_edit_Student.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/admintemplates/admin_edit_Subadmin.html" afterPath="$PROJECT_DIR$/earts/templates/admintemplates/admin_edit_Subadmin.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/admintemplates/admin_edit_course.html" afterPath="$PROJECT_DIR$/earts/templates/admintemplates/admin_edit_course.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/admintemplates/admin_view_Course.html" afterPath="$PROJECT_DIR$/earts/templates/admintemplates/admin_view_Course.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/admintemplates/admin_view_Events.html" afterPath="$PROJECT_DIR$/earts/templates/admintemplates/admin_view_Events.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/admintemplates/admin_view_Student.html" afterPath="$PROJECT_DIR$/earts/templates/admintemplates/admin_view_Student.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/admintemplates/admin_view_SubAdmin.html" afterPath="$PROJECT_DIR$/earts/templates/admintemplates/admin_view_SubAdmin.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/admintemplates/admin_view_assignedjudges.html" afterPath="$PROJECT_DIR$/earts/templates/admintemplates/admin_view_assignedjudges.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/admintemplates/admin_view_program_committee.html" afterPath="$PROJECT_DIR$/earts/templates/admintemplates/admin_view_program_committee.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/admintemplates/admin_view_staff.html" afterPath="$PROJECT_DIR$/earts/templates/admintemplates/admin_view_staff.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/admintemplates/index.html" afterPath="$PROJECT_DIR$/earts/templates/admintemplates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/audiencetemplates/public1.html" afterPath="$PROJECT_DIR$/earts/templates/audiencetemplates/public1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/audiencetemplates/public2.html" afterPath="$PROJECT_DIR$/earts/templates/audiencetemplates/public2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/audiencetemplates/public3.html" afterPath="$PROJECT_DIR$/earts/templates/audiencetemplates/public3.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/judgestemplates/judges_home.html" afterPath="$PROJECT_DIR$/earts/templates/judgestemplates/judges_home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/judgestemplates/judges_view_participants.html" afterPath="$PROJECT_DIR$/earts/templates/judgestemplates/judges_view_participants.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/judgestemplates/judges_view_perfomance.html" afterPath="$PROJECT_DIR$/earts/templates/judgestemplates/judges_view_perfomance.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/judgestemplates/judges_view_profile.html" afterPath="$PROJECT_DIR$/earts/templates/judgestemplates/judges_view_profile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/judgestemplates/judges_view_programs.html" afterPath="$PROJECT_DIR$/earts/templates/judgestemplates/judges_view_programs.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/landingpage.html" afterPath="$PROJECT_DIR$/earts/templates/landingpage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/login.html" afterPath="$PROJECT_DIR$/earts/templates/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/participants_studentstemplates/student_home.html" afterPath="$PROJECT_DIR$/earts/templates/participants_studentstemplates/student_home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/participants_studentstemplates/student_upload_program.html" afterPath="$PROJECT_DIR$/earts/templates/participants_studentstemplates/student_upload_program.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/participants_studentstemplates/student_view_Events.html" afterPath="$PROJECT_DIR$/earts/templates/participants_studentstemplates/student_view_Events.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/participants_studentstemplates/student_view_participation.html" afterPath="$PROJECT_DIR$/earts/templates/participants_studentstemplates/student_view_participation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/participants_studentstemplates/student_view_perfomance.html" afterPath="$PROJECT_DIR$/earts/templates/participants_studentstemplates/student_view_perfomance.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/participants_studentstemplates/student_view_profile.html" afterPath="$PROJECT_DIR$/earts/templates/participants_studentstemplates/student_view_profile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/participants_studentstemplates/student_view_programs.html" afterPath="$PROJECT_DIR$/earts/templates/participants_studentstemplates/student_view_programs.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommitte_view_assignedjudges.html" afterPath="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommitte_view_assignedjudges.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommitte_view_programs.html" afterPath="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommitte_view_programs.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_assign_judges.html" afterPath="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_assign_judges.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_edit_programs.html" afterPath="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_edit_programs.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_home.html" afterPath="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_view_participants.html" afterPath="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_view_participants.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_view_perfomance.html" afterPath="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_view_perfomance.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_view_perfomance2.html" afterPath="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_view_perfomance2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_view_profile.html" afterPath="$PROJECT_DIR$/earts/templates/programcommitteetemplates/procommittee_view_profile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_add_event.html" afterPath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_add_event.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_add_judges.html" afterPath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_add_judges.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_add_programcommittee.html" afterPath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_add_programcommittee.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_edit_Events.html" afterPath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_edit_Events.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_edit_judges.html" afterPath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_edit_judges.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_edit_programcommittee.html" afterPath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_edit_programcommittee.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_view_assignedjudges.html" afterPath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_view_assignedjudges.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_view_events.html" afterPath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_view_events.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_view_judges.html" afterPath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_view_judges.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_view_participants.html" afterPath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_view_participants.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_view_perfomance.html" afterPath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_view_perfomance.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_view_perfomance1.html" afterPath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_view_perfomance1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_view_profile.html" afterPath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_view_profile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_view_programcommittee.html" afterPath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_view_programcommittee.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_view_programs.html" afterPath="$PROJECT_DIR$/earts/templates/subadmintemplates/sadmin_view_programs.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/urls.py" afterPath="$PROJECT_DIR$/earts/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/earts/views.py" afterPath="$PROJECT_DIR$/earts/views.py" />
     </list>
     <ignored path="media/2022-04-23-15-17.jpg" />
@@ -123,8 +46,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/earts/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="59">
-              <caret line="1236" column="8" lean-forward="false" selection-start-line="1236" selection-start-column="8" selection-end-line="1236" selection-end-column="8" />
+            <state relative-caret-position="353">
+              <caret line="1241" column="17" lean-forward="true" selection-start-line="1241" selection-start-column="17" selection-end-line="1241" selection-end-column="17" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -927,7 +850,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650749700752</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="css">
+      <created>1651025489860</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1651025489860</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1188,10 +1118,10 @@
         <state relative-caret-position="-168">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="e#1346#1352#0#HTML" expanded="true" />
-            <element signature="e#1413#1419#0#HTML" expanded="true" />
-            <element signature="e#1530#1536#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="e#1346#1352#0#HTML" expanded="false" />
+            <element signature="e#1413#1419#0#HTML" expanded="false" />
+            <element signature="e#1530#1536#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1273,11 +1203,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="64" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
-            <element signature="e#449#455#0#HTML" expanded="true" />
-            <element signature="e#2218#2224#0#HTML" expanded="true" />
-            <element signature="e#2356#2362#0#HTML" expanded="true" />
-            <element signature="e#2453#2459#0#HTML" expanded="true" />
-            <element signature="e#2591#2597#0#HTML" expanded="true" />
+            <element signature="e#449#455#0#HTML" expanded="false" />
+            <element signature="e#2218#2224#0#HTML" expanded="false" />
+            <element signature="e#2356#2362#0#HTML" expanded="false" />
+            <element signature="e#2453#2459#0#HTML" expanded="false" />
+            <element signature="e#2591#2597#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1444,8 +1374,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/earts/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="1236" column="8" lean-forward="false" selection-start-line="1236" selection-start-column="8" selection-end-line="1236" selection-end-column="8" />
+        <state relative-caret-position="353">
+          <caret line="1241" column="17" lean-forward="true" selection-start-line="1241" selection-start-column="17" selection-end-line="1241" selection-end-column="17" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
