@@ -1,0 +1,51 @@
+{% extends 'programcommitteetemplates/procommittee_home1.html' %}
+
+
+{% block body %}
+<div class="main-container">
+<div class="card-box pd-20 height-100-p mb-30">
+<form action="/earts/procommittee_addprogramspost/" method="post" enctype="multipart/form-data" name="form1" id="form1">
+<div class="pd-20">
+						<h4 class="text-blue h4">Add Program</h4>
+					</div>
+  <div class="form-group row">
+		<label class="col-sm-12 col-md-2 col-form-label">Program&nbsp;Name</label>
+		<div class="col-sm-12 col-md-10">
+			<input class="form-control" type="text" placeholder="Program Name" name="text1">
+		</div>
+  </div>
+  <div class="form-group row">
+	    <label class="col-sm-12 col-md-2 col-form-label">Program Type</label>
+      <div class="pd-5">
+      <div class="custom-control custom-radio mb-6">
+					<input type="radio" id="customRadio4" name="radiobutton" value="single" class="custom-control-input">
+					<label class="custom-control-label" for="customRadio4">Single</label>
+      </div>
+
+      <div class="custom-control custom-radio mb-6">
+					<input type="radio" id="customRadio5" name="radiobutton" value="group" class="custom-control-input">
+					<label class="custom-control-label" for="customRadio5">Group</label>
+      </div>
+      </div>
+  </div>
+   <div class="form-group row">
+		<label class="col-sm-12 col-md-2 col-form-label">Program&nbsp;Discription</label>
+		<div class="col-sm-12 col-md-10">
+			<input class="form-control" type="textarea" placeholder="Add Discription" name="text2">
+		</div>
+  </div>
+  <div class="form-group row">
+		<label class="col-sm-12 col-md-2 col-form-label">Event&nbsp;Name</label>
+		<div class="col-sm-12 col-md-10">
+            <div class="pd-5"><h6 class="text  h6">{{ eventdata.event_name }}</h6></div>
+		</div>
+  </div>
+
+
+
+    <div align="center">
+       <button type="submit" class="btn btn-outline-primary">Submit</button>
+  </div>
+</form>
+</div></div>
+{% endblock %}

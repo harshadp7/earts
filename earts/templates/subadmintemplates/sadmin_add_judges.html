@@ -1,69 +1,71 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
-</head>
+{% extends 'subadmintemplates/subadminhome.html' %}
 
-<body><form action="/earts/sadmin_addjudgespost/" method="post" enctype="multipart/form-data"><table width="200" border="1">
-  <tr>
-    <th scope="col">Judge Name</th>
-    <th scope="col"><input type="text" name="textfield"/></th>
-  </tr>
-  <tr>
-    <th>Gender</th>
-    <td><p>
-      <input name="r1" type="radio" value="male" />
-      Male&nbsp;
-      </p>
-      <p>
-        <input name="r1" type="radio" value="female" />
-      Female  </p></td>
-  </tr>
-  <tr>
-    <th>Place</th>
-    <td>
-      <input type="text" name="textfield1" />
-    </td>
-  </tr>
-  <tr>
-    <th>PIN</th>
-    <td>
-      <input type="text" name="textfield2" />
-    </td>
-  </tr>
-  <tr>
-    <th>Post</th>
-    <td><label>
-      <input type="text" name="textfield3" />
-    </label></td>
-  </tr>
-  <tr>
-    <th>District</th>
-    <td>
-      <input type="text" name="textfield4" />
-    </td>
-  </tr>
-  <tr>
-    <th>Image</th>
-    <td>
-      <input type="file" name="file" />
-    </td>
-  </tr>
 
-  <tr>
-    <th>eMail</th>
-    <td>
-      <input type="text" name="textfield5" />
-    </td>
-  </tr>
-  
-  <tr>
-    <td colspan="2">
-      <input type="submit" name="Submit" value="Submit" />
-   </td>
-    </tr>
-</table>
+{% block body %}
+<div class="main-container">
+<div class="card-box pd-20 height-100-p mb-30">
+<form action="/earts/sadmin_addjudgespost/" method="post" enctype="multipart/form-data" name="form1" id="form1">
+<div class="pd-20">
+						<h4 class="text-blue h4">Add judge</h4>
+					</div>
+  <div class="form-group row">
+		<label class="col-sm-12 col-md-2 col-form-label">Judge&nbsp;Name</label>
+		<div class="col-sm-12 col-md-10">
+			<input class="form-control" type="text" placeholder="Enter Name" name="textfield">
+		</div>
+  </div>
+  <div class="form-group row">
+	    <label class="col-sm-12 col-md-2 col-form-label">Gender</label>
+      <div class="custom-control custom-radio mb-6">
+					<input type="radio" id="customRadio4" name="r1" class="custom-control-input">
+					<label class="custom-control-label" for="customRadio4">Male</label>
+      </div>
+
+      <div class="custom-control custom-radio mb-6">
+					<input type="radio" id="customRadio5" name="r1" class="custom-control-input">
+					<label class="custom-control-label" for="customRadio5">Female</label>
+      </div>
+  </div>
+  <div class="form-group row">
+		<label class="col-sm-12 col-md-2 col-form-label">Place</label>
+		<div class="col-sm-12 col-md-10">
+			<input class="form-control" type="text" placeholder="Enter Place" name="textfield1">
+		</div>
+  </div>
+     <div class="form-group row">
+		<label class="col-sm-12 col-md-2 col-form-label">PIN</label>
+		<div class="col-sm-12 col-md-10">
+			<input class="form-control" type="number" placeholder="Enter PIN" name="textfield2">
+		</div>
+  </div>
+    <div class="form-group row">
+		<label class="col-sm-12 col-md-2 col-form-label">Post</label>
+		<div class="col-sm-12 col-md-10">
+			<input class="form-control" type="text" placeholder="Enter Post" name="textfield3">
+		</div>
+  </div>
+    <div class="form-group row">
+		<label class="col-sm-12 col-md-2 col-form-label">District</label>
+		<div class="col-sm-12 col-md-10">
+			<input class="form-control" type="text" placeholder="Enter District" name="textfield4">
+		</div>
+  </div>
+    <div class="form-group row">
+		<label class="col-sm-12 col-md-2 col-form-label">Image</label>
+		<div class="col-sm-12 col-md-10">
+			<input class="form-control" type="file"  name="file">
+		</div>
+  </div>
+    <div class="form-group row">
+		<label class="col-sm-12 col-md-2 col-form-label">Email</label>
+		<div class="col-sm-12 col-md-10">
+			<input class="form-control" type="email" placeholder="Enter Email Address" name="textfield5">
+		</div>
+  </div>
+    <div align="center">
+       <button type="submit" class="btn btn-outline-primary">Submit</button>
+
+  </div>
 </form>
-</body>
-</html>
+</div></div>
+{% endblock %}

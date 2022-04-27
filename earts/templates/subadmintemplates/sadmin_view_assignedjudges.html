@@ -1,36 +1,50 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
-</head>
+{% extends 'subadmintemplates/subadminhome.html' %}
+{% block body %}
+	<div class="mobile-menu-overlay"></div>
 
-<body>
-<form id="form1" name="form1" method="post" action="//"><table width="767" border="1">
-  <tr>
-    <th colspan="2"> </th>
-    <th colspan="2">judge Name:&nbsp; <input name="textfield" type="text" /> </th>
-    <td colspan="3"><label>
-      <input type="submit" name="search" value="Search" />
-    </label></td>
-  </tr>
-  <tr>
-    <th width="131" height="33">#</th>
-    <th width="140">Event&nbsp;Name </th>
-    <th width="185">Program&nbsp;Name</th>
-    <th colspan="2">Judge Name</th>
-    </tr>
-    {% for i in data  %}
-  <tr>
-      <td height="61">{{ forloop.counter }}</td>
-      <td>{{i.EVENTS.event_name}}</td>
-      <td>{{ i.PROGRAMS.program_name }}&nbsp;</td>
-      <td>{{ i.JUDGES.judge_name }}&nbsp;</td>
+	<div class="main-container">
+		<div class="pd-ltr-20 xs-pd-20-10">
+			<div class="min-height-200px">
+                <div class="row">
+				<div class="card-box mb-30">
+					<div class="pd-20">
+                    <h4 class="text-blue h4">Judges Assigned Table</h4>
+						<form action="/earts/sadmin_viewjudgesassgnload/" method="post"><table width="362" border="1">
+                            <div class="pd-10">
+                            <h6 class="text-blue h6">Search Judges:</h6>
+                            <input type="text" name="textfield" placeholder="Search" />
+                            <button type="submit" class="btn btn-outline-primary">view</button></div></form>
+					     <div id="DataTables Table_0_filter" class="dataTables_filter" align="center">
+					     <div id="DataTables Table_0_filter" class="dataTables_filter" align="right">
+                                                   </div>
+						<table class="data-table table stripe hover nowrap" style="width:1200px">
+							<thead>
+								<tr>
+                                  <th width="131" height="33">Sl.no</th>
+                                  <th width="140">Event&nbsp;Name </th>
+                                    <th width="185">Program&nbsp;Name</th>
+                                     <th colspan="2">Judge Name</th>
+                                    </tr>
+							</thead> {% for i in data  %}
+							<tbody>
+								<tr>
+									<td height="61">{{ forloop.counter }}</td>
+                                    <td>{{i.EVENTS.event_name}}</td>
+                                     <td>{{ i.PROGRAMS.program_name }}</td>
+                                     <td>{{ i.JUDGES.judge_name }}</td>
 
-  </tr>
-    {% endfor %}
-</table>
+								</tr>
 
-</form>
-</body>
-</html>
+							</tbody> {% endfor %}
+						</table>
+					</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+    </div>
+    <div class="footer-wrap pd-20 mb-20 card-box">
+                <a href="https://github.com/dropways" target="_blank"></a>
+	</div>
+{% endblock %}

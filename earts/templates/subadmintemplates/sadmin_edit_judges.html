@@ -1,79 +1,82 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
-</head>
+{% extends 'subadmintemplates/subadminhome.html' %}
 
-<body><form action="/earts/sadmin_editjudgespost/" method="post" enctype="multipart/form-data">
-    <input type="hidden" name="jid" value="{{ jd.id }}"/>
-    <table width="200" border="1">
-  <tr>
-    <th scope="col">JudgesName</th>
-    <th scope="col"><input type="text" name="textfield" value="{{ jd.judge_name }}"/></th>
-  </tr>
-  <tr>
-    <th>Gender</th>
-      {% if jd.gender == 'male' %}
-    <td><p>
-      <input name="r1" type="radio" value="male" checked="checked"/>
-      Male&nbsp;
-        <input name="r1" type="radio" value="female" />
-      Female  </p></td>
-      {% endif %}
 
-   {% if jd.gender == 'female' %}
-    <td><p>
-      <input name="r1" type="radio" value="male" />
-      Male&nbsp;
-        <input name="r1" type="radio" value="female" checked="checked"/>
-      Female  </p></td>
-      {% endif %}
-  </tr>
-  <tr>
-    <th>Place</th>
-    <td>
-      <input type="text" name="textfield1" value="{{ jd.place }}"/>
-    </td>
-  </tr>
-  <tr>
-    <th>PIN</th>
-    <td>
-      <input type="text" name="textfield2" value="{{ jd.pin }}"/>
-    </td>
-  </tr>
-  <tr>
-    <th>Post</th>
-    <td><label>
-      <input type="text" name="textfield3" value="{{jd.post}}"/>
-    </label></td>
-  </tr>
-  <tr>
-    <th>District</th>
-    <td>
-      <input type="text" name="textfield4" value="{{ jd.district }}" />
-    </td>
-  </tr>
-  <tr>
-    <th>Image</th>
-    <td>
-      <input type="file" name="file" />
-    </td>
-  </tr>
+{% block body %}
+<div class="main-container">
+<div class="card-box pd-20 height-100-p mb-30">
+<form action="/earts/sadmin_editjudgespost/" method="post" enctype="multipart/form-data" name="form1" id="form1">
+<input type="hidden" name="jid" value="{{ jd.id }}"/>
+<div class="pd-20">
+						<h4 class="text-blue h4">Edit Judges</h4>
+					</div>
+  <div class="form-group row">
+		<label class="col-sm-12 col-md-2 col-form-label">Judges Name</label>
+		<div class="col-sm-12 col-md-10">
+			<input class="form-control" type="text" value="{{ jd.judge_name}}" placeholder="Enter Name" name="textfield">
+		</div>
+  </div>
+  <div class="form-group row">
+	    <label class="col-sm-12 col-md-2 col-form-label">Gender</label>
+	    {% if jd.gender == 'male' %}
+      <div class="custom-control custom-radio mb-6">
+      					<input type="radio" id="customRadio4" name="r1" value="male" class="custom-control-input" checked="checked">
+					<label class="custom-control-label" for="customRadio4">Male</label>
+      </div>
+      <div class="custom-control custom-radio mb-6">
+					<input type="radio" id="customRadio5" name="r1" value="female"  class="custom-control-input">
+					<label class="custom-control-label" for="customRadio5">Female</label>
+	  	   </div>{% endif %}
+	   {% if jd.gender == 'female' %}
+      <div class="custom-control custom-radio mb-6">
+      					<input type="radio" id="customRadio4" name="r1" value="male" class="custom-control-input">
+					<label class="custom-control-label" for="customRadio4">Male</label>
+      </div>
+      <div class="custom-control custom-radio mb-6">
+					<input type="radio" id="customRadio5" name="r1" class="custom-control-input" value="female"checked="checked">
+					<label class="custom-control-label" for="customRadio5">Female</label>
+	  </div>
+	   {% endif %}</div>
+  <div class="form-group row">
+		<label class="col-sm-12 col-md-2 col-form-label">Place</label>
+		<div class="col-sm-12 col-md-10">
+			<input class="form-control" type="text" value="{{ jd.place }}" placeholder="Enter Place" name="textfield1">
+		</div>
+  </div>
+     <div class="form-group row">
+		<label class="col-sm-12 col-md-2 col-form-label">PIN</label>
+		<div class="col-sm-12 col-md-10">
+			<input class="form-control" type="number" placeholder="Enter PIN" value="{{ jd.pin }}" name="textfield2">
+		</div>
+  </div>
+    <div class="form-group row">
+		<label class="col-sm-12 col-md-2 col-form-label">Post</label>
+		<div class="col-sm-12 col-md-10">
+			<input class="form-control" type="text" placeholder="Enter Post" value="{{ jd.post }}" name="textfield3">
+		</div>
+  </div>
+    <div class="form-group row">
+		<label class="col-sm-12 col-md-2 col-form-label">District</label>
+		<div class="col-sm-12 col-md-10">
+			<input class="form-control" type="text" placeholder="Enter District" value="{{ jd.district }}" name="textfield4">
+		</div>
+  </div>
+    <div class="form-group row">
+		<label class="col-sm-12 col-md-2 col-form-label">Image</label>
+		<div class="col-sm-12 col-md-10">
+			<input class="form-control" type="file"  name="file">
+		</div>
+  </div>
+    <div class="form-group row">
+		<label class="col-sm-12 col-md-2 col-form-label">Email</label>
+		<div class="col-sm-12 col-md-10">
+			<input class="form-control" type="email" placeholder="Enter Email Address" value="{{ jd.email }}" name="textfield5">
+		</div>
+  </div>
+    <div align="center">
+       <button onclick="window.history.back()" class="btn btn-outline-primary">Back</button>
+       <button type="submit" class="btn btn-outline-primary">Save</button>
 
-  <tr>
-    <th>eMail</th>
-    <td>
-      <input type="text" name="textfield5"  value="{{ jd.email }}"/>
-    </td>
-  </tr>
-  
-  <tr>
-    <td colspan="2"><label>
-      <input type="submit" name="Submit" value="Save" />
-    </label></td>
-    </tr>
-</table>
+  </div>
 </form>
-</body>
-</html>
+</div></div>
+{% endblock %}

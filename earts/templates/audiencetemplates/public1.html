@@ -19,6 +19,7 @@
                                          <tr>
                                           <th>Sl.no</th>
                                           <th>Programs Name</th>
+                                          <th>Result</th>
                                           <th>Link</th>
                                          </tr>
                                             </thead>{%  for i in data %}
@@ -26,7 +27,8 @@
                                                  <tr>
                                                <td>{{ forloop.counter}}</td>
                                                <td>{{ i.program_name }}</td>
-                                               <td><a type="link" href="/earts/publicpageload2/{{ i.id }}" class="btn btn-outline-primary">Performances</a></td>
+                                                     <td><a type="link" href="/earts/publicpageload4/{{ i.id }}" class="btn btn-outline-primary">View Result</a></td>
+                                                     <td><a type="link" href="/earts/publicpageload2/{{ i.id }}" class="btn btn-outline-primary">Performances</a></td>
                                                </tr>
                                                </tbody>{% endfor %}
                                   </table>

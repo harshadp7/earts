@@ -5,12 +5,21 @@
 	<div class="main-container">
 		<div class="pd-ltr-20 xs-pd-20-10">
 			<div class="min-height-200px">
-                <!-- Simple Datatable start -->
+                <div class="row">
 				<div class="card-box mb-30">
 					<div class="pd-20">
-						<h4 class="text-blue h4">Data Table Simple</h4>
-					</div>
-					<div class="pb-20">
+						<h4 class="text-blue h4">Events Table</h4>
+                    <form action="/earts/admin_viewprogramcommitteeload/" method="post"><table width="362" border="1">
+                            <div class="pd-10">
+                            <h6 class="text-blue h6">Search Judges:</h6>
+                            <input type="text" name="textfield" placeholder="Search" />
+                            <button type="submit" class="btn btn-outline-primary">view</button></div></form>
+					     <div id="DataTables Table_0_filter" class="dataTables_filter" align="center">
+					     <div id="DataTables Table_0_filter" class="dataTables_filter" align="right">
+                          <label>
+                             <input type="search" class="form-control form-control-sm" placeholder="Search" aria-controls="DataTables_Table_0">
+                          </label>
+                          </div>
 						<table class="data-table table stripe hover nowrap" style="width:1200px">
 							<thead>
 								<tr>
@@ -43,13 +52,13 @@
 							</tbody> {% endfor %}
 						</table>
 					</div>
+					</div>
 				</div>
-
-				<!-- Export Datatable End -->
-			</div>
-			<div class="footer-wrap pd-20 mb-20 card-box">
-                <a href="https://github.com/dropways" target="_blank"></a>
+				</div>
 			</div>
 		</div>
+    </div>
+    <div class="footer-wrap pd-20 mb-20 card-box">
+                <a href="https://github.com/dropways" target="_blank"></a>
 	</div>
 {% endblock %}

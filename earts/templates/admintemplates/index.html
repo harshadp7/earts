@@ -211,12 +211,15 @@
 		<div class="menu-block customscroll">
 			<div class="sidebar-menu">
 				<ul id="accordion-menu">
-                    <a  href="/earts/admin_home/"><div class="sidebar-menu"><li><span class="micon dw dw-house-1"></span><span class="mtext">Home</span></li>
+                    <li>
+						<a href="/earts/admin_home/" class="dropdown-toggle no-arrow">
+							<span class="micon dw dw-house-1"></span><span class="mtext">Home</span>
+						</a>
 
-                    </div></a>
+					</li>
 					<li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-house-1"></span><span class="mtext">Sub&nbsp;Admin</span>
+							<span class="micon dw dw-user-1"></span><span class="mtext">Sub&nbsp;Admin</span>
 						</a>
 						<ul class="submenu">
 							<li><a href="/earts/admin_addsubadminload/">Add&nbsp;SubAdmin</a></li>
@@ -225,7 +228,7 @@
 					</li>
 					<li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-house-1"></span><span class="mtext">Events</span>
+							<span class="micon dw dw-list3"></span><span class="mtext">Events</span>
 						</a>
 						<ul class="submenu">
 							<li><a href="/earts/admin_addeventload/">Add&nbsp;Events</a></li>
@@ -234,7 +237,7 @@
 					</li>
 					<li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-library"></span><span class="mtext">Staff</span>
+							<span class="micon dw dw-user-11"></span><span class="mtext">Staff</span>
 						</a>
 						<ul class="submenu">
 							<li><a href="/earts/admin_addstaffload/">Add Staff</a></li>
@@ -243,7 +246,7 @@
 					</li>
 					<li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-library"></span><span class="mtext">Student</span>
+							<span class="micon dw dw-user3"></span><span class="mtext">Student</span>
 						</a>
 						<ul class="submenu">
 							<li><a href="/earts/admin_addstudentload/">Add Student</a></li>
@@ -252,7 +255,7 @@
 					</li>
 					<li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-library"></span><span class="mtext">Course</span>
+							<span class="micon dw dw-list2"></span><span class="mtext">Course</span>
 						</a>
 						<ul class="submenu">
 							<li><a href="/earts/admin_addcourseload/">Add Course</a></li>
@@ -261,33 +264,25 @@
 					</li>
 					<li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-library"></span><span class="mtext">Program Committee</span>
+							<span class="micon dw dw-group"></span><span class="mtext">Program Committee</span>
 						</a>
 						<ul class="submenu">
-							<li><a href="/earts/admin_viewprogramcommitteeload/">Add ProgramCommittee</a></li>
+							<li><a href="/earts/admin_viewprogramcommitteeload/">View ProgramCommittee</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-library"></span><span class="mtext">Judges Assigned</span>
+							<span class="micon dw dw-user-12"></span><span class="mtext">Judges</span>
 						</a>
 						<ul class="submenu">
-							<li><a href="/earts/admin_viewjudgesassgnload/">Add Judges Assigned</a></li>
+							<li><a href="/earts/admin_viewjudgesassgnload/">View Judges</a></li>
 						</ul>
-					</li>
-					<li class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-library"></span><span class="mtext">Others</span>
+					<li>
+						<a href="/earts/loginload/" class="dropdown-toggle no-arrow">
+							<span class="micon dw dw-logout1"></span><span class="mtext">Log Out</span>
 						</a>
-						<ul class="submenu">
-							<li><a href="/earts/admin_viewcommentsreplyload/">View Complaints & Reply</a></li>
-							<li><a href="/earts/admin_viewcommentsratingload/">View Comments & Rating </a></li>
-						</ul>
-                    </li>
-                    <div  align="center">
-                    <a href="/earts/loginload/" class="btn btn-light">
-							<span class="mtext">LOG OUT</span>
-                    </a></div></li></ul>
+
+					</li></ul>
             </div>
 		</div>
 	</div>
@@ -295,7 +290,21 @@
 
 
                    			{% block home %} {% endblock %}
-            			{% block body %} {% endblock %}
+            			{% block body %}<div class="main-container">
+    <div class="pd-ltr-20">
+                         <div class="card-box pd-20 height-100-p mb-30">
+				<div class="row align-items-center">
+					<div class="col-md-4">
+						<img src="vendors/images/banner-img.png" alt="">
+					</div>
+					<div class="col-md-8">
+						<h4 class="font-20 weight-500 mb-10 text-capitalize">
+							Welcome back <div class="weight-600 font-30 text-blue">Admin!</div>
+						</h4>
+					</div>
+				</div>
+			</div>
+    </div> {% endblock %}
 
 								</div></div></div>
 							</td>

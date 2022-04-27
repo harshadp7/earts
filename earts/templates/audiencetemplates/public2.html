@@ -1,48 +1,48 @@
-{% extends 'landingpage.html' %}
-{% block body %}
-	<div class="mobile-menu-overlay"></div>
+    {% extends 'landingpage.html' %}
+    {% block body %}
+        <div class="mobile-menu-overlay"></div>
 
-	<div class="main-container">
-		<div class="pd-ltr-20 xs-pd-20-10">
-			<div class="min-height-600px">
-                <!-- Simple Datatable start -->
-				<div class="card-box mb-30">
-					<div class="pd-20">
-						<h2 class="text-blue h2">Performances</h2>
-					</div>
-{#					<div class="col-lg-4 col-md-6 col-sm-12 mb-30">#}
-						<div class="pd-20 card-box height-100-p">
-                            <div class="list-group">
+        <div class="main-container">
+            <div class="pd-ltr-20 xs-pd-20-10">
+                <div class="min-height-600px">
+                    <!-- Simple Datatable start -->
+                    <div class="card-box mb-30">
+                        <div class="pd-20">
+                            <h2 class="text-blue h2">Performances</h2>
+                        </div>
+    {#					<div class="col-lg-4 col-md-6 col-sm-12 mb-30">#}
+                            <div class="pd-20 card-box height-100-p">
+                                <div class="list-group">
 
-                                 <table class="table">
-                                    <thead>
-                                         <tr>
-                                          <th>Sl.no</th>
-                                          <th>Performance Name</th>
-                                          <th>Program Name</th>
-                                          <th>Student Name</th>
-                                          <th>Link</th>
-                                         </tr>
-                                            </thead>{%  for i in data %}
-                                                 <tbody>
-                                                 <tr>
-                                               <td>{{ forloop.counter}}</td>
-                                               <td>{{ i.performance_name }}</td>
-                                               <td>{{ i.PROGRAMS.program_name }}</td>
-                                               <td>{{ i.PARTICIPANTS.STUDENT.student_name }}</td>
-                                               <td><a type="link" href="/earts/publicpageload3/{{ i.id }}" class="btn btn-outline-primary">View</a></td>
-                                               </tr>
-                                               </tbody>{% endfor %}
-                                  </table>
+                                     <table class="table">
+                                        <thead>
+                                             <tr>
+                                              <th>Sl.no</th>
+                                              <th>Performance Name</th>
+                                              <th>Program Name</th>
+                                              <th>Student Name</th>
+                                              <th>Link</th>
+                                             </tr>
+                                                </thead>{%  for i in data %}
+                                                     <tbody>
+                                                     <tr>
+                                                   <td>{{ forloop.counter}}</td>
+                                                   <td>{{ i.performance_name }}</td>
+                                                   <td>{{ i.PROGRAMS.program_name }}</td>
+                                                   <td>{{ i.PARTICIPANTS.STUDENT.student_name }}</td>
+                                                   <td><a type="link" href="/earts/publicpageload3/{{ i.id }}" class="btn btn-outline-primary">View</a></td>
+                                                   </tr>
+                                                   </tbody>{% endfor %}
+                                      </table>
+                                </div>
                             </div>
-						</div>
-{#					</div>#}
-				</div>
+    {#					</div>#}
+                    </div>
 
-				<!-- Export Datatable End -->
-			</div><footer>
-			<div class="footer-wrap pd-20 mb-20 card-box">
-            </div></footer>
-		</div>
-	</div>
-{% endblock %}
+                    <!-- Export Datatable End -->
+                </div><footer>
+                <div class="footer-wrap pd-20 mb-20 card-box">
+                </div></footer>
+            </div>
+        </div>
+    {% endblock %}

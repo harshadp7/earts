@@ -6,8 +6,8 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from pip._vendor.requests import session
 from django.db.models import Sum
-from .models import login, subadmin, staff, course, student, schedule, events, programs, participants, \
-    program_committee, judges, performance, judges_assigned, result, complaint, comments_rating
+from .models import login, subadmin, staff, course, student, events, programs, participants, \
+    program_committee, judges, performance, judges_assigned, result
 
 
 # Create your views here.
@@ -29,20 +29,21 @@ def loginpost(request):
             a = login.objects.get(username=uname, password=password)
             if a.type == 'Subadmin':
                 request.session['lid'] = a.id
-                return render(request, 'subadmintemplates/sadmin_home.html')
+                sobj = subadmin.objects.get(LOGIN_id=request.session['lid'])
+                return render(request, 'subadmintemplates/subadminhome.html',{'a':sobj})
             elif a.type == 'admin':
                 return render(request, 'admintemplates/index.html')
             elif a.type == 'judge':
                 request.session['lid'] = a.id
-                return render(request, 'judgestemplates/judges_home.html')
+                return judges_homeload(request)
             elif a.type == 'staff':
                 request.session['lid'] = a.id
-                return procommitte_homeload(request)
+                return procommittee_homeload(request)
             elif a.type == 'student':
                 request.session['lid'] = a.id
                 da = student.objects.get(LOGIN=a.id)
                 request.session["id"] = da.id
-                return render(request, 'participants_studentstemplates/student_home.html')
+                return student_homeload(request)
             else:
                 return HttpResponse("INVALID")
         else:
@@ -116,6 +117,7 @@ def admin_addsubadminpost(request):
     subadminobj.email = s_adminmail
     subadminobj.LOGIN = loginobj
     subadminobj.save()
+
     import smtplib
     s = smtplib.SMTP('smtp.gmail.com', 587)
     s.starttls()
@@ -404,26 +406,31 @@ def admin_editsubadminpost(request):
     s_adminpin = request.POST['textfield2']
     s_adminpost = request.POST['textfield3']
     s_admindistrict = request.POST['textfield4']
-    s_adminimg = request.POST['file']
-    staffmail = request.POST['textfield5']
+    s_adminmail = request.POST['textfield5']
     sbid = request.POST['sbid']
 
     subadminobj = subadmin.objects.get(id=sbid)
     if 'file' in request.FILES:
         s_adminimg = request.FILES['file']
-        if s_adminimg.filename != '':
-            subadminobj.image = s_adminimg.filename
-
+        fs = FileSystemStorage()
+        nam = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M")
+        filename = nam + ".jpg"
+        print(filename)
+        fs.save(filename, s_adminimg)
+        url = '/media/' + nam + ".jpg"
+        subadminobj.image = url
     subadminobj.subadmin_name = s_adminname
     subadminobj.gender = s_admingender
     subadminobj.place = s_adminplace
     subadminobj.pin = s_adminpin
     subadminobj.post = s_adminpost
     subadminobj.district = s_admindistrict
+    subadminobj.email = s_adminmail
+
 
     subadminobj.save()
 
-    return render(request, 'admintemplates/admin_edit_Subadmin.html')
+    return render(request, 'admintemplates/admin_edit_Subadmin.html') and HttpResponse("<script>alert('Success...!');window.history.go(-2)</script>")
 
 
 def admin_editstaffload(request, id):
@@ -438,13 +445,21 @@ def admin_editstaffpost(request):
     staffpin = request.POST['textfield2']
     staffpost = request.POST['textfield3']
     staffdistrict = request.POST['textfield4']
-    # staffimg = request.FILES['file']
     staffqualification = request.POST['select']
     staffmail = request.POST['textfield5']
     staffdept = request.POST['select2']
     stfid = request.POST['stfid']
 
     staffobj = staff.objects.get(id=stfid)
+    if 'file' in request.FILES:
+        studimg = request.FILES['file']
+        fs = FileSystemStorage()
+        nam = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M")
+        filename = nam + ".jpg"
+        print(filename)
+        fs.save(filename, staffimg)
+        url = '/media/' + nam + ".jpg"
+        staffobj.image = url
     staffobj.st_name = staffname
     staffobj.gender = staffgender
     staffobj.place = staffplace
@@ -456,7 +471,7 @@ def admin_editstaffpost(request):
     staffobj.department = staffdept
     staffobj.save()
 
-    return render(request, 'admintemplates/admin_edit_staff.html')
+    return render(request, 'admintemplates/admin_edit_staff.html') and HttpResponse("<script>alert('Success...!');window.history.go(-2)</script>")
 
 
 def admin_editstudentload(request, id):
@@ -472,7 +487,6 @@ def admin_editstudentpost(request):
     studpin = request.POST['textfield2']
     studpost = request.POST['textfield3']
     studdistrict = request.POST['textfield4']
-    studimg = request.FILES['file']
     studmail = request.POST['textfield5']
     studcourse = request.POST['select']
     stid = request.POST['stid']
@@ -483,13 +497,22 @@ def admin_editstudentpost(request):
     studentobj.gender = studgender
     studentobj.place = studplace
     studentobj.post = studpost
+    if 'file' in request.FILES:
+        studimg = request.FILES['file']
+        fs = FileSystemStorage()
+        nam = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M")
+        filename = nam + ".jpg"
+        print(filename)
+        fs.save(filename, studimg)
+        url = '/media/' + nam + ".jpg"
+        studentobj.image = url
     studentobj.pin = studpin
     studentobj.district = studdistrict
     studentobj.COURSE = courseobj
     studentobj.email = studmail
 
     studentobj.save()
-    return admin_viewstudentload(request)
+    return admin_viewstudentload(request) and HttpResponse("<script>alert('Success...!');window.history.go(-2)</script>")
 
 
 def admin_editeventsload(request, id):
@@ -508,7 +531,7 @@ def admin_editeventspost(request):
     eventobj.event_date = eventdate
     eventobj.event_discription = eventdisc
     eventobj.save()
-    return render(request, 'admintemplates/admin_edit_Events.html')
+    return render(request, 'admintemplates/admin_edit_Events.html') and HttpResponse("<script>alert('Success...!');window.history.go(-2)</script>")
 
 
 def admin_editcourseload(request, id):
@@ -526,7 +549,7 @@ def admin_editcoursepost(request):
     courseobj.deptartment = deptartment
     courseobj.save()
 
-    return render(request, 'admintemplates/admin_edit_course.html')
+    return render(request, 'admintemplates/admin_edit_course.html') and HttpResponse("<script>alert('Success...!');window.history.go(-2)</script>")
 
 
 def admin_sendreplyload(request):
@@ -596,7 +619,8 @@ def admin_viewjudgesassgnload(request):
 
 
 def sadmin_homeload(request):
-    return render(request, 'subadmintemplates/sadmin_home.html')
+    sobj = subadmin.objects.get(LOGIN_id=request.session['lid'])
+    return render(request, 'subadmintemplates/subadminhome.html',{'a':sobj})
 
 
 def sadmin_homepost(request):
@@ -692,6 +716,15 @@ def sadmin_editjudgespost(request):
     jid = request.POST['jid']
 
     judgeobj = judges.objects.get(id=jid)
+    if 'file' in request.FILES:
+        judge_img = request.FILES['file']
+        fs = FileSystemStorage()
+        nam = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M")
+        filename = nam + ".jpg"
+        print(filename)
+        fs.save(filename, judge_img)
+        url = '/media/' + nam + ".jpg"
+        judgeobj.image = url
     judgeobj.judge_name = judge_name
     judgeobj.gender = judge_gender
     judgeobj.place = judge_place
@@ -701,7 +734,7 @@ def sadmin_editjudgespost(request):
     judgeobj.email = judge_mail
     judgeobj.save()
 
-    return render(request, 'subadmintemplates/sadmin_edit_judges.html')
+    return render(request, 'subadmintemplates/sadmin_edit_judges.html') and HttpResponse("<script>alert('Success...!');window.history.go(-2)</script>")
 
 
 def sadmin_viewprofileload(request):
@@ -763,7 +796,7 @@ def sadmin_editeventspost(request):
     eventobj.event_date = eventdate
     eventobj.event_discription = eventdisc
     eventobj.save()
-    return render(request, 'subadmintemplates/sadmin_edit_Events.html')
+    return render(request, 'subadmintemplates/sadmin_edit_Events.html') and HttpResponse("<script>alert('Success...!');window.history.go(-2)</script>")
 
 
 def sadmin_addprogramcommitteeload(request):
@@ -837,23 +870,23 @@ def sadmin_editprogramcommitteepost(request):
     return sadmin_viewprogramcommitteeload(request)
 
 
-def sadmin_addprogramsload(request):
-    eventobj = events.objects.all()
-    return render(request, 'subadmintemplates/sadmin_add_programs.html', {'eventdata': eventobj})
-
-
-def sadmin_addprogramspost(request):
-    programname = request.POST['text1']
-    programdiscription = request.POST['text2']
-    eventname = request.POST['select1']
-
-    programsobj = programs()
-    programsobj.program_name = programname
-    programsobj.program_discription = programdiscription
-    programsobj.EVENTS_id = eventname
-    programsobj.save()
-
-    return sadmin_addprogramsload(request)
+# def sadmin_addprogramsload(request):
+#     eventobj = events.objects.all()
+#     return render(request, 'subadmintemplates/sadmin_add_programs.html', {'eventdata': eventobj})
+#
+#
+# def sadmin_addprogramspost(request):
+#     programname = request.POST['text1']
+#     programdiscription = request.POST['text2']
+#     eventname = request.POST['select1']
+#
+#     programsobj = programs()
+#     programsobj.program_name = programname
+#     programsobj.program_discription = programdiscription
+#     programsobj.EVENTS_id = eventname
+#     programsobj.save()
+#
+#     return sadmin_addprogramsload(request)
 
 
 def sadmin_viewprogramsload(request):
@@ -874,49 +907,33 @@ def sadmin_viewprogramspost(request):
     return render(request, 'subadmintemplates/sadmin_view_programs.html')
 
 
-def sadmin_deleteprograms(request, id):
-    programsdel = programs.objects.get(id=id)
-    programsdel.delete()
-    return sadmin_viewprogramsload(request)
-
-
-def sadmin_editprogramsload(request, id):
-    prgmsobj = programs.objects.get(pk=id)
-    eventobj = events.objects.all()
-    return render(request, 'subadmintemplates/sadmin_edit_programs.html',
-                  {'programsid': prgmsobj, 'eventdata': eventobj})
-
-
-def sadmin_editprogramspost(request):
-    programname = request.POST['text1']
-    programdiscription = request.POST['text2']
-    eventname = request.POST['select1']
-    programsid = request.POST['programsid']
-
-    prgmsobj = programs.objects.get(id=programsid)
-    eventobj = events.objects.get(id=eventname)
-    prgmsobj.program_name = programname
-    prgmsobj.program_discription = programdiscription
-    prgmsobj.EVENTS_id = eventobj.id
-    prgmsobj.save()
-    return sadmin_viewprogramsload(request)
 
 
 def sadmin_viewjudgesassgnload(request):
     assgnjudegesobj = judges_assigned.objects.all()
-    return render(request, 'subadmintemplates/sadmin_view_assignedjudges.html',
-                  {'data': assgnjudegesobj})
+    if request.method == "POST":
+        t = request.POST['textfield']
+        assgnjudegesobj = judges_assigned.objects.filter(JUDGES__judge_name__contains=t)
+        return render(request, 'subadmintemplates/sadmin_view_assignedjudges.html', {'data': assgnjudegesobj})
+    return render(request, 'subadmintemplates/sadmin_view_assignedjudges.html',{'data': assgnjudegesobj})
 
 
 def sadmin_viewparticipants(request):
     particobj = participants.objects.all()
-
+    if request.method == "POST":
+        t = request.POST['textfield']
+        particobj = participants.objects.filter(STUDENT__student_name__contains=t)
+        return render(request, 'subadmintemplates/sadmin_view_participants.html', {'partic': particobj})
     return render(request, 'subadmintemplates/sadmin_view_participants.html', {'partic': particobj})
 
 
 def sadmin_viewperfomance1(request):
     perfomanceobj = performance.objects.all()
-    return render(request, 'subadmintemplates/sadmin_View_perfomance.html', {'perfomancedata': perfomanceobj})
+    if request.method == "POST":
+        t = request.POST['textfield']
+        perfomanceobj = performance.objects.filter(performance_name__contains=t)
+        return render(request, 'subadmintemplates/sadmin_view_perfomance.html', {'perfomancedata': perfomanceobj})
+    return render(request, 'subadmintemplates/sadmin_view_perfomance.html', {'perfomancedata': perfomanceobj})
 
 
 def sadmin_viewperfomance2(request, id):
@@ -930,7 +947,8 @@ def sadmin_viewperfomance2(request, id):
 
 
 def judges_homeload(request):
-        return render(request, 'judgestemplates/judges_home.html')
+    jobj = judges.objects.get(LOGIN_id=request.session['lid'])
+    return render(request, 'judgestemplates/judges_home.html',{'jdata':jobj})
 
 
 def judges_homepost(request):
@@ -963,7 +981,7 @@ def judges_viewparticipantsload(request, id):
 def judges_viewperfomanceload(request, id):
     perfomanceobj = performance.objects.get(PARTICIPANTS_id=id)
     request.session['partic'] = id
-    return render(request, 'judgestemplates/judges_view_perfomance.html', {'perfomance': perfomanceobj})
+    return render(request, 'judgestemplates/judges_view_perfomance.html', {'viewdata': perfomanceobj})
 
 
 def judges_scoreperfomance(request):
@@ -1007,32 +1025,89 @@ def judges_scoreperfomance(request):
            return HttpResponse("<script>alert('Scored...!');window.history.back()</script>")
         else:
            return HttpResponse("<script>alert('Already Scored');window.history.back()</script>")
+
+def judges_viewresult(request, id):
+           perfobj = result.objects.filter(PROGRAMS_id=id)
+           if perfobj.exists():
+               return render(request, 'judgestemplates/judges_view_result.html', {'data': perfobj})
+           else:
+               return HttpResponse("<script>alert('No Result Found...!');window.history.back()</script>")
     ###########################################program_committee###########################
     ###########################################program_committee###########################
 
-def procommitte_homeload(request):
+def procommittee_homeload(request):
     procommobj = program_committee.objects.filter(STAFF__LOGIN_id=request.session['lid'])
-
-    return render(request, 'programcommitteetemplates/procommittee_home.html', {'proc': procommobj})
+    return render(request, 'programcommitteetemplates/procommittee_home1.html', {'proc': procommobj})
 
 
 def procommittee_homepost(request):
     return render(request, 'programcommitteetemplates/procommittee_home.html')
 
+def procommittee_addprogramsload(request,id):
+    request.session['eventid1'] = id
+    eventobj = events.objects.get(id=id)
+    return render(request,'programcommitteetemplates/procommittee_add_programs.html', {'eventdata': eventobj})
 
-def procommittee_viewprogramsload(request, id):
+
+def procommittee_addprogramspost(request):
+    programname = request.POST['text1']
+    proggramtype = request.POST['radiobutton']
+    programdiscription = request.POST['text2']
+    eventid =request.session['eventid1']
+
+    programsobj = programs()
+    programsobj.program_name = programname
+    programsobj.program_type = proggramtype
+    programsobj.program_discription = programdiscription
+    programsobj.EVENTS_id = eventid
+    programsobj.save()
+
+    return procommittee_addprogramsload(request,eventid)
+
+def procommittee_deleteprograms(request, id):
+    programsdel = programs.objects.get(id=id)
+    programsdel.delete()
+    return procommittee_viewprogramsload(request)
+
+def procommittee_viewprogramsload(request,id):
     request.session['eventids'] = id
     request.session['pgmid'] = str(id)
     programsobj = programs.objects.filter(EVENTS_id=id)
-    eventobj = events.objects.all()
-
-    # if request.method == "POST":
-    #     t = request.POST['textfield']
-    #     allprograms = programs.objects.filter(program_name__contains=t)
-    #     return render(request, 'programcommitteetemplates/procommitte_view_programs.html', {'eventdata':eventobj,'prgmsdata':allprograms})
-
+    eventobj = events.objects.filter(id=id)
     return render(request, 'programcommitteetemplates/procommitte_view_programs.html',
                   {'eventdata': eventobj, 'prgmsdata': programsobj})
+
+# def procommittee_searchprogramsload(request,id):
+#     eventobj = events.objects.filter(id=id)
+#     request.session['eventids'] = id
+#     request.session['pgmid'] = str(id)
+#     programsobj = programs.objects.filter(EVENTS_id=id)
+#     if request.method == "POST":
+#         t = request.POST['textfield']
+#         allprograms = programs.objects.filter(program_name__contains=t)
+#         return render(request, 'programcommitteetemplates/procommitte_view_programs.html', {'eventdata':eventobj,'prgmsdata':allprograms})
+
+def procommittee_editprogramsload(request, id):
+    prgmsobj = programs.objects.get(pk=id)
+    eventobj = events.objects.get(id=request.session['eventids'])
+    return render(request, 'programcommitteetemplates/procommittee_edit_programs.html',
+                  {'programsid': prgmsobj, 'eventdata': eventobj})
+
+
+def procommittee_editprogramspost(request):
+    programname = request.POST['text1']
+    programdiscription = request.POST['text2']
+    proggramtype = request.POST['radiobutton']
+    programsid = request.POST['programsid']
+    eventid = request.session['eventid1']
+
+    prgmsobj = programs.objects.get(id=programsid)
+    prgmsobj.program_name = programname
+    prgmsobj.program_type = proggramtype
+    prgmsobj.program_discription = programdiscription
+    prgmsobj.EVENTS_id = eventid
+    prgmsobj.save()
+    return HttpResponse("<script>alert('Saved..!');</script>")
 
 
 def procommittee_viewprofileload(request):
@@ -1050,29 +1125,37 @@ def procommittee_viewparticipants(request, id):
 
 def procommittee_approveload(request, id):
     particobj = participants.objects.get(id=id)
-    particobj.status = "approve"
-    particobj.save()
-    return redirect('/earts/procommittee_viewparticipants/' + request.session['pgmid'])
+    if particobj.status == "approve":
+       return HttpResponse("<script>alert('Already Approved..!');window.history.go(-1)</script>")
+    else:
+        particobj.status = "approve"
+        particobj.save()
+        return redirect('/earts/procommittee_viewparticipants/' + request.session['pgmid'])
 
 
 def procommittee_assignjudgesload(request, id):
     judgesobj = judges.objects.all()
+    programobj=programs.objects.filter(id=id)
     request.session["selpid"] = id
 
-    return render(request, 'programcommitteetemplates/procommittee_assign_judges.html', {'judgesdata': judgesobj})
+    return render(request, 'programcommitteetemplates/procommittee_assign_judges.html', {'judgesdata': judgesobj},{'progdata': programobj})
 
 
 def procommittee_assignjudgespost(request):
     judgename = request.POST["select"]
     programid = request.session["selpid"]
     eventid = request.session['eventids']
-
     judgeassgnobj = judges_assigned()
-    judgeassgnobj.JUDGES_id = judgename
-    judgeassgnobj.EVENTS_id = eventid
-    judgeassgnobj.PROGRAMS_id = programid
-    judgeassgnobj.save()
-    return procommittee_viewprogramsload(request, id=request.session['eventids'])
+    jasgnob=judges_assigned.objects.filter(PROGRAMS_id=programid).count()
+    print(jasgnob)
+    if jasgnob==3:
+       return HttpResponse("<script>alert('Three Judges Already Assigned...!');window.history.back()</script>")
+    else:
+       judgeassgnobj.JUDGES_id = judgename
+       judgeassgnobj.EVENTS_id = eventid
+       judgeassgnobj.PROGRAMS_id = programid
+       judgeassgnobj.save()
+    return HttpResponse("<script>alert('Assigned...!');window.history.back()</script>")
 
 
 def procommittee_scheduleprogload(request, id):
@@ -1120,7 +1203,7 @@ def procommittee_viewperfomanceload(request,id):
         opj=i.score2
         hy=i.score3
         sums=int(jobj)+int(opj)+int(hy)
-        ls.append({"program_name":i.PROGRAMS.program_name,"ss":i.PARTICIPANTS.STUDENT.student_name,"p":i.performance_name,"sc":sums,"id":i.id,"pid":i.PROGRAMS_id})
+        ls.append({"program_name":i.PROGRAMS.program_name,"ss":i.PARTICIPANTS.STUDENT.student_name,"p":i.performance_name,"sc":sums,"id":i.id,"pid":i.PROGRAMS.id})
     return render(request, 'programcommitteetemplates/procommittee_view_perfomance.html',{'perfomancedata': ls})
 
 def procommittee_saveresults(request):
@@ -1146,11 +1229,12 @@ def procommittee_publishresult(request):
     pgmid1=request.session['pgmid2']
     pobj = result.objects.filter(PROGRAMS_id=pgmid1)
     pp=performance.objects.filter(PROGRAMS_id=pgmid1).order_by("-totalscore")[:3]
+    scores=pp.
     ids=[]
     pid=[]
-    if pobj.exists():
+    if pp.exists():
        return HttpResponse("<script>alert('Already Published');window.history.back()</script>")
-    else:
+    else :
        for i in pp:
           ids.append(i.PARTICIPANTS.STUDENT.id)
           pid.append(i.PROGRAMS_id)
@@ -1170,13 +1254,20 @@ def procommittee_viewperfomance2(request, id):
     viewobj = performance.objects.get(id=id)
     return render(request, 'programcommitteetemplates/procommittee_view_perfomance2.html', {'viewdata': viewobj})
 
+def procommittee_viewresult(request,id):
+    perfobj=result.objects.filter(PROGRAMS_id=id)
+    if perfobj.exists():
+      return render(request,'programcommitteetemplates/procommittee_view_result.html',{'data':perfobj})
+    else :
+        return HttpResponse("<script>alert('No Result Found...!');window.history.back()</script>")
 
 
 
 #Students/participants
 
 def student_homeload(request):
-    return render(request, 'participants_studentstemplates/student_home.html')
+    sobj = student.objects.get(LOGIN_id=request.session['lid'])
+    return render(request, 'participants_studentstemplates/student_home.html',{'jdata':sobj})
 
 
 def student_homepost(request):
@@ -1221,13 +1312,17 @@ def student_viewprogramsload(request, id):
 
 def student_applyprograms(request, id):
     studentid = request.session["id"]
-    participantsobj = participants()
-    participantsobj.PROGRAMS_id = id
-    participantsobj.STUDENT_id = studentid
-    participantsobj.requested_date = datetime.datetime.now().date()
-    participantsobj.status = "Pending"
-    participantsobj.save()
-    return student_viewprogramsload(request, id=request.session['pgmid'])
+    p1=participants.objects.filter(PROGRAMS_id=id,STUDENT_id=studentid)
+    if p1.exists():
+        return HttpResponse("<script>alert('Already Applied...!');window.history.go(-1)</script>")
+    else:
+        participantsobj = participants()
+        participantsobj.PROGRAMS_id = id
+        participantsobj.STUDENT_id = studentid
+        participantsobj.requested_date = datetime.datetime.now().date()
+        participantsobj.status = "Pending"
+        participantsobj.save()
+        return student_viewprogramsload(request, id=request.session['pgmid']) and HttpResponse("<script>alert('Applied...!');window.history.go(-2)</script>")
 
 
 def student_viewparticipationload(request):
@@ -1303,13 +1398,21 @@ def student_uploadprogramspost(request):
 
 def student_viewperfomanceload(request, id):
     performanceobj = performance.objects.get(id=id)
-    return render(request, 'participants_studentstemplates/student_view_perfomance.html',{'perfomance': performanceobj})
+    return render(request, 'participants_studentstemplates/student_view_perfomance.html',{'viewdata': performanceobj})
 
 
 def student_deleteperfomance(request, id, progobj, praticipationid):
     perfomanceobj = performance.objects.get(id=id)
     perfomanceobj.delete()
     return student_uploadprogramsload(request, progobj, praticipationid)
+
+
+def student_viewresult(request, id):
+    perfobj = result.objects.filter(PROGRAMS_id=id)
+    if perfobj.exists():
+        return render(request, 'participants_studentstemplates/student_view_result.html', {'data': perfobj})
+    else:
+        return HttpResponse("<script>alert('No Result Found...!');window.history.back()</script>")
 
 def publicpageload(request):
     eventobj=events.objects.all()
@@ -1325,3 +1428,9 @@ def publicpageload2(request,id):
 def publicpageload3(request,id):
     perfobj=performance.objects.get(id=id)
     return render(request,'audiencetemplates/public3.html',{'data':perfobj})
+def publicpageload4(request,id):
+    perfobj=result.objects.filter(PROGRAMS_id=id)
+    if perfobj.exists():
+      return render(request,'audiencetemplates/public4.html',{'data':perfobj})
+    else :
+        return HttpResponse("<script>alert('No Result Found...!');window.history.back()</script>")

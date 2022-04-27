@@ -1,40 +1,69 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
-</head>
+{% extends 'participants_studentstemplates/student_home.html' %}
+{% block body %}
+	<div class="mobile-menu-overlay"></div>
 
-<body><form action="/earts/student_load/" method="post">
-<br/>
-  
-  <table  border="1">
-  <tr>
-    <th width="52">#</th>
-    <th width="233">Requested&nbsp;Date </th>
-    <th width="92">Status </td>
-	<th >Event&nbsp;Name</th>
-    <th width="331">Program&nbsp;Name </th>
-    <th width="43">Student&nbsp;Name</th>
-    <td width="39">&nbsp;</td>
-  </tr>
-      {% for i in data %}
-  <tr>
-    <td>{{ forloop.counter }}&nbsp;</td>
-    <td>{{ i.requested_date}}&nbsp;</td>
-    <td>{{ i.status }}&nbsp;</td>
-	<td>{{ i.PROGRAMS.EVENTS.event_name}}</td>
-    <td>{{ i.PROGRAMS.program_name }}&nbsp;</td>
-	<td>{{ i.STUDENT.student_name }}&nbsp;</td>
-    <td><a href="/earts/student_deleteprticipation/{{ i.id }}">Delete Request</a></td>
-      {% if i.status == "Pending" %}
-          <td>Please wait for approval</td>
-      {% else %}
-    <td><a href="/earts/student_uploadprogramsload/{{ i.PROGRAMS.id }}/{{ i.id }}">Enter Program</a></td>
-  {% endif %}
+	<div class="main-container">
+		<div class="pd-ltr-20 xs-pd-20-10">
+			<div class="min-height-200px">
+                <div class="row">
+				<div class="card-box mb-30">
+					<div class="pd-20">
+						<h4 class="text-blue h4">Programs Table</h4>
+{#                   {% for j in prgmsdata %} <form action="/earts/procommittee_searchprogramsload/{{ j.id }}" method="post">{% endfor %}#}
+{#                         <div id="DataTables Table_0_filter" class="dataTables_filter" align="right">#}
+{#                          <label>#}
+{#                             <input type="search" class="form-control form-control-sm" name="textfield" placeholder="Search Programs" aria-controls="DataTables_Table_0">#}
+{#                              <button type="submit" class="btn btn-outline-primary">Search</button>#}
+{#                          </label>#}
+{#                        </div></form>#}
+						<table class="data-table table stripe hover nowrap" style="width:1200px">
+							<thead>
+								<tr>
+                                  <th >Sl.no</th>
+                                    <th >Requested&nbsp;Date</th>
+                                    <th >Status</th>
+                                       <th >Event&nbsp;Name </th>
+                                      <th >Program Name</th>
+                                      <th >Student Name</th>
+                                     <th colspan="2">Links</th>
+                                    </tr>
+							</thead> {% for i in data  %}
+							<tbody>
+								<tr>
+									<td>{{ forloop.counter }}</td>
+                                     <td>{{ i.requested_date }}</td>
+                                     <td>{{ i.status}}</td>
+                                     <td>{{ i.PROGRAMS.EVENTS.event_name}}</td>
+                                     <td>{{i.PROGRAMS.program_name}}</td>
+                                     <td>{{i.STUDENT.student_name}}</td>
+                                     <td>
+										<div align="center" class="pd-20">
+                                                   <a class="btn btn-outline-danger" href="/earts/student_deleteprticipation/{{ i.id }}">Delete Request</a>
+                                         </div>
+									</td>
+                                     {% if i.status == "Pending" %}
+                                    <td>
+										<div align="center" class="pd-20">
+                                                  Please wait for approval
+                                         </div>
+									</td>
+                                     {% else %}
+                                    <td>
+										<div align="center" class="pd-20">
+                                                   <a class="btn btn-outline-danger" href="/earts/student_uploadprogramsload/{{ i.PROGRAMS.id }}/{{ i.id }}">Enter Program</a>
+                                         </div>
+									</td>
+                                     {% endif %}
+                                 </tr>
 
-  </tr>
-      {% endfor %}
-</table>
-</form>
-</body>
-</html>
+							</tbody> {% endfor %}
+						</table>
+					</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+    </div>
+
+{% endblock %}

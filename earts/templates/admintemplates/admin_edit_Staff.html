@@ -1,105 +1,112 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
-</head>
-
-<body><form action="/earts/admin_editstaffpost/" method="post" enctype="multipart/form-data">
-     <input type="hidden" name="stfid" value="{{ a.id }}"/>
-    <table width="200" border="1">
-  <tr>
-    <th scope="col">Name</th>
-    <th scope="col"><input type="text" name="textfield" value="{{ a.st_name }}"/></th>
-  </tr>
-  <tr>
-    <td>Gender</td>
-      {% if a.gender == 'male' %}
-    <td><p>
-      <input name="r1" type="radio" value="male"  checked="checked"/>
-      Male&nbsp;
-      </p>
-      <p>
-        <input name="r1" type="radio" value="female" />
-      Female  </p></td>
-      {% endif %}
+{% extends 'admintemplates/index.html' %}
 
 
+{% block body %}
+<div class="main-container">
+<div class="card-box pd-20 height-100-p mb-30">
+<form action="/earts/admin_editstaffpost/" method="post" enctype="multipart/form-data" name="form1" id="form1">
+<input type="hidden" name="stfid" value="{{ a.id }}"/>
+<div class="pd-20">
+						<h4 class="text-blue h4">Edit Staff</h4>
+					</div>
+  <div class="form-group row">
+		<label class="col-sm-12 col-md-2 col-form-label">Staff&nbsp;Name</label>
+		<div class="col-sm-12 col-md-10">
+			<input class="form-control" type="text" placeholder="Enter Name" value="{{ a.st_name }}" name="textfield">
+		</div>
+  </div>
+  <div class="form-group row">
+	    <label class="col-sm-12 col-md-2 col-form-label">Gender</label>
+	    {% if a.gender == 'male' %}
+      <div class="custom-control custom-radio mb-6">
+      					<input type="radio" id="customRadio4" name="r1" value="male" class="custom-control-input" checked="checked">
+					<label class="custom-control-label" for="customRadio4">Male</label>
+      </div>
+      <div class="custom-control custom-radio mb-6">
+					<input type="radio" id="customRadio5" name="r1" value="female"  class="custom-control-input">
+					<label class="custom-control-label" for="customRadio5">Female</label>
+	  	   </div>{% endif %}
+	   {% if a.gender == 'female' %}
+      <div class="custom-control custom-radio mb-6">
+      					<input type="radio" id="customRadio4" name="r1" value="male" class="custom-control-input">
+					<label class="custom-control-label" for="customRadio4">Male</label>
+      </div>
+      <div class="custom-control custom-radio mb-6">
+					<input type="radio" id="customRadio5" name="r1" class="custom-control-input" value="female"checked="checked">
+					<label class="custom-control-label" for="customRadio5">Female</label>
+	  </div>
+	   {% endif %}</div>
+  <div class="form-group row">
+		<label class="col-sm-12 col-md-2 col-form-label">Place</label>
+		<div class="col-sm-12 col-md-10">
+			<input class="form-control" type="text" placeholder="Enter Place" value="{{ a.place }}" name="textfield1">
+		</div>
+  </div>
+     <div class="form-group row">
+		<label class="col-sm-12 col-md-2 col-form-label">PIN</label>
+		<div class="col-sm-12 col-md-10">
+			<input class="form-control" type="number" placeholder="Enter PIN" value="{{ a.pin }}" name="textfield2">
+		</div>
+  </div>
+    <div class="form-group row">
+		<label class="col-sm-12 col-md-2 col-form-label">Post</label>
+		<div class="col-sm-12 col-md-10">
+			<input class="form-control" type="text" placeholder="Enter Post" value="{{ a.post }}" name="textfield3">
+		</div>
+  </div>
+    <div class="form-group row">
+		<label class="col-sm-12 col-md-2 col-form-label">District</label>
+		<div class="col-sm-12 col-md-10">
+			<input class="form-control" type="text" placeholder="Enter District" value="{{ a.district }}" name="textfield4">
+		</div>
+  </div>
+    <div class="form-group row">
+		<label class="col-sm-12 col-md-2 col-form-label">Image</label>
+		<div class="col-sm-12 col-md-10">
+			<input class="form-control" type="file" value="{{ a.image }}"  name="file">
+		</div>
+  </div>
+  <div class="form-group row">
+		<label class="col-sm-12 col-md-2 col-form-label">Qualification</label>
+									<div class="col-sm-12 col-md-10">
+									<select class="selectpicker form-control" data-style="btn-outline-primary" data-size="5" name="select">
+										<optgroup label="Qualification" data-max-options="2">
+										   <option value="{{ a.qualification }}">{{ a.qualification }}</option>
+											<option>SSLC</option>
+											<option>PlusTwo</option>
+											<option>UG</option>
+											<option>PG</option>
+										</optgroup>
+									</select>
+									</div>
+								</div>
+								<div class="form-group row">
+		                         <label class="col-sm-12 col-md-2 col-form-label">Department</label>
+									<div class="col-sm-12 col-md-10">
+									<select class="selectpicker form-control" data-style="btn-outline-primary" data-size="5" name="select2">
+										<optgroup label="Department" data-max-options="2">
+										  <option value="{{ a.department }}">{{ a.department }}</option>
+											<option>BBA</option>
+                                             <option>BCOM</option>
+                                               <option>BSC</option>
+                                                <option>BCA</option>
+                                                 <option>BA</option>
+										</optgroup>
+									</select>
+									</div>
+								</div>
+    <div class="form-group row">
+		<label class="col-sm-12 col-md-2 col-form-label">Email</label>
+		<div class="col-sm-12 col-md-10">
+			<input class="form-control" type="email" placeholder="Enter Email Address" value="{{ a.email }}" name="textfield5">
+		</div>
+  </div>
+    <div align="center">
+       <button onclick="window.history.back()" class="btn btn-outline-primary">Back</button>
+       <button type="submit" class="btn btn-outline-primary">Save</button>
 
+  </div>
 
-  {% if a.gender == 'female' %}
-    <td><p>
-      <input name="r1" type="radio" value="male"  />
-      Male&nbsp;
-      </p>
-      <p>
-        <input name="r1" type="radio" value="female"  checked="checked"/>
-      Female  </p></td>
-      {% endif %}
-
-  </tr>
-  <tr>
-    <th>Place</th>
-    <td>
-      <input type="text" name="textfield1" value="{{ a.place }}"/>
-    </td>
-  </tr>
-  <tr>
-    <th>PIN</th>
-    <td>
-      <input type="text" name="textfield2" value="{{ a.pin }}"/>
-    </td>
-  </tr>
-  <tr>
-    <th>Post</th>
-    <td><label>
-      <input type="text" name="textfield3" value="{{ a.post }}"/>
-    </label></td>
-  </tr>
-  <tr>
-    <th>District</th>
-    <td>
-      <input type="text" name="textfield4" value="{{ a.district }}"/>
-
-  </tr>
-  <tr>
-    <td>Image</td>
-    <td>
-      <input type="file" name="file" />
-    </td>
-  </tr>
-  <tr>
-    <td>Qualification</td>
-    <td><select name="select" size="1">
-
-      <option value="{{ a.qualification }}">{{ a.qualification }}</option>
-      <option>Plus two</option>
-            </select></td>
-  </tr>
-  <tr>
-    <td>eMail</td>
-    <td>
-      <input type="text" name="textfield5" value="{{ a.email }}"/>
-    </td>
-  </tr>
-  <tr>
-    <td>Department</td>
-    <td><label>
-      <select name="select2">
-        <option value="{{ a.department }}">{{ a.department }}</option>
-        <option>BCOM</option>
-        <option>BSC</option>
-        <option>BCA</option>
-        <option>BA</option>
-      </select>
-    </label></td>
-  </tr>
-  <tr>
-    <td colspan="2"><label>
-      <input type="submit" name="Submit" value="Save" />
-    </label></td>
-    </tr>
-</table>
 </form>
-</body>
-</html>
+</div></div>
+{% endblock %}

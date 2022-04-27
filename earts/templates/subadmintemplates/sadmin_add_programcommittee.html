@@ -1,42 +1,37 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
-</head>
+{% extends 'subadmintemplates/subadminhome.html' %}
 
-<body>
-<form id="form1" name="form1" method="post" action="/earts/sadmin_addprogramcommitteepost/">
-  <table width="200" border="1">
-    <tr>
-      <td>Staff</td>
-      <td><label>
-     <select name="select">
-            {% for i in staffdata %}
+
+{% block body %}
+<div class="main-container">
+<div class="card-box pd-20 height-100-p mb-30">
+<form action="/earts/sadmin_addprogramcommitteepost/" method="post" enctype="multipart/form-data" name="form1" id="form1">
+<div class="pd-20">
+						<h4 class="text-blue h4">Add Program Committee</h4>
+					</div>
+  <div class="form-group row">
+									<div class="col-sm-12 col-md-10">
+                                    <label class="col-sm-12 col-md-2 col-form-label">Staffs :</label>
+									<select class="selectpicker " data-style="btn-outline-primary" data-size="5" name="select">
+            {% for i in staffdata  %}
           <option value="{{ i.id }}">{{ i.st_name }}</option>
             {% endfor %}
 
         </select>
-      </label></td>
-    </tr>
-    <tr>
-      <td>Event</td>
-      <td><label>
-      <select name="select2">
+									</div>
+								</div>
+    <div class="form-group row">
+
+									<div class="col-sm-12 col-md-10">
+                                    <label class="col-sm-12 col-md-2 col-form-label">Events :</label>
+									<select class="selectpicker " data-style="btn-outline-primary" data-size="5" name="select2">
             {% for i in eventdata %}
           <option value="{{ i.id }}">{{ i.event_name }}</option>
             {% endfor %}
+                                    </select></div> </div>
+    <div  class="form-group row"> <div class="pd-ltr-50" > <div class="col-sm-22 col-md-10">
+    <button type="submit" class="btn btn-outline-primary">Add</button></div></div></div>
 
-        </select>
-      </label></td>
-    </tr>
-    <tr>
-      <td colspan="2"><label>
-        <input type="submit" name="Submit" value="Add" />
-      </label></td>
-    </tr>
-  </table>
+
 </form>
-
-</body>
-</html>
+</div></div>
+{% endblock %}

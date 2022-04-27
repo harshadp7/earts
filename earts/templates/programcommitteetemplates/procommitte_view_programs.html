@@ -1,41 +1,62 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
-</head>
+{% extends 'programcommitteetemplates/procommittee_home1.html' %}
+{% block body %}
+	<div class="mobile-menu-overlay"></div>
 
-<body>
-<form id="form1" name="form1" method="post" action="/earts/student_viewprogramsload/"><table width="767" border="1">
-  <tr>
-    <th colspan="2">Programs </th>
-    <th colspan="2">Program&nbsp;name:&nbsp; <input name="textfield" type="text" /> </th>
-    <td colspan="3"><label>
-      <input type="submit" name="search" value="Search" />
-    </label></td>
-  </tr>
-  <tr>
-    <th width="131" height="33">#</th>
-    <th width="140">Program&nbsp;Name </th>
-    <th width="185">Program&nbsp;Discription </th>
-    <th colspan="2">Event</th>
-    <th colspan="2">&nbsp;</th>
-    </tr>
-    {% for i in prgmsdata  %}
-  <tr>
-      <td height="61">{{ forloop.counter }}</td>
-      <td>{{ i.program_name }}&nbsp;</td>
-      <td>{{ i.program_discription}}&nbsp;</td>
-      <td colspan="2" >{{i.EVENTS.event_name}}</td>
-      <td><a href="/earts/procommittee_viewparticipants/{{ i.id }}">View Participants</a></td>
-      <td><a href="/earts/procommittee_assignjudgesload/{{ i.id }}">Assign Judges</a></td>
-      <td><a href="/earts/procommittee_scheduleprogload/{{ i.id }}">Schedule Program</a></td>
-      <td><a href="/earts/procommittee_viewperfomanceload/{{ i.id }}">View Perfomances</a></td>
+	<div class="main-container">
+		<div class="pd-ltr-20 xs-pd-20-10">
+			<div class="min-height-200px">
+                <div class="row">
+				<div class="card-box mb-30">
+					<div class="pd-20">
+						<h4 class="text-blue h4">Programs Table</h4>
+{#                   {% for j in prgmsdata %} <form action="/earts/procommittee_searchprogramsload/{{ j.id }}" method="post">{% endfor %}#}
+{#                         <div id="DataTables Table_0_filter" class="dataTables_filter" align="right">#}
+{#                          <label>#}
+{#                             <input type="search" class="form-control form-control-sm" name="textfield" placeholder="Search Programs" aria-controls="DataTables_Table_0">#}
+{#                              <button type="submit" class="btn btn-outline-primary">Search</button>#}
+{#                          </label>#}
+{#                        </div></form>#}
+						<table class="data-table table stripe hover nowrap" style="width:1200px">
+							<thead>
+								<tr>
+                                  <th >Sl.no</th>
+                                    <th >Program&nbsp;Name </th>
+                                    <th >Program&nbsp;Type </th>
+                                       <th >Program&nbsp;Discription </th>
+                                      <th >Event</th>
+                                     <th>Actions</th>
+                                    </tr>
+							</thead> {% for i in prgmsdata %}
+							<tbody>
+								<tr>
+									<td>{{ forloop.counter }}</td>
+                                     <td>{{ i.program_name }}</td>
+                                     <td>{{ i.program_type}}</td>
+                                     <td>{{ i.program_discription}}</td>
+                                     <td>{{i.EVENTS.event_name}}</td>
+                                     <td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+												<a class="dropdown-item" href="/earts/procommittee_viewparticipants/{{ i.id }}"><i class="dw dw-view"></i>View Participants</a>
+												<a class="dropdown-item" href="/earts/procommittee_assignjudgesload/{{ i.id }}"><i class="dw dw-add-file"></i>Assign Judges</a>
+												<a class="dropdown-item" href="/earts/procommittee_viewperfomanceload/{{ i.id }}"><i class="dw dw-view"></i>View Perfomance</a>
+												<a class="dropdown-item" href="/earts/procommittee_editprogramsload/{{ i.id }}"><i class="dw dw-edit-2"></i>Edit Programs</a>
+											</div>
+										</div>
+									</td>
+                                 </tr>
 
-  </tr>
-    {% endfor %}
-</table>
+							</tbody> {% endfor %}
+						</table>
+					</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+    </div>
 
-</form>
-</body>
-</html>
+{% endblock %}

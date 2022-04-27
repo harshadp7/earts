@@ -1,34 +1,61 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
-</head>
+{% extends 'subadmintemplates/subadminhome.html' %}
+{% block body %}
+	<div class="mobile-menu-overlay"></div>
 
-<body>
-<form id="form1" name="form1" method="post" action="/earts/sadmin_viewprogramsload/"><table width="767" border="0">
-  <tr>
-    <th colspan="2">Programs </th>
-    <th colspan="2">Program&nbsp;name:&nbsp; <input name="textfield" type="text" /> </th>
-    <td colspan="3"><label>
-      <input type="submit" name="search" value="Search" />
-    </label></td>
-  </tr>
-  <tr>
-    <th>#</th>
-    <th>Program&nbsp;Name </th><th>Participants Name</th><th>Perfomance Name </th><th>&nbsp;</th>
-    </tr>
-    {% for i in perfomancedata  %}
-  <tr>
-      <td>{{ forloop.counter }}</td>
-      <td>{{ i.PROGRAMS.program_name }}&nbsp;</td>
-      <td>{{ i.PARTICIPANTS.STUDENT.student_name }}</td>
-      <td>{{ i.performance_name }} </td>
-      <td><a href="/earts/sadmin_viewperfomance2/{{ i.id }}">View</a></td>
-  </tr>
-    {% endfor %}
-</table>
+	<div class="main-container">
+		<div class="pd-ltr-20 xs-pd-20-10">
+			<div class="min-height-200px">
+                <div class="row">
+				<div class="card-box mb-30">
+					<div class="pd-20">
+						<h4 class="text-blue h4">Perfomances Table</h4>
+                    <form action="/earts/sadmin_viewperfomance1/" method="post"><table width="362" border="1">
+                            <div class="pd-10">
+					     <div id="DataTables Table_0_filter" class="dataTables_filter" align="center">
+					     <div id="DataTables Table_0_filter" class="dataTables_filter" align="right">
 
-</form>
-</body>
-</html>
+                           <h6 class="text-blue h6">Search Perfomance:</h6>
+                             <input type="search" class="form-control form-control-sm" name="textfield" placeholder="Search" aria-controls="DataTables_Table_0">
+                              <button type="submit" class="btn btn-outline-primary">Search</button></div>
+                                                    </div></form>
+						<table class="data-table table stripe hover nowrap" style="width:1200px">
+							<thead>
+								<tr>
+                                  <th >Sl.no</th>
+                                    <th>Program&nbsp;Name</td>
+                                    <th>Participant&nbsp;Name</td>
+                                    <th>Perfomance Name </th>
+                                    <th>Action</th>
+                                </tr>
+							</thead> {% for i in perfomancedata    %}
+							<tbody>
+								<tr>
+									<td>{{ forloop.counter }}</td>
+                                    <td>{{ i.PROGRAMS.program_name }}</td>
+                                    <td>{{ i.PARTICIPANTS.STUDENT.student_name }}</td>
+                                    <td>{{ i.performance_name }} </td>
+                                    <td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+												<a class="dropdown-item" href="/earts/sadmin_viewperfomance2/{{ i.id }}"><i class="dw dw-view"></i>View</a>
+{#												<a class="dropdown-item" href="/earts/sadmin_viewresult/{{ i.PROGRAMS.id }}"><i class="dw dw-position"></i>View Result</a>#}
+											</div>
+										</div>
+									</td>
+
+                                 </tr>
+
+							</tbody> {% endfor %}
+						</table>
+					</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+    </div>
+
+{% endblock %}

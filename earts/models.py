@@ -74,6 +74,7 @@ class programs(models.Model):
     program_name=models.CharField(max_length=50)
     EVENTS=models.ForeignKey(events, on_delete=models.CASCADE)
     program_discription=models.CharField(max_length=50)
+    program_type=models.CharField(max_length=50)
 
 
     class Meta:
@@ -131,13 +132,6 @@ class performance(models.Model):
     class Meta:
         db_table = 'performance'
 
-class schedule(models.Model):
-    PROGRAM = models.ForeignKey(programs, on_delete=models.CASCADE)
-    date=models.CharField(max_length=50)
-    time=models.CharField(max_length=50)
-
-    class Meta:
-        db_table = 'schedule'
 
 class result(models.Model):
     PROGRAMS = models.ForeignKey(programs, on_delete=models.CASCADE)
@@ -157,19 +151,5 @@ class judges_assigned(models.Model):
     class Meta:
         db_table = 'judges_assigned'
 
-class complaint(models.Model):
-    complaint=models.CharField(max_length=50)
-    reply=models.CharField(max_length=50)
-    JUDGES = models.ForeignKey(judges, on_delete=models.CASCADE)
-    STUDENT = models.ForeignKey(student, on_delete=models.CASCADE,default=1)
 
-    class Meta:
-        db_table = 'complaint'
 
-class comments_rating(models.Model):
-    comments=models.CharField(max_length=200)
-    rating=models.CharField(max_length=50)
-    date=models.CharField(max_length=50)
-    STUDENT = models.ForeignKey(student, on_delete=models.CASCADE,default=1)
-    class Meta:
-        db_table = 'comments_rating'

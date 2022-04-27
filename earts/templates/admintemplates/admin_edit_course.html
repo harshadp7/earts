@@ -1,41 +1,38 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
-</head>
+{% extends 'admintemplates/index.html' %}
 
-<body>
+
+{% block body %}
+<div class="main-container">
+<div class="card-box pd-20 height-100-p mb-30">
 <form action="/earts/admin_editcoursepost/" method="post" enctype="multipart/form-data" name="form1" id="form1">
+<div class="pd-20">
+						<h4 class="text-blue h4">Add Course</h4>
+					</div>
+					<input type="hidden" name="cid" value="{{ a.id }}" />
+  <div class="form-group row">
+		<label class="col-sm-12 col-md-2 col-form-label">Course&nbsp;Name</label>
+		<div class="col-sm-12 col-md-10">
+			<input class="form-control" type="text" placeholder="Enter Name" name="textfield" value="{{ a.course_name }}">
+		</div>
+  </div>
 
+  <div class="form-group row">
+		<label class="col-sm-12 col-md-2 col-form-label">Department</label>
+									<div class="col-sm-12 col-md-10">
+									<select class="selectpicker form-control" data-style="btn-outline-primary" data-size="5" name="dept">
+										<optgroup label="Departments" data-max-options="2">
+											<option value="{{ a.department }}">{{ a.department }}</option>
+                                            <option>arts</option>
+                                            <option>computer science</option>
+                                            <option>science</option>
+										</optgroup>
+									</select>
+									</div>
+								</div>
 
-     <input type="hidden" name="cid" value="{{ a.id }}" />
-  <table width="200" border="1">
-    <tr>
-      <td scope="col"><div align="left">Course name</div>        </td>
-      <td scope="col">
-        <input type="text" name="textfield" value="{{ a.course_name }}" />
-      </td>
-    </tr>
-	<tr>
-	<td>Department</td>
-	</tr>
-    <tr>
-	<td>
-        <select name="dept">
-            <option value="{{ a.department }}">{{ a.department }}</option>
-            <option>arts</option>
-            <option>computer science</option>
-            <option>science</option>
-        </select>
-      </td>
-    </tr>
-      <tr>
-      <td colspan="2">
-        <input type="submit" name="Submit" value="save" />
-      </td>
-    </tr>
-  </table>
+    <div align="center">
+       <button type="submit" class="btn btn-outline-primary">Save</button>
+  </div>
 </form>
-</body>
-</html>
+</div></div>
+{% endblock %}

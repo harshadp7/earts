@@ -60,7 +60,7 @@ urlpatterns = [
     path('admin_home/', views.admin_homeload),
 
     #subadmin path:
-    path('sadmin_home/', views.sadmin_homeload),
+    path('sadmin_homeload/', views.sadmin_homeload),
     path('sadmin_addjudgesload/',views.sadmin_addjudgesload),
     path('sadmin_addjudgespost/',views.sadmin_addjudgespost),
     path('sadmin_viewprofileload/',views.sadmin_viewprofileload),
@@ -73,9 +73,7 @@ urlpatterns = [
     path('sadmin_vieweventspost/',views.sadmin_vieweventspost),
     path('sadmin_vieweventsload/',views.sadmin_vieweventsload),
     path('sadmin_editeventsload/<str:id>',views.sadmin_editeventsload),
-    path('sadmin_editeventspost/<str:id>',views.sadmin_editeventspost),
-    path('sadmin_addprogramsload/',views.sadmin_addprogramsload),
-    path('sadmin_addprogramspost/',views.sadmin_addprogramspost),
+    path('sadmin_editeventspost/',views.sadmin_editeventspost),
     path('sadmin_viewprogramspost/',views.sadmin_viewprogramspost),
     path('sadmin_viewprogramsload/',views.sadmin_viewprogramsload),
     path('sadmin_addprogramcommitteeload/',views.sadmin_addprogramcommitteeload),
@@ -87,23 +85,27 @@ urlpatterns = [
     path('sadmin_viewparticipants/',views.sadmin_viewparticipants),
     path('sadmin_viewperfomance1/',views.sadmin_viewperfomance1),
     path('sadmin_viewperfomance2/<str:id>',views.sadmin_viewperfomance2),
-    path('sadmin_editprogramsload/<str:id>',views.sadmin_editprogramsload),
-    path('sadmin_editprogramspost/',views.sadmin_editprogramspost),
+    path('procommittee_editprogramsload/<str:id>',views.procommittee_editprogramsload),
+    path('procommittee_editprogramspost/',views.procommittee_editprogramspost),
+    path('sadmin_editprogramcommitteepost/',views.sadmin_editprogramcommitteepost),
     path('sadmin_deleteprogramcommittee/<id>', views.sadmin_deleteprogramcommittee),
-    path('sadmin_deleteprograms/<id>', views.sadmin_deleteprograms),
+    path('procommittee_deleteprograms/<id>', views.procommittee_deleteprograms),
 
 #judges path :
-    path('judges_home/', views.judges_homeload),
+    path('judges_homeload/', views.judges_homeload),
     path('judges_viewprofileload/',views.judges_viewprofileload),
     path('judges_viewprogramsload/',views.judges_viewprogramsload),
     path('judges_viewparticipantsload/<str:id>',views.judges_viewparticipantsload),
     path('judges_viewperfomanceload/<str:id>',views.judges_viewperfomanceload),
     path('judges_scoreperfomance/',views.judges_scoreperfomance),
+    path('judges_viewresult/<str:id>',views.judges_viewresult),
 
 
 #programcommitte path:
-    path('procommittee_homeload/', views.procommitte_homeload),
+    path('procommittee_homeload/', views.procommittee_homeload),
     path('procommittee_viewprofileload/', views.procommittee_viewprofileload),
+    path('procommittee_addprogramspost/',views.procommittee_addprogramspost),
+    path('procommittee_addprogramsload/<str:id>',views.procommittee_addprogramsload),
     path('procommittee_viewprogramsload/<str:id>',views.procommittee_viewprogramsload),
     path('procommittee_viewparticipants/<str:id>',views.procommittee_viewparticipants),
     path('procommittee_viewperfomanceload/<str:id>', views.procommittee_viewperfomanceload),
@@ -118,6 +120,8 @@ urlpatterns = [
     path('procommittee_deletejudgeassgn/<str:id>',views.procommittee_deletejudgeassgn),
     path('procommittee_saveresults/',views.procommittee_saveresults),
     path('procommittee_publishresult/',views.procommittee_publishresult),
+    path('procommittee_viewresult/<str:id>',views.procommittee_viewresult),
+    # path('procommittee_searchprogramsload/<str:id>',views.procommittee_searchprogramsload),
 
 
 
@@ -134,10 +138,12 @@ urlpatterns = [
     path('student_uploadprogramspost/',views.student_uploadprogramspost),
     path('student_deleteperfomance/<str:id>/<progobj>/<praticipationid>',views.student_deleteperfomance),
     path('student_viewperfomanceload/<str:id>',views.student_viewperfomanceload),
+    path('student_viewresult/<str:id>',views.student_viewresult),
     path('publicpageload/',views.publicpageload),
     path('publicpageload1/<str:id>',views.publicpageload1),
     path('publicpageload2/<str:id>',views.publicpageload2),
     path('publicpageload3/<str:id>',views.publicpageload3),
+    path('publicpageload4/<str:id>',views.publicpageload4),
 
 
 ]

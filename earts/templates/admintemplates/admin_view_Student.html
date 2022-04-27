@@ -1,51 +1,72 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title></head>
+{% extends 'admintemplates/index.html' %}
+{% block body %}
+	<div class="mobile-menu-overlay"></div>
 
-<body>
-<form id="form1" name="form1" method="post" action="/earts/admin_viewstudentload/">
-  <table width="221" border="1">
-    <tr>
-      <th colspan="10" scope="col">Student&nbsp;Name </th>
-      <th width="17" scope="col"><label>
-        <input type="text" name="textfield" />
-        <input type="submit" name="Submit" value="Search" />
-      </label></th>
-    </tr></table><br/>
-	<table border="1">
-    <tr>
-      <td width="15">#</td>
-      <td width="99">Student&nbsp;Name</td>
-      <td width="45">Gender</td>
-      <td width="33">Place</td>
-      <td width="34">PIN</td>
-      <td width="28">Post</td>
-      <td width="43">District</td>
-      <td width="37">Image</td>
-      <td width="34">Email</td>
-      <td width="83">Course</td>
-      <td width="110"><a href="#">Edit</a></td>
-      <td width="110"><a href="#">Delete</a></td>
-    </tr>
-        {% for i in data %}
-    <tr>
-      <td>{{ forloop.counter }}</td>
-      <td>{{ i.student_name }}</td>
-      <td>{{ i.gender }}&nbsp;</td>
-      <td>{{ i.place }}&nbsp;</td>
-      <td>{{ i.pin }}&nbsp;</td>
-      <td>{{ i.post }}</td>
-      <td>{{ i.district }}&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>{{ i.email }}&nbsp;</td>
-      <td>{{ i.COURSE.course_name }}&nbsp;</td>
-      <td><a href="/earts/admin_editstudentload/{{ i.id }}">Edit</a></td>
-      <td><a href="/earts/admin_deletestudent/{{ i.id }}">Delete</a></td>
-    </tr>
-        {% endfor %}
-  </table>
-</form>
-</body>
-</html>
+	<div class="main-container">
+			<div class="pd-ltr-20 xs-pd-20-10">
+               <div class="row">
+				 <div class="card-box mb-30">
+					<div class="pd-20">
+						<h4 class="text-blue h4">Student Table</h4>
+					     <div id="DataTables Table_0_filter" class="dataTables_filter" align="center">
+					     <div id="DataTables Table_0_filter" class="dataTables_filter" align="right">
+                          <label>
+                             <input type="search" class="form-control form-control-sm" placeholder="Search" aria-controls="DataTables_Table_0">
+                          </label>
+                          </div>
+                            <table class="data-table table stripe hover nowrap" style="width:1200px">
+							<thead>
+								<tr>
+                                  <td width="15">#</td>
+                                    <td width="15">Student Name</td>
+                                     <td width="15">Gender</td>
+                                      <td width="15">Place</td>
+									  <td width="15">Post</td>
+									  <td width="15">PIN</td>
+									  <td width="15">District</td>
+									  <td width="15">Image</td>
+									  <td width="20">Email</td>
+									  <td width="83">Course</td>
+
+									  <th >Action</th>
+                                </tr>
+							</thead> {% for i in data %}
+							<tbody>
+								<tr>
+									<td>{{ forloop.counter }} </td>
+									<td>{{ i.student_name }}</td>
+                                    <td>{{ i.gender }}</td>
+                                    <td>{{ i.place }}</td>
+                                    <td>{{ i.pin  }}</td>
+                                    <td>{{ i.post }}</td>
+                                    <td>{{ i.district }}</td>
+                                    <td><img src="{{ i.image }}" width="100" height="100" ></td>
+                                    <td>{{ i.email }}</td>
+                                    <td>{{ i.COURSE.course_name }}</td>
+
+                                    <td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+												<a class="dropdown-item" href="/earts/admin_editstudentload/{{ i.id }}"><i class="dw dw-edit2"></i>Edit</a>
+												<a class="dropdown-item" href="/earts/admin_deletestudent/{{ i.id }}"><i class="dw dw-delete-3"></i> Delete</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+
+							</tbody> {% endfor %}
+						</table>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+    </div>
+    <div class="footer-wrap pd-20 mb-20 card-box">
+                <a href="https://github.com/dropways" target="_blank"></a>
+	</div>
+{% endblock %}

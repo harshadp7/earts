@@ -1,35 +1,59 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
-</head>
+{% extends 'programcommitteetemplates/procommittee_home1.html' %}
 
-<body><form action="/earts/procommittee_editprogramspost/" method="post">
-    <input type="hidden" name="programsid" value="{{ programsid.id }}"/>
-    <table width="200" border="1">
-  <tr>
-    <td>Program&nbsp;Name</td>
-    <td><input name="text1" type="text"  value="{{ programsid.program_name }}"/></td>
-  </tr>
-  <tr>
-    <td>program&nbsp;Discription</td>
-    <td><textarea name="text2" cols="" rows="" value="" >{{ programsid.program_discription }}</textarea></td>
-  </tr>
-  <tr>
-    <td>Event:</td>
-    <td><select name="select1">
-                <option value="{{ programsid.EVENTS.id }}"> {{ programsid.EVENTS.event_name }}</option>
-            {% for i in eventdata %}
-          <option value="{{ i.id }}">{{ i.event_name }}</option>
-            {% endfor %}
 
-        </select>
-  </tr>
-  <tr>
-    <td colspan="2"><input type="submit" value="Save" /></td>
-    </tr>
-</table>
+{% block body %}
+<div class="main-container">
+<div class="card-box pd-20 height-100-p mb-30">
+<form action="/earts/procommittee_editprogramspost/" method="post" enctype="multipart/form-data" name="form1" id="form1">
+
+<div class="pd-20">
+						<h4 class="text-blue h4">Edit Program</h4>
+					</div> <input type="hidden" name="programsid" value="{{ programsid.id }}"/>
+  <div class="form-group row">
+      		<label class="col-sm-12 col-md-2 col-form-label">Program&nbsp;Name</label>
+		<div class="col-sm-12 col-md-10">
+			<input class="form-control" type="text1" placeholder="Enter Name" value="{{ programsid.program_name }}" name="text1">
+		</div>
+  </div>
+    <div class="form-group row">
+	    <label class="col-sm-12 col-md-2 col-form-label">Gender</label>
+	    {% if programsid.program_type == 'single' %}
+      <div class="custom-control custom-radio mb-6">
+      					<input type="radio" id="customRadio4" name="radiobutton" value="single" class="custom-control-input" checked="checked">
+					<label class="custom-control-label" for="customRadio4">Single</label>
+      </div>
+      <div class="custom-control custom-radio mb-6">
+					<input type="radio" id="customRadio5" name="radiobutton" value="group"  class="custom-control-input">
+					<label class="custom-control-label" for="customRadio5">Group</label>
+	  	   </div>{% endif %}
+	   {% if programsid.program_type == 'group' %}
+      <div class="custom-control custom-radio mb-6">
+      					<input type="radio" id="customRadio4" name="radiobutton" value="single" class="custom-control-input">
+					<label class="custom-control-label" for="customRadio4">Single</label>
+      </div>
+      <div class="custom-control custom-radio mb-6">
+					<input type="radio" id="customRadio5" name="radiobutton" class="custom-control-input" value="group"checked="checked">
+					<label class="custom-control-label" for="customRadio5">Group</label>
+	  </div>
+	   {% endif %}</div>
+   <div class="form-group row">
+		<label class="col-sm-12 col-md-2 col-form-label">Program&nbsp;Discription</label>
+		<div class="col-sm-12 col-md-10">
+			<input class="form-control" type="textarea" value="{{ programsid.program_discription }}" placeholder="Add Discription" name="text2">
+		</div>
+  </div>
+  <div class="form-group row">
+		<label class="col-sm-12 col-md-2 col-form-label">Event&nbsp;Name</label>
+		<div class="col-sm-12 col-md-10">
+            <div class="pd-5"><h6 class="text  h6">{{ eventdata.event_name }}</h6></div>
+		</div>
+  </div>
+
+
+
+    <div align="center">
+       <button type="submit" class="btn btn-outline-primary">Submit</button>
+  </div>
 </form>
-</body>
-</html>
+</div></div>
+{% endblock %}

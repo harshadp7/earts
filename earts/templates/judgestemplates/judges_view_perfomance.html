@@ -1,25 +1,97 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
-</head>
+{% extends 'judgestemplates/judges_home.html' %}
+{% block body %}
+    {% load static %}
+	<div class="mobile-menu-overlay"></div>
 
-<body><form action="/earts/judges_scoreperfomance/" method="post">  <table width="407" border="0">
-<input type="hidden" name="perfid" value="{{ perfomance.id }}"/>
-<tr>
-    <th width="173">Perfomance&nbsp;Name</th>
-    <td width="218">{{ perfomance.performance_name }}</td>
-  </tr>
-  <tr>
-    <td  colspan="2"><img src="{{ perfomance.uploaded_files }}" width="500" height="350" ></td>
-    </tr>
-	 <tr>
-    <td  colspan="2">Score :&nbsp;<input type="text" name="score"/></td><tr>
-    <td  colspan="2"><button type="submit">Save</button></td></tr>
+	<div class="main-container">
+		<div class="pd-ltr-20 xs-pd-20-10">
+			<div class="min-height-600px">
+                <!-- Simple Datatable start -->
+				<div class="card-box mb-30">
+					<div class="pd-10">
+						<h2 class="text-blue h2">Performance View</h2>
+					</div>
+{#					<div class="col-lg-4 col-md-6 col-sm-12 mb-30">#}
+                        {% if viewdata.file_type == "Video" %}
+                            <form action="/earts/judges_scoreperfomance/" method="post">  <table width="407" border="0">
+						<div class="pd-20 card-box height-100-p">
+                           <div class="clearfix mb-20">
+						      <div class="pull-left">
+                                  <input type="hidden" name="perfid" value="{{ viewdata.id }}"/>
+							    <h4 class="text-blue h4">{{ viewdata.performance_name }}</h4>
+							    <p class="font-14 ml-0">By,<br>{{ viewdata.PARTICIPANTS.STUDENT.student_name }} </p>
+						      </div>
+					        </div>
+					        <div class="container">
+						      <video poster="" controls crossorigin>
+						     	<source src="{{ viewdata.uploaded_files }}" type="video/mp4">
+						    	<source src="{{ viewdata.uploaded_files }}" type="video/webm">
+						      </video>
+                                <div class="col-sm-12 col-md-10">
+			                     <input class="form-control" type="text" placeholder="Score Here" name="score">
+                                    <button class="btn btn-outline-secondary" type="submit">Save</button>
+		                            </div>
+					        </div>
+                        </div></form>
+                        {% elif viewdata.file_type == 'Image' %}
+                                                        <form action="/earts/judges_scoreperfomance/" method="post">  <table width="407" border="0">
+						<div class="pd-20 card-box height-100-p">
+								<div class="da-card-photo"><input type="hidden" name="perfid" value="{{ viewdata.id }}"/>
+                                    <div class="col-sm-12 col-md-10">
+                                         <h5 class="mb-10  pd-20">Perfomance Name :{{ viewdata.performance_name }}.</h5>
+			                           <input class="form-control" type="text" placeholder="Score Here" name="score">
+                                    <button class="btn btn-outline-primary" type="submit">Save</button>
+		                            </div>
+									<img src="{{ viewdata.uploaded_files }}"  class="img-fluid.max-width:100%; height-100-p" alt="">
+                                     <div class="da-overlay">
+                                       <div class="da-social">
+                                             <ul class="clearfix">
+                                                    <li><a href="{{ viewdata.performance_name }}" data-fancybox="images"><i class="fa fa-picture-o"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-link"></i></a></li>
+											</ul>
+										</div>
+                                       </div>
+								</div>
+                        </div></form>
+                        {% else %}
+                         <form action="/earts/judges_scoreperfomance/" method="post">  <table width="407" border="0">
+						<div class="pd-20 card-box height-100-p">
+					        <div class="clearfix mb-20">
+						      <div class="pull-left"><input type="hidden" name="perfid" value="{{ viewdata.id }}"/>
+							   <h4 class="text-blue h4">{{ viewdata.performance_name }}</h4>
+							    <p class="font-14 ml-0">By,<br>{{ viewdata.PARTICIPANTS.STUDENT.student_name }} </p>
+						      </div>
+					        </div>
+					        <div class="container">
+						      <audio controls>
+						      	<source src="{{ viewdata.uploaded_files }}" type="audio/mp3">
+						     	<source src="{{ viewdata.uploaded_files }}" type="audio/ogg">
+						      </audio>
+                                <div class="col-sm-12 col-md-10">
+			                     <input class="form-control" type="text" placeholder="Score Here" name="score">
+                                    <button class="btn btn-outline-secondary" type="submit">Save</button>
+		                            </div>
+					        </div>
+                        </div></form>
+                        {% endif %}
+{#					</div>#}
+				</div>
 
-    </tr>
-</table>
-</form>
-</body>
-</html>
+				<!-- Export Datatable End -->
+			</div>
+		</div>
+	</div>
+    <script src="{% static 'desk/vendors/scripts/core.jsv"' %}"></script>
+	<script src="{% static 'desk/vendors/scripts/script.min.jsv' %}"></script>
+	<script src="{% static 'desk/vendors/scripts/process.js' %}"></script>
+	<script src="{% static 'desk/vendors/scripts/layout-settings.js' %}"></script>
+	<script src="{% static 'desk/src/plugins/plyr/dist/plyr.js' %}"></script>
+	<script src="{% static 'desk/https://cdn.shr.one/1.0.1/shr.js' %}"></script>
+	<script>
+		plyr.setup({
+			tooltips: {
+				controls: !0
+			},
+		});
+	</script>
+{% endblock %}

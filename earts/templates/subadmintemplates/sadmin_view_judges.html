@@ -1,48 +1,71 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title></head>
+{% extends 'subadmintemplates/subadminhome.html' %}
+{% block body %}
+	<div class="mobile-menu-overlay"></div>
 
-<body>
-<form id="form1" name="form1" method="post" action="/earts/sadmin_viewjudgesload/">
-  <table width="200" border="1">
-    <tr>
-      <th colspan="8" scope="col">Judges&nbsp;name </th>
-      <th width="17" scope="col"><label>
-        <input type="text" name="textfield" />
-        <input type="submit" name="Submit" value="Search" />
-      </label></th>
-    </tr>
-    <tr>
-        <td width="15">#</td>
-      <td width="15">Name</td>
-      <td width="15">Gender</td>
-      <td width="15">Place</td>
-      <td width="15">PIN</td>
-      <td width="15">Post</td>
-      <td width="15">District</td>
-      <td width="15">Image</td>
-      <td width="20">Email</td>
+	<div class="main-container">
+		<div class="pd-ltr-20 xs-pd-20-10">
+			<div class="min-height-200px">
+            <div class="row">
+             <div class="card-box mb-30">
+					<div class="pd-20">
+						<h4 class="text-blue h4">Judges Table</h4>
+                    <form action="/earts/sadmin_viewjudgesload/" method="post"><table width="362" border="1">
+                            <div class="pd-10">
 
-    </tr>
-      {% for i in data %}
-    <tr>
+					     <div id="DataTables Table_0_filter" class="dataTables_filter" align="center">
+					     <div id="DataTables Table_0_filter" class="dataTables_filter" align="right">
+                          <label>
+                              <input type="search" class="form-control form-control-sm" name="textfield" placeholder="Search Judges" aria-controls="DataTables_Table_0">
+                              <button type="submit" class="btn btn-outline-primary">Search</button></div>
+                          </label>
+                          </div></form>
+						<table class="data-table table stripe hover nowrap" style="width:1200px">
+							<thead>
+								<tr>
+                                  <th >Sl.no</th>
+                                     <th class="table-plus datatable-nosort">Name</th>
+                                        <th>Gender</th>
+                                          <th>Place</th>
+                                          <th>PIN</th>
+                                           <th>Post</th>
+                                           <th>District</th>
+                                           <th style="width:35px">Image</th>
+                                             <th style="width:49px">E-mail</th>
+                                            <th >Action</th>
+                                    </tr>
+							</thead> {% for i in data %}
+							<tbody>
+								<tr>
+									<td>{{ forloop.counter }} </td>
+                                    <td>{{ i.judge_name }}</td>
+                                    <td>{{ i.gender }}</td>
+                                    <td>{{ i.place }}</td>
+                                    <td>{{ i.pin  }}</td>
+                                    <td>{{ i.post }}</td>
+                                    <td>{{ i.district }}</td>
+                                    <td><img src="{{ i.image }}" width="100" height="100" ></td>
+                                    <td>{{ i.email }}</td>
+                                    <td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+												<a class="dropdown-item" href="/earts/sadmin_editjudgesload/{{ i.id }}"><i class="dw dw-edit2"></i>Edit</a>
+												<a class="dropdown-item" href="/earts/sadmin_deletejudges/{{ i.id }}"><i class="dw dw-delete-3"></i> Delete</a>
+											</div>
+										</div>
+									</td>
+								</tr>
 
-      <td>{{ forloop.counter }}</td>
-      <td>{{ i.judge_name }}&nbsp;</td>
-      <td>{{ i.gender }}&nbsp;</td>
-      <td>{{ i.place }}&nbsp;</td>
-      <td>{{ i.pin }}&nbsp;</td>
-      <td>{{ i.post }}&nbsp;</td>
-      <td>{{ i.district }}&nbsp;</td>
-      <td></td>
-      <td>{{ i.email }}</td>
-      <td><a href="/earts/sadmin_editjudgesload/{{ i.id }}">Edit</a></td>
-      <td><a href="/earts/sadmin_deletejudges/{{ i.id }}">Delete</a></td>
-    </tr>
-      {% endfor %}
-  </table>
-</form>
-</body>
-</html>
+							</tbody> {% endfor %}
+						</table>
+					</div>
+				</div>
+				</div>
+				</div>
+			</div>
+		</div>
+    </div>
+
+{% endblock %}

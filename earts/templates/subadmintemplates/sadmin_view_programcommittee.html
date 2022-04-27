@@ -1,41 +1,64 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
-</head>
+{% extends 'subadmintemplates/subadminhome.html' %}
+{% block body %}
+	<div class="mobile-menu-overlay"></div>
 
-<body>
-<form id="form1" name="form1" method="post" action="/earts/sadmin_viewprogramcommitteeload/"><table width="380" border="1">
-  <tr>
-    <td colspan="2">Program&nbsp;Committee </td>
-    <td colspan="2">Events: &nbsp; <select name="select2">
+	<div class="main-container">
+		<div class="pd-ltr-20 xs-pd-20-10">
+			<div class="min-height-200px">
+                <div class="row">
+				<div class="card-box mb-30">
+					<div class="pd-20">
+						<h4 class="text-blue h4">Progarm Committee Table</h4>
+						<h5 class="text-blue h4">Events:</h5>
+						<form action="/earts/sadmin_viewprogramcommitteeload/" method="post"><table width="362" border="1">
+						<select class="selectpicker form-control" data-style="btn-outline-primary" data-size="5" name="select2">
+						 <label>Select Event
+                          </label>
             {% for i in event %}
           <option value="{{ i.id }}">{{ i.event_name }}</option>
             {% endfor %}
 
-        </select> </td>
-    <td width="122"><label>
-      <input type="submit" name="search" value="Search" />
-    </label></td>
-  </tr>
-  <tr>
-    <td width="50">#</td>
-    <td width="70">Staff&nbsp;Name </td>
-    <td width="18">Event&nbsp;Name </td>
-    <td colspan="2">&nbsp;</td>
-    </tr>
-    {% for i in prgmcdata %}
-  <tr>
-      <td>{{ forloop.counter }}</td>
-      <td>{{ i.STAFF.st_name }}&nbsp;</td>
-      <td>{{ i.EVENTS.event_name}}&nbsp;</td>
-    <td ><a href="/earts/sadmin_editprogramcommitteeload/{{ i.id }}">Edit</a></td>
-    <td><a href="/earts/sadmin_deleteprogramcommittee/{{ i.id }}">Delete</a></td>
-  </tr>
-    {% endfor %}
-</table>
+        </select><button type="submit" class="btn btn-primary">Search</button></form>
+					     <div id="DataTables Table_0_filter" class="dataTables_filter" align="center">
+					     <div id="DataTables Table_0_filter" class="dataTables_filter" align="right">
+                                                   </div>
+						<table class="data-table table stripe hover nowrap" style="width:1200px">
+							<thead>
+								<tr>
+                                  <th >Sl.no</th>
+                                    <th>Staff Name</th>
+                                    <th>Event&nbsp;Name </td>
+                                    <th>Event&nbsp;date </th>
+                                    <th>Action</th>
+                                    </tr>
+							</thead> {% for i in prgmcdata %}
+							<tbody>
+								<tr>
+									<td>{{ forloop.counter }}</td>
+                                   <td>{{ i.STAFF.st_name }}</td>
+                                   <td>{{ i.EVENTS.event_name}}</td>
+                                   <td>{{ i.created_date }}</td>
+                                   <td>
+										<div class="dropdown">
+											<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+												<i class="dw dw-more"></i>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+												<a class="dropdown-item" href="/earts/sadmin_editprogramcommitteeload/{{ i.id }}"><i class="dw dw-edit2"></i> Edit</a>
+												<a class="dropdown-item" href="//earts/sadmin_deleteprogramcommittee/{{ i.id }}"><i class="dw dw-delete-3"></i> Delete</a>
+											</div>
+										</div>
+									</td>
+								</tr>
 
-</form>
-</body>
-</html>
+							</tbody> {% endfor %}
+						</table>
+					</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+    </div>
+
+{% endblock %}
