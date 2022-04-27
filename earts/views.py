@@ -1202,8 +1202,10 @@ def procommittee_viewperfomanceload(request,id):
         jobj=i.score1
         opj=i.score2
         hy=i.score3
+        ls1=(int(jobj),int(opj),int(hy))
+        i1=any(ls1)
         sums=int(jobj)+int(opj)+int(hy)
-        ls.append({"program_name":i.PROGRAMS.program_name,"ss":i.PARTICIPANTS.STUDENT.student_name,"p":i.performance_name,"sc":sums,"id":i.id,"pid":i.PROGRAMS.id})
+        ls.append({"program_name":i.PROGRAMS.program_name,"ss":i.PARTICIPANTS.STUDENT.student_name,"p":i.performance_name,"sc":sums,"id":i.id,"pid":i.PROGRAMS.id,'val':i1})
     return render(request, 'programcommitteetemplates/procommittee_view_perfomance.html',{'perfomancedata': ls})
 
 def procommittee_saveresults(request):
@@ -1231,9 +1233,19 @@ def procommittee_publishresult(request):
     pp=performance.objects.filter(PROGRAMS_id=pgmid1).order_by("-totalscore")[:3]
     ids=[]
     pid=[]
-    if pp.exists():
+    for i in pp:
+        jobj=i.score1
+        opj=i.score2
+        hy=i.score3
+        ls1=(int(jobj),int(opj),int(hy))
+        i1=not all(ls1)
+        print(ls1)
+        print(i1)
+        if i1 is True:
+            return HttpResponse("<script>alert('Judges Not Scored..!');window.history.back()</script>")
+    if pobj.exists():
        return HttpResponse("<script>alert('Already Published');window.history.back()</script>")
-    else :
+    elif i1 is True:
        for i in pp:
           ids.append(i.PARTICIPANTS.STUDENT.id)
           pid.append(i.PROGRAMS_id)
